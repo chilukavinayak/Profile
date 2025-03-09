@@ -1,233 +1,173 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en"> <!-- Language declared for accessibility and SEO :contentReference[oaicite:2]{index=2} -->
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Vinayak Chiluka - Profile Showcase</title>
-  <style>
-    /* ====== Basic Resets ====== */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: Arial, sans-serif;
-    }
-    body {
-      background: #f9f9f9;
-      color: #444;
-      line-height: 1.6;
-    }
-    h1, h2, h3, h4 {
-      font-weight: 600;
-      margin-bottom: 1rem;
-    }
-
-    /* ====== Hero Section ====== */
-    .hero {
-      background: linear-gradient(135deg, #83a4d4, #b6fbff);
-      padding: 4rem 2rem;
-      text-align: center;
-      color: #003049;
-    }
-    .hero h1 {
-      font-size: 2.5rem;
-      margin-bottom: 0.5rem;
-    }
-    .hero p {
-      font-size: 1.1rem;
-      max-width: 600px;
-      margin: 0.5rem auto 2rem;
-      line-height: 1.4;
-    }
-
-    /* ====== Container ====== */
-    .container {
-      max-width: 1200px;
-      margin: 2rem auto;
-      padding: 0 2rem;
-    }
-
-    /* ====== Section Titles ====== */
-    .section-title {
-      font-size: 1.8rem;
-      margin-bottom: 1.5rem;
-      border-bottom: 3px solid #b6fbff;
-      display: inline-block;
-      padding-bottom: 0.5rem;
-      color: #003049;
-    }
-
-    /* ====== Cards and Content Blocks ====== */
-    .content-block {
-      background: #fff;
-      border-radius: 8px;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-      padding: 2rem;
-      margin-bottom: 2rem;
-      transition: transform 0.3s ease-in-out;
-    }
-    .content-block:hover {
-      transform: translateY(-5px);
-    }
-    .content-block h3 {
-      margin-bottom: 1rem;
-      color: #003049;
-    }
-    .content-block p, .content-block ul {
-      margin-bottom: 1rem;
-      line-height: 1.5;
-    }
-    .content-block ul {
-      list-style: disc inside;
-    }
-
-    /* ====== Fancy Lists ====== */
-    .key-points {
-      margin-top: 1rem;
-    }
-    .key-points li {
-      margin: 0.5rem 0;
-    }
-
-    /* ====== Footer ====== */
-    footer {
-      text-align: center;
-      padding: 1rem;
-      background: #003049;
-      color: #fff;
-      margin-top: 2rem;
-    }
-    footer p {
-      margin: 0.5rem 0;
-    }
-  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Vinayak Chiluka | Portfolio</title>
+  <meta name="description" content="Vinayak Chiluka – AWS Certified Cloud Architect and DevOps lead with 9+ years of experience in software development." />
+  <meta name="keywords" content="Vinayak Chiluka, AWS, Cloud Architect, DevOps, Portfolio" />
+  <!-- Open Graph meta for rich social sharing -->
+  <meta property="og:title" content="Vinayak Chiluka – Cloud & DevOps Portfolio" />
+  <meta property="og:description" content="AWS-certified architect showcasing IoT, cloud migration, and DevOps projects." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://vinayakchiluka.github.io" />
+  <meta property="og:image" content="images/portfolio-preview.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Vinayak Chiluka Portfolio" />
+  <meta name="twitter:description" content="Cloud architect with expertise in AWS, DevOps, and software design." />
+  <meta name="twitter:image" content="images/portfolio-preview.png" />
+  <link rel="stylesheet" href="styles.css" /> <!-- Link to external CSS -->
 </head>
 <body>
-
-  <!-- ====== Hero Section ====== -->
-  <section class="hero">
-    <h1>Vinayak Chiluka</h1>
-    <p>Sr. Principal Engineer at Wissen | AWS Certified Solutions Architect (Associate &amp; Professional)</p>
-  </section>
-
-  <!-- ====== About Section ====== -->
-  <div class="container">
-    <h2 class="section-title">About Me</h2>
-    <div class="content-block">
-      <h3>Personal & Educational Background</h3>
-      <p>
-        I am Vinayak Chiluka, graduated with a B.Tech in Electronics and Communication Engineering (ECE) from JNTU 
-        Hyderabad (2014). With over 15 years in the software industry, I have worked extensively on embedded systems, 
-        financial trading, eCommerce, and IoT. I currently live in Hyderabad, India, and work at Wissen as a Sr. Principal 
-        Engineer.
-      </p>
-      <p>
-        I hold two AWS certifications (Solutions Architect – Associate &amp; Professional) and have led teams of up to 
-        14 members. My expertise encompasses Cloud, DevOps, and software architecture. My past stints include consulting 
-        at Amazon, tackling large-scale distributed systems handling over 10,000+ RPS.
-      </p>
-    </div>
-
-    <!-- ====== Technical Expertise ====== -->
-    <h2 class="section-title">Technical Expertise</h2>
-    <div class="content-block">
-      <h3>Primary Technology Stack</h3>
-      <ul class="key-points">
-        <li><strong>Programming Languages:</strong> Java (Primary), C, C++, Python, C#</li>
-        <li><strong>Cloud:</strong> AWS (Extensive expertise), Some Azure (Azure Repos in CodePipeline)</li>
-        <li><strong>DevOps / IaC:</strong> Docker, Kubernetes, AWS CDK, Helm Charts, Terraform, Ansible</li>
-        <li><strong>Databases:</strong> Amazon RDS (PostgreSQL, MySQL, SQL Server)</li>
-        <li><strong>Messaging:</strong> MQTT (AWS IoT Core), Amazon SQS, SNS, SES</li>
-        <li><strong>Security:</strong> KMS, IAM, TLS/SSL</li>
+  <!-- Header/Hero Section with navigation -->
+  <header>
+    <nav class="top-nav">
+      <h1>Vinayak Chiluka</h1> <!-- Site title / Name as H1 for SEO -->
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#blog">Blog</a></li>
+        <li><a href="#contact">Contact</a></li>
       </ul>
+    </nav>
+    <div class="hero">
+      <h2 class="tagline">AWS Cloud Architect & DevOps Lead</h2>
+      <p class="intro-text">Building scalable cloud solutions and driving DevOps culture.</p>
+      <!-- Optionally, a scrolling or typing text effect for a futuristic feel -->
     </div>
+  </header>
 
-    <!-- ====== Notable Projects ====== -->
-    <h2 class="section-title">Notable Projects & Contributions</h2>
-    <div class="content-block">
-      <h3>IoT Data Processing Pipeline</h3>
-      <ul class="key-points">
-        <li>Built an AWS IoT Core-based system handling data at different intervals (1Hz &amp; 20Hz).</li>
-        <li>Used SQS, Lambda, DynamoDB, and S3 for robust, scalable data processing.</li>
-        <li>Developed a historical data service with pre-signed URLs and AWS SES for missing-file alerts.</li>
-      </ul>
+  <main>
+    <!-- 2. About Me Section -->
+    <section id="about">
+      <h2>About Me</h2>
+      <div class="about-content">
+        <img src="images/vinayak.jpg" alt="Vinayak Chiluka" class="profile-pic" />
+        <div class="about-text">
+          <p>Hi, I'm <strong>Vinayak Chiluka</strong>, a software architect with over <strong>9 years of experience</strong> in full-stack development and cloud computing&#8203;:contentReference[oaicite:3]{index=3}. I specialize in building enterprise-grade applications, cloud migration, and DevOps automation. I'm an <strong>AWS Certified Solutions Architect – Professional</strong>&#8203;:contentReference[oaicite:4]{index=4} and have led engineering teams to deliver innovative solutions in IoT and fintech domains. I excel in <strong>microservices architecture, CI/CD pipelines, and security best practices</strong>, and I'm passionate about mentoring teams and solving complex technical challenges.</p>
+          <p>I’ve managed projects from concept to deployment, including leading an IoT data platform as a Team Lead&#8203;:contentReference[oaicite:5]{index=5} and driving DevOps initiatives at scale. My background includes a B.Tech in Electronics & Communication (2014) and hands-on expertise with a wide range of technologies.</p>
+        </div>
+      </div>
+    </section>
 
-      <h3>AWS RDS Migration & Optimization</h3>
-      <ul class="key-points">
-        <li>Migrated MS SQL databases to Amazon RDS with minimal downtime.</li>
-        <li>Evaluated 1-year RDS utilization for Reserved Instances versus On-Demand.</li>
-        <li>Ensured encryption best practices (KMS-enabled RDS).</li>
-      </ul>
+    <!-- 3. Technical Skills Section -->
+    <section id="skills">
+      <h2>Technical Skills</h2>
+      <p class="subtitle">**Programming:** Java, Python, C# &bull; **Cloud:** AWS (EC2, S3, RDS, Lambda, etc.) &bull; **DevOps:** Docker, Kubernetes, Jenkins &bull; **Security:** OAuth2, SSL, AWS KMS</p>
+      <div class="skills-grid">
+        <!-- Example skill with animated bar -->
+        <div class="skill-bar">
+          <span>Java & Spring Boot</span>
+          <div class="bar"><div class="fill" style="width: 90%;"></div></div>
+        </div>
+        <div class="skill-bar">
+          <span>AWS Cloud & Services</span>
+          <div class="bar"><div class="fill" style="width: 85%;"></div></div>
+        </div>
+        <div class="skill-bar">
+          <span>DevOps & CI/CD</span>
+          <div class="bar"><div class="fill" style="width: 80%;"></div></div>
+        </div>
+        <div class="skill-bar">
+          <span>Security & Automation</span>
+          <div class="bar"><div class="fill" style="width: 75%;"></div></div>
+        </div>
+      </div>
+    </section>
 
-      <h3>Elastic Beanstalk Customization & Security</h3>
-      <ul class="key-points">
-        <li>Implemented strict egress Security Group rules and improved monitoring.</li>
-        <li>Resolved EC2 health check visibility issues with CloudWatch and EB extensions.</li>
-      </ul>
+    <!-- 4. Projects Portfolio Section -->
+    <section id="projects">
+      <h2>Projects Portfolio</h2>
+      <!-- Filter buttons to toggle project categories -->
+      <div class="filter-menu">
+        <button onclick="filterProjects('all')" class="active">All</button>
+        <button onclick="filterProjects('cloud')">Cloud</button>
+        <button onclick="filterProjects('devops')">DevOps</button>
+      </div>
+      <div class="projects-grid">
+        <!-- Project 1: IoT Data Processing (Cloud) -->
+        <div class="project-card cloud">
+          <h3>IoT Data Processing Platform</h3>
+          <p class="project-desc">**Overview:** Led the development of an IoT data ingestion platform for smart devices, streaming millions of events to AWS for real-time processing&#8203;:contentReference[oaicite:6]{index=6}. Utilized AWS IoT Core, Lambda, and DynamoDB for a serverless, scalable architecture.<br>
+          **Challenge:** Needed to handle high-volume data from distributed devices reliably.<br>
+          **Solution:** Implemented AWS IoT Core and Kinesis streams for ingestion, with Lambda functions to process and store data. Built a monitoring dashboard for fault analysis.<br>
+          **Outcome:** Achieved real-time analytics with scalable processing and improved fault detection.</p>
+        </div>
+        <!-- Project 2: AWS RDS Migration (Cloud) -->
+        <div class="project-card cloud">
+          <h3>AWS RDS Migration</h3>
+          <p class="project-desc">**Overview:** Migrated on-premise databases to Amazon RDS in a secure and automated manner. Planned and executed data migration with minimal downtime.<br>
+          **Challenge:** Large data volumes and legacy schemas required careful planning.<br>
+          **Solution:** Used AWS DMS (Database Migration Service) and CloudFormation scripts for repeatable infrastructure setup. Performed extensive testing and optimization on MySQL and PostgreSQL RDS instances.<br>
+          **Outcome:** Successfully moved data to AWS cloud, reducing maintenance overhead and improving scalability.</p>
+        </div>
+        <!-- Project 3: Helm Deployment (DevOps) -->
+        <div class="project-card devops">
+          <h3>Helm Chart Deployment Automation</h3>
+          <p class="project-desc">**Overview:** Developed Helm charts to automate Kubernetes deployments for a microservices application. Streamlined the release process with parameterized configurations.<br>
+          **Challenge:** Standardizing deployments across multiple environments (dev, staging, prod).<br>
+          **Solution:** Created reusable Helm charts and used CI/CD (Jenkins) to deploy to EKS clusters. Incorporated health checks and rollbacks for reliability.<br>
+          **Outcome:** Deployment time reduced significantly and environment parity improved, with infrastructure as code facilitating easier maintenance.</p>
+        </div>
+        <!-- Project 4: Elastic Beanstalk Customization (DevOps/Cloud) -->
+        <div class="project-card devops">
+          <h3>Elastic Beanstalk Environment Customization</h3>
+          <p class="project-desc">**Overview:** Customized AWS Elastic Beanstalk for a web application to use a custom Docker platform and automated CI/CD pipeline. Adjusted infrastructure (load balancer, auto-scaling) via EB extensions.<br>
+          **Challenge:** Default EB settings didn’t meet application requirements for scaling and deployment speed.<br>
+          **Solution:** Employed EB configuration files and Docker multi-container setup to tailor the environment. Integrated CodePipeline for continuous deployment.<br>
+          **Outcome:** Achieved a more flexible PaaS setup with faster deployments and better resource utilization on AWS.</p>
+        </div>
+      </div>
+    </section>
 
-      <h3>Helm Chart Deployment (Onedesk)</h3>
-      <ul class="key-points">
-        <li>Created Helm charts for an Nginx UI and Spring Boot microservices.</li>
-        <li>Set up Active Directory authentication and TLS/SSL configurations.</li>
-      </ul>
-    </div>
+    <!-- 5. Blog Section -->
+    <section id="blog">
+      <h2>Blog & Technical Articles</h2>
+      <p class="subtitle">Sharing knowledge on cloud architecture, DevOps, and software engineering:</p>
+      <article class="blog-post">
+        <h3><a href="#">Optimizing Cloud Costs with Serverless Architectures</a></h3>
+        <p>A deep dive into cost-efficient AWS serverless solutions, with tips on using Lambda and DynamoDB effectively.</p>
+      </article>
+      <article class="blog-post">
+        <h3><a href="#">Continuous Deployment with Jenkins and Kubernetes</a></h3>
+        <p>How to set up a CI/CD pipeline using Jenkins pipelines and deploying seamlessly to Kubernetes clusters with Helm.</p>
+      </article>
+      <p><a href="#" class="all-posts">View all articles &raquo;</a></p>
+    </section>
 
-    <!-- ====== Leadership & Knowledge Transfer ====== -->
-    <h2 class="section-title">Leadership & Knowledge Transfer</h2>
-    <div class="content-block">
-      <p>
-        I’ve led teams of interns, junior, and senior engineers. I regularly conduct KT sessions on Amazon AppStream 2.0, 
-        advanced Ansible, AWS Glue, and SQL interview preparation. Through live demonstrations and thorough documentation, 
-        I ensure smooth onboarding and skill enhancement.
-      </p>
-    </div>
+    <!-- 6. Contact Section -->
+    <section id="contact">
+      <h2>Contact Me</h2>
+      <p>Interested in working together or have a question? Get in touch using the form below or via my social links.</p>
+      <form class="contact-form" action="#" method="post">
+        <div class="form-group">
+          <label for="name">Name:</label> 
+          <input type="text" id="name" name="name" required />
+        </div>
+        <div class="form-group">
+          <label for="email">Email:</label> 
+          <input type="email" id="email" name="email" required />
+        </div>
+        <div class="form-group">
+          <label for="message">Message:</label> 
+          <textarea id="message" name="message" rows="4" required></textarea>
+        </div>
+        <button type="submit">Send Message</button>
+      </form>
+      <div class="social-links">
+        <a href="https://www.linkedin.com/in/vinayak-chiluka" target="_blank">LinkedIn</a> &bull;
+        <a href="https://github.com/vinayakchiluka" target="_blank">GitHub</a> &bull;
+        <a href="mailto:chilukavinayak.p@gmail.com">Email</a>
+      </div>
+    </section>
+  </main>
 
-    <!-- ====== Career Aspirations & Interests ====== -->
-    <h2 class="section-title">Career Aspirations & Interests</h2>
-    <div class="content-block">
-      <p>
-        My immediate goal is to transition into a Solutions Architect role at AWS (L5) in a hybrid setup in Bangalore or 
-        Chennai. I'm passionate about AI, machine learning, data science, and staying updated on service meshes, container 
-        orchestration, and distributed computing. 
-      </p>
-      <p>
-        I'm also active in the stock market, focusing on intraday trading using technical indicators like MA, RSI, 
-        MACD, and Bollinger Bands. Outside of work, I enjoy playing PS5 games, reading tech blogs, and playing cricket.
-      </p>
-    </div>
-
-    <!-- ====== Personal Goals & Challenges ====== -->
-    <h2 class="section-title">Personal Goals & Challenges</h2>
-    <div class="content-block">
-      <h3>Buying a Home</h3>
-      <p>
-        Currently in the process of buying my first home in Hyderabad. Overcame some challenges with work location 
-        (Pune) and banker verifications.
-      </p>
-      <h3>Work-Life Balance</h3>
-      <p>
-        Seeking roles that offer flexibility and cutting-edge AWS projects, while allowing me to maintain personal 
-        commitments and well-being.
-      </p>
-    </div>
-
-    <!-- ====== Future Learning Areas ====== -->
-    <h2 class="section-title">Future Learning Areas</h2>
-    <div class="content-block">
-      <ul class="key-points">
-        <li>Exploring AWS AI/ML services (SageMaker, Bedrock, etc.)</li>
-        <li>Deeper dive into Kubernetes and service meshes</li>
-        <li>Cost-effective and scalable architectures on AWS</li>
-        <li>Advanced Ansible, Terraform, and Helm expertise</li>
-      </ul>
-    </div>
-  </div>
-
-  <!-- ====== Footer Section ====== -->
   <footer>
-    <p>&copy; 2025 - Vinayak Chiluka</p>
-    <p>Built with passion for Cloud, DevOps, and Distributed Systems</p>
+    <p>&copy; 2025 Vinayak Chiluka. All rights reserved.</p>
   </footer>
 
+  <!-- Include JavaScript at end for non-blocking load -->
+  <script src="script.js"></script>
 </body>
 </html>
