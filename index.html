@@ -3,144 +3,231 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>My Fancy Personal Page</title>
+  <title>Vinayak Chiluka - Profile Showcase</title>
   <style>
-    /* Global reset and font */
+    /* ====== Basic Resets ====== */
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      font-family: "Helvetica Neue", Arial, sans-serif;
+      font-family: Arial, sans-serif;
     }
-
     body {
-      background: linear-gradient(to right, #74ebd5, #ACB6E5);
-      color: #333;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 2rem;
-      min-height: 100vh;
-    }
-
-    .container {
-      background-color: #fff;
-      max-width: 700px;
-      width: 100%;
-      border-radius: 8px;
-      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
-      overflow: hidden;
-      animation: fadeIn 1.2s ease-in-out;
-    }
-
-    .header {
-      background: #f7f7f7;
-      padding: 2rem;
-      text-align: center;
-    }
-
-    .header img {
-      width: 120px;
-      height: 120px;
-      object-fit: cover;
-      border-radius: 50%;
-      border: 4px solid #ccc;
-      margin-bottom: 1rem;
-    }
-
-    .header h1 {
-      font-size: 2rem;
-      margin-bottom: 0.5rem;
-    }
-
-    .header p {
-      font-style: italic;
-      color: #777;
-    }
-
-    .content {
-      padding: 2rem;
+      background: #f9f9f9;
+      color: #444;
       line-height: 1.6;
     }
-
-    .content h2 {
-      font-size: 1.5rem;
+    h1, h2, h3, h4 {
+      font-weight: 600;
       margin-bottom: 1rem;
     }
 
-    .social-links {
+    /* ====== Hero Section ====== */
+    .hero {
+      background: linear-gradient(135deg, #83a4d4, #b6fbff);
+      padding: 4rem 2rem;
+      text-align: center;
+      color: #003049;
+    }
+    .hero h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+    }
+    .hero p {
+      font-size: 1.1rem;
+      max-width: 600px;
+      margin: 0.5rem auto 2rem;
+      line-height: 1.4;
+    }
+
+    /* ====== Container ====== */
+    .container {
+      max-width: 1200px;
+      margin: 2rem auto;
+      padding: 0 2rem;
+    }
+
+    /* ====== Section Titles ====== */
+    .section-title {
+      font-size: 1.8rem;
+      margin-bottom: 1.5rem;
+      border-bottom: 3px solid #b6fbff;
+      display: inline-block;
+      padding-bottom: 0.5rem;
+      color: #003049;
+    }
+
+    /* ====== Cards and Content Blocks ====== */
+    .content-block {
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      padding: 2rem;
+      margin-bottom: 2rem;
+      transition: transform 0.3s ease-in-out;
+    }
+    .content-block:hover {
+      transform: translateY(-5px);
+    }
+    .content-block h3 {
+      margin-bottom: 1rem;
+      color: #003049;
+    }
+    .content-block p, .content-block ul {
+      margin-bottom: 1rem;
+      line-height: 1.5;
+    }
+    .content-block ul {
+      list-style: disc inside;
+    }
+
+    /* ====== Fancy Lists ====== */
+    .key-points {
       margin-top: 1rem;
     }
-
-    .social-links a {
-      text-decoration: none;
-      display: inline-block;
-      margin-right: 1rem;
-      margin-bottom: 1rem;
-      font-weight: bold;
-      color: #333;
-      position: relative;
-      transition: color 0.3s;
+    .key-points li {
+      margin: 0.5rem 0;
     }
 
-    .social-links a:hover {
-      color: #0077ff;
+    /* ====== Footer ====== */
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background: #003049;
+      color: #fff;
+      margin-top: 2rem;
     }
-
-    .skills-list,
-    .projects-list {
-      margin: 0.5rem 0 1rem 1.5rem;
-      list-style-type: disc;
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(5px); }
-      to { opacity: 1; transform: translateY(0); }
+    footer p {
+      margin: 0.5rem 0;
     }
   </style>
 </head>
 <body>
+
+  <!-- ====== Hero Section ====== -->
+  <section class="hero">
+    <h1>Vinayak Chiluka</h1>
+    <p>Sr. Principal Engineer at Wissen | AWS Certified Solutions Architect (Associate &amp; Professional)</p>
+  </section>
+
+  <!-- ====== About Section ====== -->
   <div class="container">
-    <!-- Header Section -->
-    <div class="header">
-      <!-- Replace the image source below with your own image link -->
-      <img src="https://via.placeholder.com/120" alt="Profile Picture" />
-      <h1>Your Name Here</h1>
-      <p>Software Developer | Tech Enthusiast</p>
+    <h2 class="section-title">About Me</h2>
+    <div class="content-block">
+      <h3>Personal & Educational Background</h3>
+      <p>
+        I am Vinayak Chiluka, graduated with a B.Tech in Electronics and Communication Engineering (ECE) from JNTU 
+        Hyderabad (2014). With over 15 years in the software industry, I have worked extensively on embedded systems, 
+        financial trading, eCommerce, and IoT. I currently live in Hyderabad, India, and work at Wissen as a Sr. Principal 
+        Engineer.
+      </p>
+      <p>
+        I hold two AWS certifications (Solutions Architect – Associate &amp; Professional) and have led teams of up to 
+        14 members. My expertise encompasses Cloud, DevOps, and software architecture. My past stints include consulting 
+        at Amazon, tackling large-scale distributed systems handling over 10,000+ RPS.
+      </p>
     </div>
 
-    <!-- Main Content Section -->
-    <div class="content">
-      <h2>About Me</h2>
+    <!-- ====== Technical Expertise ====== -->
+    <h2 class="section-title">Technical Expertise</h2>
+    <div class="content-block">
+      <h3>Primary Technology Stack</h3>
+      <ul class="key-points">
+        <li><strong>Programming Languages:</strong> Java (Primary), C, C++, Python, C#</li>
+        <li><strong>Cloud:</strong> AWS (Extensive expertise), Some Azure (Azure Repos in CodePipeline)</li>
+        <li><strong>DevOps / IaC:</strong> Docker, Kubernetes, AWS CDK, Helm Charts, Terraform, Ansible</li>
+        <li><strong>Databases:</strong> Amazon RDS (PostgreSQL, MySQL, SQL Server)</li>
+        <li><strong>Messaging:</strong> MQTT (AWS IoT Core), Amazon SQS, SNS, SES</li>
+        <li><strong>Security:</strong> KMS, IAM, TLS/SSL</li>
+      </ul>
+    </div>
+
+    <!-- ====== Notable Projects ====== -->
+    <h2 class="section-title">Notable Projects & Contributions</h2>
+    <div class="content-block">
+      <h3>IoT Data Processing Pipeline</h3>
+      <ul class="key-points">
+        <li>Built an AWS IoT Core-based system handling data at different intervals (1Hz &amp; 20Hz).</li>
+        <li>Used SQS, Lambda, DynamoDB, and S3 for robust, scalable data processing.</li>
+        <li>Developed a historical data service with pre-signed URLs and AWS SES for missing-file alerts.</li>
+      </ul>
+
+      <h3>AWS RDS Migration & Optimization</h3>
+      <ul class="key-points">
+        <li>Migrated MS SQL databases to Amazon RDS with minimal downtime.</li>
+        <li>Evaluated 1-year RDS utilization for Reserved Instances versus On-Demand.</li>
+        <li>Ensured encryption best practices (KMS-enabled RDS).</li>
+      </ul>
+
+      <h3>Elastic Beanstalk Customization & Security</h3>
+      <ul class="key-points">
+        <li>Implemented strict egress Security Group rules and improved monitoring.</li>
+        <li>Resolved EC2 health check visibility issues with CloudWatch and EB extensions.</li>
+      </ul>
+
+      <h3>Helm Chart Deployment (Onedesk)</h3>
+      <ul class="key-points">
+        <li>Created Helm charts for an Nginx UI and Spring Boot microservices.</li>
+        <li>Set up Active Directory authentication and TLS/SSL configurations.</li>
+      </ul>
+    </div>
+
+    <!-- ====== Leadership & Knowledge Transfer ====== -->
+    <h2 class="section-title">Leadership & Knowledge Transfer</h2>
+    <div class="content-block">
       <p>
-        Write a brief introduction about yourself. Mention your professional 
-        role, your interests, and what inspires you. Keep it concise and 
-        engaging. 
+        I’ve led teams of interns, junior, and senior engineers. I regularly conduct KT sessions on Amazon AppStream 2.0, 
+        advanced Ansible, AWS Glue, and SQL interview preparation. Through live demonstrations and thorough documentation, 
+        I ensure smooth onboarding and skill enhancement.
       </p>
+    </div>
 
-      <h2>Skills</h2>
-      <ul class="skills-list">
-        <li>HTML, CSS, JavaScript</li>
-        <li>React, Node.js</li>
-        <li>Python, Django</li>
-        <li>Git &amp; GitHub</li>
+    <!-- ====== Career Aspirations & Interests ====== -->
+    <h2 class="section-title">Career Aspirations & Interests</h2>
+    <div class="content-block">
+      <p>
+        My immediate goal is to transition into a Solutions Architect role at AWS (L5) in a hybrid setup in Bangalore or 
+        Chennai. I'm passionate about AI, machine learning, data science, and staying updated on service meshes, container 
+        orchestration, and distributed computing. 
+      </p>
+      <p>
+        I'm also active in the stock market, focusing on intraday trading using technical indicators like MA, RSI, 
+        MACD, and Bollinger Bands. Outside of work, I enjoy playing PS5 games, reading tech blogs, and playing cricket.
+      </p>
+    </div>
+
+    <!-- ====== Personal Goals & Challenges ====== -->
+    <h2 class="section-title">Personal Goals & Challenges</h2>
+    <div class="content-block">
+      <h3>Buying a Home</h3>
+      <p>
+        Currently in the process of buying my first home in Hyderabad. Overcame some challenges with work location 
+        (Pune) and banker verifications.
+      </p>
+      <h3>Work-Life Balance</h3>
+      <p>
+        Seeking roles that offer flexibility and cutting-edge AWS projects, while allowing me to maintain personal 
+        commitments and well-being.
+      </p>
+    </div>
+
+    <!-- ====== Future Learning Areas ====== -->
+    <h2 class="section-title">Future Learning Areas</h2>
+    <div class="content-block">
+      <ul class="key-points">
+        <li>Exploring AWS AI/ML services (SageMaker, Bedrock, etc.)</li>
+        <li>Deeper dive into Kubernetes and service meshes</li>
+        <li>Cost-effective and scalable architectures on AWS</li>
+        <li>Advanced Ansible, Terraform, and Helm expertise</li>
       </ul>
-
-      <h2>Projects</h2>
-      <ul class="projects-list">
-        <li><strong>Project Alpha</strong> - A web app built with React and Node.js</li>
-        <li><strong>Project Beta</strong> - A Python-based data analysis tool</li>
-        <li><strong>Project Gamma</strong> - An open-source library on GitHub</li>
-      </ul>
-
-      <h2>Contact &amp; Social</h2>
-      <p>If you’d like to get in touch or follow my work:</p>
-      <div class="social-links">
-        <a href="mailto:youremail@example.com">Email</a>
-        <a href="https://github.com/YourUsername" target="_blank">GitHub</a>
-        <a href="https://www.linkedin.com/in/YourUsername" target="_blank">LinkedIn</a>
-      </div>
     </div>
   </div>
+
+  <!-- ====== Footer Section ====== -->
+  <footer>
+    <p>&copy; 2025 - Vinayak Chiluka</p>
+    <p>Built with passion for Cloud, DevOps, and Distributed Systems</p>
+  </footer>
+
 </body>
 </html>
