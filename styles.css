@@ -1,0 +1,148 @@
+/* Core styles and theme */
+:root {
+  --bg-color: #0e1a2b;       /* Dark background for tech feel */
+  --text-color: #e0e0e0;     /* Light text on dark bg */
+  --primary-color: #00bcd4;  /* Accent color (teal/cyan) for highlights */
+  --secondary-color: #ff4081;/* Secondary accent (pink) if needed */
+  --font-family: 'Segoe UI', Roboto, sans-serif;
+}
+body {
+  margin: 0; 
+  background: var(--bg-color); 
+  color: var(--text-color); 
+  font-family: var(--font-family);
+  line-height: 1.6;
+  scroll-behavior: smooth; /* Smooth scrolling for in-page links */
+}
+h1, h2, h3, h4 {
+  color: var(--primary-color);
+  margin-bottom: 0.5em;
+}
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+a:hover { color: var(--secondary-color); }
+
+/* Layout and sections */
+.top-nav {
+  display: flex; 
+  justify-content: space-between; 
+  align-items: center;
+  padding: 1rem 2rem;
+  background: rgba(14,26,43,0.9); /* semi-transparent nav background */
+  position: sticky; top: 0; z-index: 1000; /* Sticky navbar */
+}
+.top-nav h1 { font-size: 1.5rem; }
+.top-nav ul { list-style: none; margin: 0; padding: 0; display: flex; }
+.top-nav li { margin: 0 1rem; }
+.top-nav a { font-weight: 500; }
+.hero {
+  text-align: center; 
+  padding: 4rem 2rem;
+  background: url('images/hero-bg.svg') center/cover no-repeat; /* techy background image/pattern */
+}
+.hero .tagline { 
+  font-size: 2rem; 
+  animation: typing 4s steps(40) 1 normal both; /* example typing effect animation */
+  white-space: nowrap; 
+  overflow: hidden;
+  border-right: .15em solid var(--primary-color);
+}
+@keyframes typing {
+  from { width: 0; }
+  to { width: 100%; }
+}
+.hero .intro-text { font-size: 1.2rem; margin-top: 1rem; }
+
+section { padding: 3rem 2rem; }
+.about-content { display: flex; align-items: center; flex-wrap: wrap; }
+.profile-pic { 
+  max-width: 150px; border-radius: 50%; margin: 1rem;
+  transition: transform 0.3s;
+}
+.profile-pic:hover { transform: scale(1.05); } /* hover zoom effect on photo */
+.about-text { max-width: 600px; }
+
+.skills-grid {
+  display: flex; flex-wrap: wrap; gap: 1rem;
+}
+.skill-bar {
+  flex: 1 1 45%; /* two per row on larger screens */
+  min-width: 200px;
+}
+.skill-bar span { font-weight: 600; }
+.skill-bar .bar {
+  background: #374050; border-radius: 4px; overflow: hidden; 
+  margin: 0.3em 0;
+}
+.skill-bar .fill {
+  background: var(--primary-color); 
+  display: block; height: 8px; width: 0;
+  transition: width 1.5s ease-in-out;
+}
+/* When a .fill gets .animate class via JS, it will fill to specified width */
+.fill.animate { /* (JS will add inline style or class to trigger animation) */ }
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+.project-card {
+  background: #192d41; 
+  padding: 1.5rem; 
+  border-radius: 8px;
+  transition: transform 0.3s;
+}
+.project-card:hover { transform: translateY(-4px); /* subtle lift on hover */ }
+.project-card h3 { margin-top: 0; color: var(--secondary-color); }
+.project-desc { font-size: 0.95rem; line-height: 1.5; }
+.filter-menu {
+  text-align: center; margin-bottom: 1rem;
+}
+.filter-menu button {
+  background: #263747; color: #fff; border: none; padding: 0.5rem 1rem;
+  margin: 0 0.2rem; border-radius: 4px;
+  cursor: pointer; transition: background 0.3s;
+}
+.filter-menu button.active, .filter-menu button:hover { 
+  background: var(--primary-color); 
+}
+
+/* Blog section styling */
+.blog-post { margin-bottom: 1.5rem; }
+.blog-post h3 { font-size: 1.2rem; }
+.blog-post p { font-size: 0.95rem; color: #ccc; }
+.all-posts { font-weight: 600; }
+
+/* Contact form styling */
+.contact-form { max-width: 500px; margin: 1rem 0; }
+.form-group { margin-bottom: 1rem; }
+label { display: block; margin-bottom: 0.3rem; }
+input, textarea {
+  width: 100%; padding: 0.5rem; 
+  border: 1px solid #555; border-radius: 4px;
+  background: #2a3f54; color: #fff;
+}
+button[type=submit] {
+  background: var(--secondary-color); color: #fff;
+  border: none; padding: 0.6rem 1.2rem; border-radius: 4px;
+  cursor: pointer; font-size: 1rem;
+  transition: background 0.3s;
+}
+button[type=submit]:hover { background: #ff5c93; }
+
+.social-links { margin-top: 1.5rem; }
+.social-links a { color: var(--primary-color); margin: 0 0.5rem; }
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .about-content { flex-direction: column; text-align: center; }
+  .skills-grid { flex-direction: column; }
+  .projects-grid { grid-template-columns: 1fr; }
+  .top-nav ul { flex-direction: column; display: none; } /* collapse menu on mobile */
+  .top-nav ul.show { display: flex; flex-direction: column; } /* show menu when toggled */
+  .top-nav li { margin: 0.5rem 0; }
+}
