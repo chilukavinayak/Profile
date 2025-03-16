@@ -247,79 +247,16 @@
     <section class="projects section" id="projects">
       <h2 class="section__title">Projects</h2>
       <span class="section__subtitle">Recent Works</span>
-      <div class="projects__filters">
-        <span class="projects__item active-project" data-filter="all">All</span>
+      <div class="projects__filters" id="project__filters">
+        <!-- <span class="projects__item active-project" data-filter="all">All</span>
         <span class="projects__item" data-filter=".cloud">Cloud</span>
         <span class="projects__item" data-filter=".devops">DevOps</span>
-        <span class="projects__item" data-filter=".iot">IoT</span>
+        <span class="projects__item" data-filter=".iot">IoT</span> -->
       </div>
-
-      <div class="projects__container container grid">
-        <!-- Project Card 1 -->
-        <div class="projects__content cloud">
-          <div class="projects__img-box">
-            <img src="./assets/glue.png" width="5rem" alt="IoT Data Pipeline" />
-          </div>
-          <h3 class="projects__title">IoT Data Processing Pipeline</h3>
-          <p class="projects__description">
-            Built a high-throughput IoT solution on AWS IoT Core, Kinesis, and
-            DynamoDB. Enabled real-time analytics for millions of sensor
-            readings.
-          </p>
-          <a href="#" class="projects__button"
-            >View Details <i class="bx bx-right-arrow-alt projects__icon"></i
-          ></a>
-        </div>
-        <!-- Project Card 2 -->
-        <div class="projects__content devops">
-          <div class="projects__img-box">
-            <img src="images/project2.png" alt="Helm Chart Deployment" />
-          </div>
-          <h3 class="projects__title">Helm Chart Deployment</h3>
-          <p class="projects__description">
-            Created a Helm chart for multi-container microservices on
-            Kubernetes. Streamlined CI/CD with versioned Helm releases for
-            alpha, beta, and gamma environments.
-          </p>
-          <a href="#" class="projects__button"
-            >View Details <i class="bx bx-right-arrow-alt projects__icon"></i
-          ></a>
-        </div>
-        <!-- Project Card 3 -->
-        <div class="projects__content cloud">
-          <div class="projects__img-box">
-            <img src="images/project3.png" alt="RDS Migration" />
-          </div>
-          <h3 class="projects__title">AWS RDS Migration & Optimization</h3>
-          <p class="projects__description">
-            Migrated MS SQL databases to Amazon RDS with minimal downtime.
-            Analyzed 1-year usage data to optimize costs using Reserved
-            Instances.
-          </p>
-          <a href="#" class="projects__button"
-            >View Details <i class="bx bx-right-arrow-alt projects__icon"></i
-          ></a>
-        </div>
-        <!-- Project Card 4 -->
-        <div class="projects__content devops iot">
-          <div class="projects__img-box">
-            <img
-              src="images/project4.png"
-              alt="Elastic Beanstalk Customization"
-            />
-          </div>
-          <h3 class="projects__title">Elastic Beanstalk Customization</h3>
-          <p class="projects__description">
-            Customized EB environments for security and monitoring. Implemented
-            strict egress rules, advanced logging, and CloudWatch metrics for
-            multi-tier apps.
-          </p>
-          <a href="#" class="projects__button"
-            >View Details <i class="bx bx-right-arrow-alt projects__icon"></i
-          ></a>
-        </div>
-        <!-- Add or remove project cards as needed -->
-      </div>
+      <div
+        class="projects__container container grid"
+        id="projects-container"
+      ></div>
     </section>
 
     <!-- ===== BLOG SECTION ===== -->
@@ -510,6 +447,7 @@
 
     <!-- MAIN JS -->
     <script src="js/main.js"></script>
+    <script type="module" src="js/detials.js"></script>
     <!-- <script src="script.js"></script> -->
   </body>
 </html>

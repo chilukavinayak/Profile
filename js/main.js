@@ -57,29 +57,29 @@ function scrollUp() {
 window.addEventListener("scroll", scrollUp);
 
 /*===== PROJECT FILTERING (Optional) =====*/
-const projectsItems = document.querySelectorAll(".projects__item");
-const projectsContents = document.querySelectorAll(".projects__content");
+// const projectsItems = document.querySelectorAll(".projects__item");
+// const projectsContents = document.querySelectorAll(".projects__content");
 
-projectsItems.forEach((item) => {
-  item.addEventListener("click", () => {
-    // remove current active
-    projectsItems.forEach((i) => i.classList.remove("active-project"));
-    item.classList.add("active-project");
+// projectsItems.forEach((item) => {
+//   item.addEventListener("click", () => {
+//     // remove current active
+//     projectsItems.forEach((i) => i.classList.remove("active-project"));
+//     item.classList.add("active-project");
 
-    let filterValue = item.getAttribute("data-filter");
-    projectsContents.forEach((content) => {
-      if (filterValue === "all") {
-        content.style.display = "block";
-      } else {
-        if (content.classList.contains(filterValue.substring(1))) {
-          content.style.display = "block";
-        } else {
-          content.style.display = "none";
-        }
-      }
-    });
-  });
-});
+//     let filterValue = item.getAttribute("data-filter");
+//     projectsContents.forEach((content) => {
+//       if (filterValue === "all") {
+//         content.style.display = "block";
+//       } else {
+//         if (content.classList.contains(filterValue.substring(1))) {
+//           content.style.display = "block";
+//         } else {
+//           content.style.display = "none";
+//         }
+//       }
+//     });
+//   });
+// });
 
 document.addEventListener("DOMContentLoaded", function () {
   const skillHeaders = document.querySelectorAll(".skills__header");
@@ -143,45 +143,6 @@ document
 
     sendMail(name, email, phone, message);
   });
-
-// function sendMail(name, email, subject, message) {
-//   const myHeaders = new Headers();
-//   myHeaders.append("Content-Type", "application/json");
-//   myHeaders.set(
-//     "Authorization",
-//     "Basic " + btoa("<API Key>" + ":" + "<Secret Key>")
-//   );
-
-//   const data = JSON.stringify({
-//     Messages: [
-//       {
-//         From: { Email: email, Name: name },
-//         To: [{ Email: "chilukavinayak.p@gmail.com", Name: "Vinayak Chiluka" }], // Send to yourself
-//         Subject: subject,
-//         TextPart: `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`,
-//       },
-//     ],
-//   });
-
-//   fetch("https://api.mailjet.com/v3.1/send", {
-//     method: "POST",
-//     headers: myHeaders,
-//     body: data,
-//   })
-//     .then((response) => response.json())
-//     .then((result) => {
-//       if (result.Messages && result.Messages[0].Status === "success") {
-//         alert("Message sent successfully!");
-//         document.getElementById("contact-form").reset();
-//       } else {
-//         alert("Error sending message. Please try again.");
-//       }
-//     })
-//     .catch((error) => {
-//       console.log("Error:", error);
-//       alert("An error occurred. Please try again.");
-//     });
-// }
 
 function sendMail(name, email, phone, message) {
   // Collect form data
