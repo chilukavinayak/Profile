@@ -143,6 +143,31 @@ body {
   .show-menu {
     right: 0;
   }
+  
+  /* Projects mobile adjustments */
+  .projects__container {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .projects__technologies {
+    gap: 0.25rem;
+  }
+  
+  .projects__tech {
+    font-size: 0.75rem;
+    padding: 0.2rem 0.5rem;
+  }
+  
+  .projects__links {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .projects__button {
+    justify-content: center;
+    text-align: center;
+  }
 }
 
 /*==================== HOME SECTION ====================*/
@@ -647,6 +672,15 @@ body {
   }
   .projects__container {
     grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .projects__content {
+    padding: 1rem;
+  }
+  
+  .projects__metrics {
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
   }
   .blog__container {
     grid-template-columns: 1fr;

@@ -30,8 +30,7 @@ export const PROJECTS_DATA = [
       monitoring: "CloudWatch + X-Ray"
     },
     githubUrl: "https://github.com/chilukavinayak/iot-platform",
-    liveUrl: "https://iot-platform.vinayak-chiluka.me",
-    image: "assets/projects/iot-platform.png"
+    liveUrl: "https://iot-platform.vinayak-chiluka.me"
   },
   
   {
@@ -63,8 +62,7 @@ export const PROJECTS_DATA = [
       messaging: "Apache Kafka + SQS",
       monitoring: "Prometheus + Grafana"
     },
-    githubUrl: "https://github.com/chilukavinayak/logistics-platform",
-    image: "assets/projects/microservices-platform.png"
+    githubUrl: "https://github.com/chilukavinayak/logistics-platform"
   },
 
   {
@@ -96,8 +94,7 @@ export const PROJECTS_DATA = [
       security: "KMS + IAM",
       validation: "Custom Scripts"
     },
-    githubUrl: "https://github.com/chilukavinayak/db-migration-framework",
-    image: "assets/projects/db-migration.png"
+    githubUrl: "https://github.com/chilukavinayak/db-migration-framework"
   },
 
   {
@@ -129,8 +126,7 @@ export const PROJECTS_DATA = [
       caching: "Redis",
       monitoring: "Micrometer + Prometheus"
     },
-    githubUrl: "https://github.com/chilukavinayak/trade-validation",
-    image: "assets/projects/trade-validation.png"
+    githubUrl: "https://github.com/chilukavinayak/trade-validation"
   },
 
   {
@@ -162,8 +158,7 @@ export const PROJECTS_DATA = [
       filesystems: "NTFS/FAT32/exFAT/ext4",
       protocols: "HTTP/HTTPS/FTP/FTPS"
     },
-    githubUrl: "https://github.com/chilukavinayak/network-restore",
-    image: "assets/projects/network-restore.png"
+    githubUrl: "https://github.com/chilukavinayak/network-restore"
   },
 
   {
@@ -195,8 +190,7 @@ export const PROJECTS_DATA = [
       api: "WCF Services",
       frontend: "ASP.NET Dashboard"
     },
-    githubUrl: "https://github.com/chilukavinayak/consensus-engine",
-    image: "assets/projects/consensus-engine.png"
+    githubUrl: "https://github.com/chilukavinayak/consensus-engine"
   },
 
   {
@@ -228,8 +222,7 @@ export const PROJECTS_DATA = [
       storage: "S3 + DynamoDB",
       alerts: "SNS + SES"
     },
-    githubUrl: "https://github.com/chilukavinayak/cost-optimization",
-    image: "assets/projects/cost-optimization.png"
+    githubUrl: "https://github.com/chilukavinayak/cost-optimization"
   },
 
   {
@@ -261,8 +254,7 @@ export const PROJECTS_DATA = [
       metrics: "Prometheus",
       alerting: "AlertManager"
     },
-    githubUrl: "https://github.com/chilukavinayak/logging-system",
-    image: "assets/projects/logging-system.png"
+    githubUrl: "https://github.com/chilukavinayak/logging-system"
   }
 ];
 
