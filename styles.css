@@ -4,6 +4,9 @@
 
   /* Color palette */
   --first-color: #0a66c2; /* e.g., LinkedIn Blue, or pick your brand color */
+  --first-color-alt: #0958a4;
+  --first-color-rgb: 10, 102, 194;
+  --title-color: #0e2431;
   --text-color: #333333;
   --text-color-light: #777777;
   --body-color: #f6f6f6;
@@ -17,7 +20,12 @@
   --normal-font-size: 1rem;
   --small-font-size: 0.875rem;
 
+  /* Font weights */
+  --font-medium: 500;
+  --font-semi-bold: 600;
+
   /* Margins and padding */
+  --mb-0-5: 0.5rem;
   --mb-1: 1rem;
   --mb-2: 1.5rem;
   --mb-3: 2rem;
@@ -291,46 +299,154 @@ body {
 }
 
 .projects__container {
-  row-gap: 2rem;
-  column-gap: 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+  margin-bottom: var(--mb-2);
 }
+
 .projects__content {
-  background-color: var(--container-color);
-  padding: 1rem;
+  background: var(--container-color);
   border-radius: 1rem;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-  text-align: center;
-  transition: transform 0.3s;
+  padding: 1.5rem;
+  box-shadow: 0 8px 32px rgba(14, 36, 49, 0.1);
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  position: relative;
+  overflow: hidden;
+  text-align: left;
 }
+
+.projects__content::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--first-color), var(--first-color-alt));
+}
+
 .projects__content:hover {
-  transform: translateY(-4px);
+  transform: translateY(-0.5rem);
+  box-shadow: 0 12px 48px rgba(14, 36, 49, 0.15);
 }
+
+.projects__img-box {
+  margin-bottom: 1.5rem;
+}
+
 .projects__img-box img {
   width: 100%;
-  height: auto;
-  border-radius: 0.5rem;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 0.75rem;
+  background: linear-gradient(135deg, var(--first-color-alt), var(--first-color));
+}
+
+.projects__placeholder {
+  width: 100%;
+  height: 200px;
+  background: linear-gradient(135deg, var(--first-color-alt), var(--first-color));
+  border-radius: 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--container-color);
+  font-size: 3rem;
+  font-weight: var(--font-semi-bold);
   margin-bottom: 1rem;
 }
+
+.projects__data {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
 .projects__title {
-  font-size: var(--normal-font-size);
-  font-weight: 600;
-  margin-bottom: 0.5rem;
+  font-size: var(--h3-font-size);
+  color: var(--title-color);
+  margin-bottom: var(--mb-0-5);
+  font-weight: var(--font-semi-bold);
 }
+
 .projects__description {
-  font-size: var(--small-font-size);
-  color: var(--text-color-light);
-  margin-bottom: 1rem;
+  color: var(--text-color);
+  line-height: 1.6;
+  margin-bottom: var(--mb-1);
 }
+
+.projects__technologies {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: var(--mb-1);
+}
+
+.projects__tech {
+  background: rgba(var(--first-color-rgb), 0.1);
+  color: var(--first-color);
+  padding: 0.25rem 0.75rem;
+  border-radius: 1rem;
+  font-size: var(--small-font-size);
+  font-weight: var(--font-medium);
+  border: 1px solid rgba(var(--first-color-rgb), 0.2);
+}
+
+.projects__metrics {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 1rem;
+  margin-bottom: var(--mb-1);
+  padding: 1rem;
+  background: rgba(var(--first-color-rgb), 0.05);
+  border-radius: 0.5rem;
+}
+
+.projects__metric {
+  text-align: center;
+  color: var(--text-color-light);
+  font-size: var(--small-font-size);
+}
+
+.projects__metric-value {
+  display: block;
+  color: var(--first-color);
+  font-weight: var(--font-semi-bold);
+  font-size: var(--h3-font-size);
+  margin-bottom: 0.25rem;
+}
+
+.projects__links {
+  display: flex;
+  gap: 1rem;
+  margin-top: auto;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
 .projects__button {
   color: var(--first-color);
-  font-weight: 500;
   text-decoration: none;
+  transition: all 0.3s;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  border: 1px solid var(--first-color);
+  font-size: var(--small-font-size);
+  font-weight: var(--font-medium);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 }
+
 .projects__button:hover {
-  text-decoration: underline;
+  background: var(--first-color);
+  color: var(--container-color);
+  transform: translateY(-2px);
 }
+
 .projects__icon {
-  margin-left: 0.25rem;
   font-size: 1rem;
 }
 

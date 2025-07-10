@@ -248,7 +248,7 @@ function generateAndDownloadResume() {
     console.error("Error generating resume:", error);
     
     // Fallback: Try to download from assets if available
-    const fallbackUrl = "./assets/cv/Vinayak_Chiluka_Resume.pdf";
+    const fallbackUrl = "./assets/files/Resume.pdf";
     const a = document.createElement("a");
     a.href = fallbackUrl;
     a.download = "Vinayak_Chiluka_Resume.pdf";
