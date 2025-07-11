@@ -41,6 +41,95 @@ function scrollActive() {
 }
 window.addEventListener("scroll", scrollActive);
 
+/*===== SCROLL REVEAL ANIMATIONS =====*/
+function revealElements() {
+  const reveals = document.querySelectorAll('.skills__content, .projects__content, .blog__content, .contact__content');
+  
+  reveals.forEach((element, index) => {
+    const windowHeight = window.innerHeight;
+    const elementTop = element.getBoundingClientRect().top;
+    const elementVisible = 150;
+    
+    if (elementTop < windowHeight - elementVisible) {
+      element.style.animationDelay = `${index * 0.1}s`;
+      element.classList.add('animate-in');
+    }
+  });
+}
+
+window.addEventListener('scroll', revealElements);
+document.addEventListener('DOMContentLoaded', revealElements);
+
+/*===== TYPING ANIMATION =====*/
+function typeWriter(element, text, speed = 100) {
+  let i = 0;
+  element.innerHTML = '';
+  
+  function typing() {
+    if (i < text.length) {
+      element.innerHTML += text.charAt(i);
+      i++;
+      setTimeout(typing, speed);
+    }
+  }
+  typing();
+}
+
+// Initialize typing animation for home title
+document.addEventListener('DOMContentLoaded', function() {
+  const homeTitle = document.querySelector('.home__title');
+  if (homeTitle) {
+    const originalText = homeTitle.textContent;
+    typeWriter(homeTitle, originalText, 80);
+  }
+  
+  // Initialize animated counters
+  animateCounters();
+});
+
+/*===== ANIMATED COUNTERS =====*/
+function animateCounters() {
+  const counters = document.querySelectorAll('[data-count]');
+  
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const counter = entry.target;
+        const target = parseInt(counter.getAttribute('data-count'));
+        const increment = target / 100;
+        let current = 0;
+        
+        const updateCounter = () => {
+          if (current < target) {
+            current += increment;
+            counter.textContent = Math.ceil(current);
+            requestAnimationFrame(updateCounter);
+          } else {
+            counter.textContent = target;
+          }
+        };
+        
+        updateCounter();
+        observer.unobserve(counter);
+      }
+    });
+  }, { threshold: 0.5 });
+  
+  counters.forEach(counter => observer.observe(counter));
+}
+
+/*===== PARALLAX EFFECT =====*/
+window.addEventListener('scroll', () => {
+  const scrolled = window.pageYOffset;
+  const rate = scrolled * -0.5;
+  
+  // Apply parallax to background elements
+  const background = document.querySelector('body::before');
+  if (background) {
+    document.body.style.backgroundPositionY = rate + 'px';
+  }
+});
+
 /*===== CHANGE BACKGROUND HEADER =====*/
 function scrollHeader() {
   const header = document.querySelector(".header");
@@ -114,11 +203,36 @@ function animateSkills() {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           entry.target.classList.add("animate");
+          
+          // Add progress bar animations for skills
+          const skillBars = entry.target.querySelectorAll('.skills__data');
+          skillBars.forEach((skill, index) => {
+            setTimeout(() => {
+              skill.style.animation = `fadeInUp 0.6s ease forwards`;
+              skill.style.animationDelay = `${index * 0.1}s`;
+              
+              // Add skill level animation
+              const skillLevel = skill.querySelector('.skills__level');
+              if (skillLevel) {
+                const levelText = skillLevel.textContent;
+                if (levelText.includes('Expert')) {
+                  skill.style.setProperty('--skill-width', '95%');
+                } else if (levelText.includes('Advanced')) {
+                  skill.style.setProperty('--skill-width', '85%');
+                } else if (levelText.includes('Intermediate')) {
+                  skill.style.setProperty('--skill-width', '70%');
+                } else {
+                  skill.style.setProperty('--skill-width', '60%');
+                }
+              }
+            }, index * 100);
+          });
+          
           observer.unobserve(entry.target);
         }
       });
     },
-    { threshold: 0.3 } // Trigger animation when 30% of the section is visible
+    { threshold: 0.3 }
   );
 
   skillsContents.forEach((content) => observer.observe(content));
