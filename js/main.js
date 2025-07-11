@@ -361,3 +361,25 @@ Generated on: ${new Date().toLocaleDateString()}
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 `.trim();
 }
+
+/*===== BLOG READ MORE FUNCTIONALITY =====*/
+function toggleBlogContent(button) {
+  const article = button.closest('.blog__content');
+  const details = article.querySelector('.blog__details');
+  const buttonText = button.querySelector('.blog__button-text');
+  const icon = button.querySelector('.blog__icon');
+  
+  if (article.classList.contains('blog__content--expanded')) {
+    // Collapse
+    article.classList.remove('blog__content--expanded');
+    buttonText.textContent = 'Read More';
+    icon.classList.remove('bx-up-arrow-alt');
+    icon.classList.add('bx-right-arrow-alt');
+  } else {
+    // Expand
+    article.classList.add('blog__content--expanded');
+    buttonText.textContent = 'Read Less';
+    icon.classList.remove('bx-right-arrow-alt');
+    icon.classList.add('bx-up-arrow-alt');
+  }
+}
