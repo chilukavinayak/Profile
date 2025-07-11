@@ -478,18 +478,28 @@ Generated on: ${new Date().toLocaleDateString()}
 
 /*===== BLOG READ MORE FUNCTIONALITY =====*/
 function toggleBlogContent(button) {
+  console.log('🚀 toggleBlogContent called!', button);
+  
   try {
     const article = button.closest('.blog__content');
     const details = article.querySelector('.blog__details');
     const buttonText = button.querySelector('.blog__button-text');
     const icon = button.querySelector('.blog__icon');
     
+    console.log('📊 Elements found:', {
+      article: !!article,
+      details: !!details,
+      buttonText: !!buttonText,
+      icon: !!icon
+    });
+    
     if (!article || !details) {
-      console.error('Required elements not found');
+      console.error('❌ Required elements not found');
       return;
     }
     
     const isExpanded = article.classList.contains('blog__content--expanded');
+    console.log('📈 Current state - isExpanded:', isExpanded);
     
     if (isExpanded) {
       // Collapse
@@ -499,6 +509,7 @@ function toggleBlogContent(button) {
         icon.classList.remove('bx-up-arrow-alt');
         icon.classList.add('bx-right-arrow-alt');
       }
+      console.log('⬇️ Collapsed');
     } else {
       // Expand
       article.classList.add('blog__content--expanded');
@@ -507,9 +518,14 @@ function toggleBlogContent(button) {
         icon.classList.remove('bx-right-arrow-alt');
         icon.classList.add('bx-up-arrow-alt');
       }
+      console.log('⬆️ Expanded');
     }
+    
+    // Force reflow to ensure styles are applied
+    article.offsetHeight;
+    
   } catch (error) {
-    console.error('Error in toggleBlogContent:', error);
+    console.error('💥 Error in toggleBlogContent:', error);
   }
 }
 
@@ -518,12 +534,35 @@ window.toggleBlogContent = toggleBlogContent;
 
 // Alternative: Add event listeners when DOM is loaded
 document.addEventListener('DOMContentLoaded', function() {
-  const blogButtons = document.querySelectorAll('.blog__button');
+  console.log('🎯 DOM loaded, setting up blog buttons...');
   
-  blogButtons.forEach(button => {
+  const blogButtons = document.querySelectorAll('.blog__button');
+  console.log('🔍 Found blog buttons:', blogButtons.length);
+  
+  blogButtons.forEach((button, index) => {
+    console.log(`🔗 Setting up button ${index + 1}:`, button);
+    
+    // Remove existing onclick to avoid conflicts
+    button.removeAttribute('onclick');
+    
     button.addEventListener('click', function(e) {
       e.preventDefault();
+      e.stopPropagation();
+      console.log('🎯 Button clicked via event listener');
       toggleBlogContent(this);
     });
   });
+  
+  // Test function - you can call this in browser console
+  window.testBlogToggle = function() {
+    const firstButton = document.querySelector('.blog__button');
+    if (firstButton) {
+      console.log('🧪 Testing blog toggle...');
+      toggleBlogContent(firstButton);
+    } else {
+      console.log('❌ No blog button found for testing');
+    }
+  };
+  
+  console.log('✅ Blog setup complete. Type testBlogToggle() in console to test.');
 });

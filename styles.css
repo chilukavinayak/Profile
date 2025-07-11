@@ -804,6 +804,9 @@ body::before {
               transform 0.3s ease;
   transform: translateY(-10px);
   margin-top: 0;
+  
+  /* Debug: Temporary visible state to test CSS */
+  /* max-height: 800px !important; opacity: 1 !important; */
 }
 
 .blog__content--expanded .blog__details {
