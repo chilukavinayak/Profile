@@ -127,6 +127,43 @@ function animateSkills() {
 // Call the function when the page loads
 document.addEventListener("DOMContentLoaded", animateSkills);
 
+/*===== PROJECT FILTERING =====*/
+document.addEventListener("DOMContentLoaded", function () {
+  const filterItems = document.querySelectorAll(".projects__item");
+  const projectItems = document.querySelectorAll(".projects__content");
+
+  filterItems.forEach((item) => {
+    item.addEventListener("click", function () {
+      const filterValue = this.getAttribute("data-filter");
+      
+      // Remove active class from all filter items
+      filterItems.forEach((filterItem) => {
+        filterItem.classList.remove("active-project");
+      });
+      
+      // Add active class to clicked item
+      this.classList.add("active-project");
+      
+      // Filter projects
+      projectItems.forEach((project) => {
+        if (filterValue === "all") {
+          project.style.display = "block";
+          project.style.opacity = "1";
+        } else {
+          const categoryClass = filterValue.substring(1); // Remove the dot
+          if (project.classList.contains(categoryClass)) {
+            project.style.display = "block";
+            project.style.opacity = "1";
+          } else {
+            project.style.display = "none";
+            project.style.opacity = "0";
+          }
+        }
+      });
+    });
+  });
+});
+
 document
   .getElementById("contact-form")
   .addEventListener("submit", function (event) {
@@ -183,21 +220,33 @@ function sendMail(name, email, phone, message) {
 }
 
 // Resume Download Functionality
+
+
 document
   .getElementById("cv-download")
   .addEventListener("click", function (event) {
-    event.preventDefault(); // Prevent default anchor behavior
-
-    // Generate dynamic resume content
-    generateAndDownloadResume();
+    // Optional: You can remove preventDefault if you want native download behavior
+    // If you keep it, manually trigger the download via location.href
+    event.preventDefault(); 
+    window.location.href = "../assets/files/resume.pdf";
   });
+
+
+// document
+//   .getElementById("cv-download")
+//   .addEventListener("click", function (event) {
+//     event.preventDefault(); // Prevent default anchor behavior
+
+//     // Generate dynamic resume content
+//     generateAndDownloadResume();
+//   });
 
 function generateAndDownloadResume() {
   try {
     // Check if resume file exists, if not generate a dynamic one
     const resumeData = {
       name: "Vinayak Chiluka",
-      title: "Principal Software Architect | Distributed Systems Engineer",
+      title: "Senior Principal Engineer | Distributed Systems Engineer",
       email: "chilukavinayak.p@gmail.com",
       phone: "+91 84249 49070",
       location: "Hyderabad, Telangana, India",

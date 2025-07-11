@@ -313,15 +313,27 @@ body {
   color: var(--text-color-light);
   font-weight: 500;
   padding: 0.5rem 1rem;
-  transition: background 0.3s;
+  transition: all 0.3s ease;
   border-radius: 0.5rem;
+  border: 1px solid transparent;
+  position: relative;
 }
 .projects__item:hover {
-  background-color: #eaeaea;
+  background-color: rgba(var(--first-color-rgb), 0.1);
+  color: var(--first-color);
+  border-color: rgba(var(--first-color-rgb), 0.2);
+  transform: translateY(-2px);
 }
 .active-project {
   background-color: var(--first-color);
-  color: #fff;
+  color: var(--container-color);
+  border-color: var(--first-color);
+  box-shadow: 0 4px 12px rgba(var(--first-color-rgb), 0.3);
+}
+.active-project:hover {
+  background-color: var(--first-color-alt);
+  color: var(--container-color);
+  border-color: var(--first-color-alt);
 }
 
 .projects__container {
@@ -336,7 +348,7 @@ body {
   border-radius: 1rem;
   padding: 1.5rem;
   box-shadow: 0 8px 32px rgba(14, 36, 49, 0.1);
-  transition: all 0.3s ease;
+  transition: all 0.3s ease, opacity 0.3s ease;
   border: 1px solid rgba(255, 255, 255, 0.1);
   position: relative;
   overflow: hidden;

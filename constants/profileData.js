@@ -2,7 +2,7 @@
 export const PROFILE_DATA = {
   personal: {
     name: "Vinayak Chiluka",
-    title: "Principal Software Architect | Distributed Systems Engineer",
+    title: "Senior Principal Engineer | Distributed Systems Engineer",
     subtitle: "AWS Cloud Architect & Platform Engineering Leader",
     email: "chilukavinayak.p@gmail.com",
     phone: "+91 84249 49070",

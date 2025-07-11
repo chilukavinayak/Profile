@@ -2,7 +2,7 @@
 export const RESUME_DATA = {
   personalInfo: {
     fullName: "Vinayak Chiluka",
-    title: "Principal Software Architect | Distributed Systems Engineer",
+    title: "Senior Principal Engineer | Distributed Systems Engineer",
     email: "chilukavinayak.p@gmail.com",
     phone: "+91 84249 49070",
     location: "Hyderabad, Telangana 500050, India",
