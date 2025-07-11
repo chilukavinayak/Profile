@@ -593,6 +593,13 @@ body {
   font-size: var(--small-font-size);
   color: var(--text-color-light);
   margin-bottom: 1rem;
+  line-height: 1.6;
+  text-align: left;
+}
+
+.blog__description strong {
+  color: var(--title-color);
+  font-weight: var(--font-semi-bold);
 }
 .blog__button {
   color: var(--first-color);
