@@ -85,9 +85,9 @@ export default function RootLayout({
     >
       <head>
         <link rel="manifest" href="/manifest.json" />
-        <link rel="apple-touch-icon" href="/icon-192x192.png" />
+        <link rel="apple-touch-icon" href="/icon-192x192.png.svg" />\n        <meta name="theme-color" content="#2563eb" />
       </head>
-      <body className="bg-cyber-dark text-foreground font-sans antialiased">
+      <body className="bg-white text-slate-900 font-sans antialiased">
         {children}
       </body>
     </html>
