@@ -5,7 +5,7 @@
   "description": "Personal profile site for Vinayak Chiluka",
   "homepage": "https://vinayak-chiluka.me/",
   "scripts": {
-    "build": "rm -rf dist && mkdir -p dist && cp -R * dist/",
+    "build": "rm -rf dist && mkdir -p dist && rsync -av --exclude=dist --exclude=node_modules --exclude=.git --exclude='.*' . dist/ 2>/dev/null || (cp -R css js assets constants projects dist/ 2>/dev/null; cp *.html *.md CNAME dist/ 2>/dev/null; true)",
     "deploy": "echo 'Use GitHub Actions or gh-pages for deployment'"
   },
   "devDependencies": {}
