@@ -2,7 +2,7 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: [main, master]
+    branches: [main]
   workflow_dispatch:
 
 permissions:
@@ -39,6 +39,7 @@ jobs:
           cp -r public/articles dist/
           cp -r public/cv dist/
           cp -r public/resume dist/
+          cp public/CNAME dist/CNAME
 
       - name: Setup Pages
         uses: actions/configure-pages@v4

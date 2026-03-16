@@ -8,6 +8,7 @@ const nextConfig = {
   output: 'export',
   distDir: 'dist',
   trailingSlash: true,
+  // No basePath or assetPrefix needed for custom domain
   webpack: (config) => {
     config.module.rules.push({
       test: /\.glsl$/,
