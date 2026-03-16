@@ -6,7 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "echo 'Use: npm run serve (static export cannot use next start)'",
-    "serve": "cd dist && python3 -m http.server 3000",
+    "serve": "cd dist && python3 -m http.server 7007",
     "lint": "next lint"
   },
   "dependencies": {
