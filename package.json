@@ -5,9 +5,9 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start",
-    "lint": "next lint",
-    "export": "next export"
+    "start": "echo 'Use: npm run serve (static export cannot use next start)'",
+    "serve": "cd dist && python3 -m http.server 3000",
+    "lint": "next lint"
   },
   "dependencies": {
     "@gsap/react": "^2.1.0",
