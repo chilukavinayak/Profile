@@ -27,9 +27,10 @@ jobs:
 
       - name: Copy static assets
         run: |
-          cp -r public/articles dist/
-          cp -r public/cv dist/
-          cp -r public/resume dist/
+          mkdir -p dist/articles dist/cv dist/resume
+          cp -r public/articles/* dist/articles/ 2>/dev/null || true
+          cp -r public/cv/* dist/cv/ 2>/dev/null || true
+          cp -r public/resume/* dist/resume/ 2>/dev/null || true
           cp public/CNAME dist/CNAME
           touch dist/.nojekyll
 
