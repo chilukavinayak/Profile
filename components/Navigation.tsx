@@ -27,32 +27,34 @@ export function Navigation() {
   return (
     <>
       <motion.header
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
           isScrolled 
-            ? 'bg-[#faf9f7]/90 backdrop-blur-md border-b border-[#e8e4df]' 
+            ? 'bg-white/90 backdrop-blur-md border-b border-slate-100' 
             : 'bg-transparent'
         }`}
         initial={{ y: -100 }}
         animate={{ y: 0 }}
-        transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+        transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
       >
-        <div className="container-premium">
+        <div className="container-wide">
           <div className="flex items-center justify-between h-20">
             {/* Logo */}
-            <a href="#" className="font-serif text-2xl text-[#1a2b4a]">
-              VC
+            <a 
+              href="#" 
+              className="font-['Space_Grotesk'] text-xl font-semibold text-slate-900"
+            >
+              VC.
             </a>
 
             {/* Desktop Nav */}
-            <nav className="hidden md:flex items-center gap-8">
+            <nav className="hidden md:flex items-center gap-1">
               {navLinks.map((link) => (
                 <a
                   key={link.href}
                   href={link.href}
-                  className="text-sm text-slate-600 hover:text-[#1a2b4a] transition-colors relative group"
+                  className="px-4 py-2 text-sm font-medium text-slate-600 hover:text-slate-900 rounded-lg hover:bg-slate-100 transition-colors"
                 >
                   {link.label}
-                  <span className="absolute -bottom-1 left-0 w-0 h-px bg-[#c46a52] transition-all group-hover:w-full" />
                 </a>
               ))}
             </nav>
@@ -61,8 +63,7 @@ export function Navigation() {
             <div className="hidden md:block">
               <a
                 href="#contact"
-                className="bg-[#c46a52] text-white px-5 py-2.5 rounded-full text-sm font-medium
-                         hover:bg-[#b05d46] transition-colors"
+                className="btn-primary text-sm py-2.5"
               >
                 Let's talk
               </a>
@@ -70,7 +71,7 @@ export function Navigation() {
 
             {/* Mobile Menu Button */}
             <button
-              className="md:hidden p-2 text-[#1a2b4a]"
+              className="md:hidden p-2 text-slate-600 hover:text-slate-900"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             >
               {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -89,11 +90,11 @@ export function Navigation() {
             exit={{ opacity: 0 }}
           >
             <div 
-              className="absolute inset-0 bg-[#1a2b4a]/20 backdrop-blur-sm"
+              className="absolute inset-0 bg-black/20 backdrop-blur-sm"
               onClick={() => setIsMobileMenuOpen(false)}
             />
             <motion.nav
-              className="absolute top-20 left-4 right-4 bg-white rounded-2xl p-6 shadow-xl"
+              className="absolute top-20 left-4 right-4 bg-white rounded-2xl p-6 shadow-2xl"
               initial={{ y: -20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               exit={{ y: -20, opacity: 0 }}
@@ -103,7 +104,7 @@ export function Navigation() {
                   <a
                     key={link.href}
                     href={link.href}
-                    className="px-4 py-3 text-[#1a2b4a] hover:bg-[#faf9f7] rounded-lg font-serif text-lg"
+                    className="px-4 py-3 text-slate-900 hover:bg-slate-100 rounded-lg font-['Space_Grotesk'] font-medium text-lg"
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
                     {link.label}
@@ -111,7 +112,7 @@ export function Navigation() {
                 ))}
                 <a
                   href="#contact"
-                  className="mt-4 bg-[#c46a52] text-white px-4 py-3 rounded-full text-center font-medium"
+                  className="mt-4 btn-primary justify-center"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   Let's talk

@@ -2,30 +2,26 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap');
+/* Google Fonts - Modern Design Studio Pairing */
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap');
 
 @layer base {
   :root {
-    /* Sophisticated palette: Navy, Cream, Terracotta */
-    --navy: 222 47% 18%;
-    --cream: 40 33% 97%;
-    --terracotta: 14 65% 55%;
-    --sand: 35 25% 92%;
-    
-    --background: 40 33% 97%;
-    --foreground: 222 47% 18%;
+    /* Refined palette */
+    --background: 0 0% 100%;
+    --foreground: 220 20% 10%;
     --card: 0 0% 100%;
-    --card-foreground: 222 47% 18%;
-    --primary: 222 47% 18%;
-    --primary-foreground: 40 33% 97%;
-    --secondary: 35 25% 92%;
-    --secondary-foreground: 222 47% 18%;
-    --accent: 14 65% 55%;
+    --card-foreground: 220 20% 10%;
+    --primary: 220 20% 10%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 220 14% 96%;
+    --secondary-foreground: 220 20% 10%;
+    --accent: 220 90% 56%;
     --accent-foreground: 0 0% 100%;
-    --muted: 35 25% 92%;
-    --muted-foreground: 222 20% 45%;
-    --border: 35 20% 88%;
-    --radius: 0.75rem;
+    --muted: 220 14% 96%;
+    --muted-foreground: 220 9% 46%;
+    --border: 220 13% 91%;
+    --radius: 0.5rem;
   }
 }
 
@@ -36,87 +32,128 @@
   
   html {
     scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
   
   body {
-    @apply bg-[#faf9f7] text-slate-800 font-sans antialiased;
-    font-family: 'Inter', system-ui, sans-serif;
+    @apply bg-white text-slate-900;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-feature-settings: 'liga' 1, 'calt' 1;
   }
   
-  h1, h2, h3, h4 {
-    font-family: 'Playfair Display', Georgia, serif;
-    @apply font-medium tracking-tight;
+  /* Space Grotesk for headings - modern design studio feel */
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 500;
+    letter-spacing: -0.02em;
   }
   
   ::selection {
-    @apply bg-[#e07a5f]/20 text-slate-900;
+    @apply bg-slate-900 text-white;
   }
 }
 
 @layer utilities {
-  /* Editorial heading style */
-  .heading-xl {
-    @apply text-5xl sm:text-6xl lg:text-7xl leading-[1.1];
+  /* Display typography */
+  .display-xl {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: clamp(3rem, 8vw, 6rem);
+    font-weight: 500;
+    line-height: 0.95;
+    letter-spacing: -0.03em;
   }
   
-  .heading-lg {
-    @apply text-3xl sm:text-4xl lg:text-5xl leading-[1.15];
+  .display-lg {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 500;
+    line-height: 1;
+    letter-spacing: -0.02em;
   }
   
-  /* Premium card with subtle shadow */
-  .card-premium {
-    @apply bg-white rounded-2xl border border-[#e8e4df] shadow-[0_2px_8px_rgba(0,0,0,0.04)];
+  .display-md {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: clamp(1.5rem, 3vw, 2.5rem);
+    font-weight: 500;
+    line-height: 1.1;
   }
   
-  .card-premium:hover {
-    @apply shadow-[0_8px_24px_rgba(0,0,0,0.08)] border-[#ddd8d1];
+  /* Body text with Inter */
+  .body-lg {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.125rem;
+    line-height: 1.6;
+    font-weight: 400;
   }
   
-  /* Warm accent button */
-  .btn-warm {
-    @apply bg-[#1a2b4a] text-[#faf9f7] px-6 py-3 rounded-full font-medium 
-           hover:bg-[#243550] transition-all duration-300;
+  .body-sm {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.875rem;
+    line-height: 1.5;
+    font-weight: 400;
   }
   
-  .btn-outline-warm {
-    @apply border-2 border-[#1a2b4a] text-[#1a2b4a] px-6 py-3 rounded-full font-medium
-           hover:bg-[#1a2b4a] hover:text-[#faf9f7] transition-all duration-300;
+  /* Label/Meta text */
+  .label {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
   }
   
-  /* Accent text */
-  .text-accent {
-    @apply text-[#c46a52];
+  /* Premium card */
+  .card {
+    @apply bg-white border border-slate-200 rounded-lg;
+  }
+  
+  .card-hover {
+    @apply transition-all duration-300 hover:border-slate-300 hover:shadow-lg;
+  }
+  
+  /* Primary button */
+  .btn-primary {
+    font-family: 'Space Grotesk', sans-serif;
+    @apply inline-flex items-center gap-2 px-6 py-3 bg-slate-900 text-white 
+           rounded-lg font-medium hover:bg-slate-800 transition-colors;
+  }
+  
+  .btn-secondary {
+    font-family: 'Space Grotesk', sans-serif;
+    @apply inline-flex items-center gap-2 px-6 py-3 bg-white text-slate-900 
+           border border-slate-200 rounded-lg font-medium 
+           hover:border-slate-300 hover:bg-slate-50 transition-colors;
   }
   
   /* Section spacing */
-  .section-premium {
+  .section {
     @apply py-24 lg:py-32 px-4 sm:px-6 lg:px-8;
   }
   
-  .container-premium {
-    @apply max-w-6xl mx-auto;
+  .container-narrow {
+    @apply max-w-5xl mx-auto;
   }
   
-  /* Elegant divider */
-  .divider {
-    @apply w-16 h-px bg-[#c46a52] mx-auto;
+  .container-wide {
+    @apply max-w-7xl mx-auto;
   }
 }
 
-/* Refined scrollbar */
+/* Scrollbar styling */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 6px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #faf9f7;
+  background: transparent;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #d4cfc7;
-  border-radius: 4px;
+  background: #e2e8f0;
+  border-radius: 3px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #b8b3ab;
+  background: #cbd5e1;
 }

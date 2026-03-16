@@ -23,38 +23,44 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
     <motion.article
       ref={cardRef}
       className="group"
-      initial={{ opacity: 0, y: 40 }}
+      initial={{ opacity: 0, y: 60 }}
       animate={isInView ? { opacity: 1, y: 0 } : {}}
-      transition={{ duration: 0.7, delay: index * 0.15, ease: [0.22, 1, 0.36, 1] }}
+      transition={{ 
+        duration: 0.7, 
+        delay: index * 0.1, 
+        ease: [0.16, 1, 0.3, 1] 
+      }}
     >
-      <div className="card-premium overflow-hidden">
+      <div className="card card-hover h-full flex flex-col">
         {/* Header */}
-        <div className="p-8 lg:p-10">
+        <div className="p-8 flex-1">
           <div className="flex items-start justify-between gap-4 mb-6">
-            <span className="text-xs font-medium text-[#c46a52] uppercase tracking-widest">
+            <span className="label text-slate-400">
               {project.category}
             </span>
             {project.featured && (
-              <span className="text-xs text-slate-400 italic">
+              <span className="label text-blue-600">
                 Featured
               </span>
             )}
           </div>
 
-          <h3 className="text-2xl lg:text-3xl font-serif text-[#1a2b4a] mb-4 group-hover:text-[#c46a52] transition-colors">
+          <h3 className="display-md text-slate-900 mb-4 group-hover:text-slate-700 transition-colors">
             {project.title}
           </h3>
 
-          <p className="text-slate-600 leading-relaxed mb-8">
+          <p className="body-lg text-slate-600 mb-8">
             {project.description}
           </p>
 
           {/* Metrics */}
-          <div className="flex flex-wrap gap-8 mb-8">
+          <div className="grid grid-cols-2 gap-6 mb-8">
             {project.metrics.slice(0, 2).map((metric) => (
               <div key={metric.label}>
-                <div className="text-3xl font-serif text-[#1a2b4a]">{metric.value}</div>
-                <div className="text-xs text-slate-500 uppercase tracking-wider mt-1">
+                <div className="text-2xl font-['Space_Grotesk'] font-semibold text-slate-900">
+                  {metric.value}
+                </div>
+                <div className="body-sm text-slate-500 mt-1">
                   {metric.label}
                 </div>
               </div>
@@ -66,7 +72,7 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
             {project.tags.slice(0, 4).map((tag) => (
               <span
                 key={tag}
-                className="px-3 py-1.5 bg-[#faf9f7] text-slate-600 rounded-full text-xs"
+                className="px-3 py-1.5 bg-slate-100 text-slate-700 rounded-md body-sm"
               >
                 {tag}
               </span>
@@ -74,12 +80,12 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
           </div>
         </div>
 
-        {/* Hover Action */}
-        <div className="px-8 lg:px-10 pb-8">
+        {/* Footer */}
+        <div className="px-8 pb-8">
           <a
             href="#"
-            className="inline-flex items-center gap-2 text-[#1a2b4a] font-medium 
-                     group-hover:text-[#c46a52] transition-colors"
+            className="inline-flex items-center gap-2 text-slate-900 font-['Space_Grotesk'] font-medium 
+                     group-hover:text-blue-600 transition-colors"
           >
             View project
             <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
@@ -106,28 +112,29 @@ export function Projects() {
     <section
       id="projects"
       ref={containerRef}
-      className="section-premium bg-white"
+      className="section bg-slate-50/50"
     >
-      <div className="container-premium">
+      <div className="container-narrow">
         {/* Header */}
         <motion.div
-          className="text-center max-w-2xl mx-auto mb-16"
-          initial={{ opacity: 0, y: 30 }}
+          className="mb-16"
+          initial={{ opacity: 0, y: 40 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.7 }}
+          transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
         >
-          <span className="text-[#c46a52] text-sm uppercase tracking-widest font-medium">
-            Selected Work
-          </span>
-          <h2 className="heading-lg text-[#1a2b4a] mt-4 mb-6">
-            Projects that<br />define my craft
+          <div className="label text-slate-400 mb-4">Selected Work</div>
+          <h2 className="display-lg text-slate-900 mb-6">
+            Projects that define<br />my expertise
           </h2>
-          <div className="divider" />
+          <p className="body-lg text-slate-600 max-w-2xl">
+            A collection of work spanning distributed systems, AI/LLM integration, 
+            and cloud architecture at scale.
+          </p>
         </motion.div>
 
         {/* Filter */}
         <motion.div
-          className="flex flex-wrap justify-center gap-3 mb-12"
+          className="flex flex-wrap gap-2 mb-12"
           initial={{ opacity: 0 }}
           animate={isInView ? { opacity: 1 } : {}}
           transition={{ duration: 0.5, delay: 0.2 }}
@@ -136,10 +143,10 @@ export function Projects() {
             <button
               key={cat}
               onClick={() => setFilter(cat)}
-              className={`px-5 py-2.5 rounded-full text-sm transition-all ${
+              className={`px-5 py-2.5 rounded-lg text-sm font-['Space_Grotesk'] font-medium transition-all ${
                 filter === cat
-                  ? 'bg-[#1a2b4a] text-white'
-                  : 'bg-transparent text-slate-600 hover:bg-[#faf9f7]'
+                  ? 'bg-slate-900 text-white'
+                  : 'bg-white text-slate-600 border border-slate-200 hover:border-slate-300'
               }`}
             >
               {cat.charAt(0).toUpperCase() + cat.slice(1)}
@@ -148,7 +155,7 @@ export function Projects() {
         </motion.div>
 
         {/* Projects Grid */}
-        <div className="grid md:grid-cols-2 gap-8">
+        <div className="grid md:grid-cols-2 gap-6">
           {filteredProjects.map((project, index) => (
             <ProjectCard key={project.id} project={project} index={index} />
           ))}
