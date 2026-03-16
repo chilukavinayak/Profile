@@ -2,33 +2,30 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap');
 
 @layer base {
   :root {
-    --font-sans: 'Inter', system-ui, sans-serif;
+    /* Sophisticated palette: Navy, Cream, Terracotta */
+    --navy: 222 47% 18%;
+    --cream: 40 33% 97%;
+    --terracotta: 14 65% 55%;
+    --sand: 35 25% 92%;
     
-    /* Clean, minimal color palette */
-    --background: 0 0% 100%;
-    --foreground: 222 47% 11%;
+    --background: 40 33% 97%;
+    --foreground: 222 47% 18%;
     --card: 0 0% 100%;
-    --card-foreground: 222 47% 11%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 222 47% 11%;
-    --primary: 221 83% 53%;
-    --primary-foreground: 0 0% 100%;
-    --secondary: 210 40% 96%;
-    --secondary-foreground: 222 47% 11%;
-    --muted: 210 40% 96%;
-    --muted-foreground: 215 16% 47%;
-    --accent: 221 83% 53%;
+    --card-foreground: 222 47% 18%;
+    --primary: 222 47% 18%;
+    --primary-foreground: 40 33% 97%;
+    --secondary: 35 25% 92%;
+    --secondary-foreground: 222 47% 18%;
+    --accent: 14 65% 55%;
     --accent-foreground: 0 0% 100%;
-    --destructive: 0 84% 60%;
-    --destructive-foreground: 0 0% 100%;
-    --border: 214 32% 91%;
-    --input: 214 32% 91%;
-    --ring: 221 83% 53%;
-    --radius: 0.5rem;
+    --muted: 35 25% 92%;
+    --muted-foreground: 222 20% 45%;
+    --border: 35 20% 88%;
+    --radius: 0.75rem;
   }
 }
 
@@ -42,58 +39,84 @@
   }
   
   body {
-    @apply bg-white text-slate-900 font-sans antialiased;
-    min-height: 100vh;
+    @apply bg-[#faf9f7] text-slate-800 font-sans antialiased;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+  
+  h1, h2, h3, h4 {
+    font-family: 'Playfair Display', Georgia, serif;
+    @apply font-medium tracking-tight;
   }
   
   ::selection {
-    @apply bg-blue-100 text-blue-900;
+    @apply bg-[#e07a5f]/20 text-slate-900;
   }
 }
 
 @layer utilities {
-  .text-gradient {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-blue-800;
+  /* Editorial heading style */
+  .heading-xl {
+    @apply text-5xl sm:text-6xl lg:text-7xl leading-[1.1];
   }
   
-  /* Clean card style - no glassmorphism */
-  .card {
-    @apply bg-white border border-slate-200 rounded-lg shadow-sm;
+  .heading-lg {
+    @apply text-3xl sm:text-4xl lg:text-5xl leading-[1.15];
   }
   
-  .card-hover {
-    @apply transition-all duration-200 hover:shadow-md hover:border-slate-300;
+  /* Premium card with subtle shadow */
+  .card-premium {
+    @apply bg-white rounded-2xl border border-[#e8e4df] shadow-[0_2px_8px_rgba(0,0,0,0.04)];
   }
   
-  /* Subtle shadow for depth */
-  .shadow-soft {
-    box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+  .card-premium:hover {
+    @apply shadow-[0_8px_24px_rgba(0,0,0,0.08)] border-[#ddd8d1];
+  }
+  
+  /* Warm accent button */
+  .btn-warm {
+    @apply bg-[#1a2b4a] text-[#faf9f7] px-6 py-3 rounded-full font-medium 
+           hover:bg-[#243550] transition-all duration-300;
+  }
+  
+  .btn-outline-warm {
+    @apply border-2 border-[#1a2b4a] text-[#1a2b4a] px-6 py-3 rounded-full font-medium
+           hover:bg-[#1a2b4a] hover:text-[#faf9f7] transition-all duration-300;
+  }
+  
+  /* Accent text */
+  .text-accent {
+    @apply text-[#c46a52];
   }
   
   /* Section spacing */
-  .section {
-    @apply py-20 px-4 sm:px-6 lg:px-8;
+  .section-premium {
+    @apply py-24 lg:py-32 px-4 sm:px-6 lg:px-8;
   }
   
-  .container-tight {
-    @apply max-w-5xl mx-auto;
+  .container-premium {
+    @apply max-w-6xl mx-auto;
+  }
+  
+  /* Elegant divider */
+  .divider {
+    @apply w-16 h-px bg-[#c46a52] mx-auto;
   }
 }
 
-/* Clean scrollbar */
+/* Refined scrollbar */
 ::-webkit-scrollbar {
-  width: 6px;
+  width: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background: transparent;
+  background: #faf9f7;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #cbd5e1;
-  border-radius: 3px;
+  background: #d4cfc7;
+  border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #94a3b8;
+  background: #b8b3ab;
 }

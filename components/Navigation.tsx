@@ -18,7 +18,7 @@ export function Navigation() {
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20)
+      setIsScrolled(window.scrollY > 50)
     }
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
@@ -27,31 +27,32 @@ export function Navigation() {
   return (
     <>
       <motion.header
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-200 ${
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
           isScrolled 
-            ? 'bg-white/80 backdrop-blur-md border-b border-slate-200' 
+            ? 'bg-[#faf9f7]/90 backdrop-blur-md border-b border-[#e8e4df]' 
             : 'bg-transparent'
         }`}
         initial={{ y: -100 }}
         animate={{ y: 0 }}
-        transition={{ duration: 0.3 }}
+        transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
       >
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-16">
+        <div className="container-premium">
+          <div className="flex items-center justify-between h-20">
             {/* Logo */}
-            <a href="#" className="text-lg font-bold text-slate-900">
+            <a href="#" className="font-serif text-2xl text-[#1a2b4a]">
               VC
             </a>
 
             {/* Desktop Nav */}
-            <nav className="hidden md:flex items-center gap-1">
+            <nav className="hidden md:flex items-center gap-8">
               {navLinks.map((link) => (
                 <a
                   key={link.href}
                   href={link.href}
-                  className="px-4 py-2 text-sm font-medium text-slate-600 hover:text-slate-900 rounded-lg hover:bg-slate-100 transition-colors"
+                  className="text-sm text-slate-600 hover:text-[#1a2b4a] transition-colors relative group"
                 >
                   {link.label}
+                  <span className="absolute -bottom-1 left-0 w-0 h-px bg-[#c46a52] transition-all group-hover:w-full" />
                 </a>
               ))}
             </nav>
@@ -60,18 +61,19 @@ export function Navigation() {
             <div className="hidden md:block">
               <a
                 href="#contact"
-                className="px-4 py-2 bg-blue-600 text-white text-sm font-medium rounded-lg hover:bg-blue-700 transition-colors"
+                className="bg-[#c46a52] text-white px-5 py-2.5 rounded-full text-sm font-medium
+                         hover:bg-[#b05d46] transition-colors"
               >
-                Hire Me
+                Let's talk
               </a>
             </div>
 
             {/* Mobile Menu Button */}
             <button
-              className="md:hidden p-2 text-slate-600 hover:text-slate-900"
+              className="md:hidden p-2 text-[#1a2b4a]"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             >
-              {isMobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+              {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
           </div>
         </div>
@@ -87,21 +89,21 @@ export function Navigation() {
             exit={{ opacity: 0 }}
           >
             <div 
-              className="absolute inset-0 bg-black/20"
+              className="absolute inset-0 bg-[#1a2b4a]/20 backdrop-blur-sm"
               onClick={() => setIsMobileMenuOpen(false)}
             />
             <motion.nav
-              className="absolute top-16 left-0 right-0 bg-white border-b border-slate-200 p-4"
+              className="absolute top-20 left-4 right-4 bg-white rounded-2xl p-6 shadow-xl"
               initial={{ y: -20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               exit={{ y: -20, opacity: 0 }}
             >
-              <div className="flex flex-col gap-1">
+              <div className="flex flex-col gap-2">
                 {navLinks.map((link) => (
                   <a
                     key={link.href}
                     href={link.href}
-                    className="px-4 py-3 text-slate-600 hover:text-slate-900 hover:bg-slate-50 rounded-lg font-medium"
+                    className="px-4 py-3 text-[#1a2b4a] hover:bg-[#faf9f7] rounded-lg font-serif text-lg"
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
                     {link.label}
@@ -109,10 +111,10 @@ export function Navigation() {
                 ))}
                 <a
                   href="#contact"
-                  className="mt-2 px-4 py-3 bg-blue-600 text-white text-center font-medium rounded-lg"
+                  className="mt-4 bg-[#c46a52] text-white px-4 py-3 rounded-full text-center font-medium"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
-                  Hire Me
+                  Let's talk
                 </a>
               </div>
             </motion.nav>

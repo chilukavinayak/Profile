@@ -1,7 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { Github, Linkedin, Mail, Download, MapPin, Briefcase } from 'lucide-react'
+import { ArrowDown, MapPin, Download, Mail } from 'lucide-react'
 import content from '@/content/data.json'
 
 export function Hero() {
@@ -12,180 +12,136 @@ export function Hero() {
     link.click()
   }
 
-  const hero = content.hero
-
   return (
     <section
       id="hero"
-      className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 py-20"
+      className="min-h-screen flex flex-col justify-center px-4 sm:px-6 lg:px-8 pt-20 pb-16"
     >
-      <div className="max-w-4xl mx-auto w-full">
-        <div className="grid lg:grid-cols-[1fr,auto] gap-12 items-start">
-          {/* Left content */}
+      <div className="container-premium">
+        <div className="grid lg:grid-cols-2 gap-16 items-center">
+          {/* Left Content */}
           <motion.div
-            className="space-y-6"
-            initial={{ opacity: 0, y: 20 }}
+            className="space-y-8"
+            initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
+            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
           >
-            {/* Name */}
-            <div className="space-y-2">
+            {/* Greeting */}
+            <div className="space-y-4">
               <motion.p
-                className="text-slate-500 text-sm font-medium tracking-wide uppercase"
+                className="text-[#c46a52] font-medium tracking-wide uppercase text-sm"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
-                transition={{ delay: 0.1 }}
+                transition={{ delay: 0.2 }}
               >
                 Hello, I'm
               </motion.p>
-              <motion.h1
-                className="text-4xl sm:text-5xl lg:text-6xl font-bold text-slate-900 tracking-tight"
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.2 }}
-              >
-                Vinayak Chiluka
-              </motion.h1>
-              <motion.p
-                className="text-xl sm:text-2xl text-blue-600 font-medium"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 0.3 }}
-              >
-                Senior Principal Engineer
-              </motion.p>
+              
+              <h1 className="heading-xl text-[#1a2b4a]">
+                Vinayak
+                <br />
+                <span className="italic font-normal">Chiluka</span>
+              </h1>
             </div>
 
-            {/* Tagline */}
-            <motion.p
-              className="text-lg text-slate-600 leading-relaxed max-w-xl"
+            {/* Role & Description */}
+            <motion.div
+              className="space-y-4"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.4 }}
             >
-              {hero.tagline}
-            </motion.p>
+              <p className="text-xl lg:text-2xl text-[#1a2b4a] font-light">
+                Senior Principal Engineer
+              </p>
+              
+              <p className="text-lg text-slate-600 leading-relaxed max-w-lg">
+                Architecting resilient distributed systems at scale. 
+                11+ years crafting high-throughput applications, 
+                leading cloud migrations, and shipping AI-powered solutions.
+              </p>
+            </motion.div>
 
-            {/* Location & Availability */}
+            {/* Location */}
             <motion.div
-              className="flex flex-wrap items-center gap-4 text-sm text-slate-500"
+              className="flex items-center gap-2 text-slate-500"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.5 }}
             >
-              <span className="flex items-center gap-1.5">
-                <MapPin className="w-4 h-4" />
-                India
-              </span>
-              <span className="flex items-center gap-1.5">
-                <Briefcase className="w-4 h-4" />
-                11+ Years Experience
-              </span>
-              {hero.available && (
-                <span className="flex items-center gap-1.5 text-emerald-600">
-                  <span className="relative flex h-2 w-2">
-                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-500 opacity-75" />
-                    <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500" />
-                  </span>
-                  Available for opportunities
-                </span>
-              )}
+              <MapPin className="w-4 h-4" />
+              <span className="text-sm">Based in India • Available worldwide</span>
             </motion.div>
 
-            {/* Action Buttons */}
+            {/* CTA Buttons */}
             <motion.div
-              className="flex flex-wrap gap-3 pt-2"
+              className="flex flex-wrap gap-4 pt-4"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.6 }}
             >
-              <button
-                onClick={handleDownloadCV}
-                className="inline-flex items-center gap-2 px-5 py-2.5 bg-blue-600 text-white rounded-lg font-medium hover:bg-blue-700 transition-colors"
-              >
-                <Download className="w-4 h-4" />
-                Download CV
+              <button onClick={handleDownloadCV} className="btn-warm">
+                <span className="flex items-center gap-2">
+                  <Download className="w-4 h-4" />
+                  Download CV
+                </span>
               </button>
-              <a
-                href="#contact"
-                className="inline-flex items-center gap-2 px-5 py-2.5 bg-white text-slate-700 border border-slate-300 rounded-lg font-medium hover:bg-slate-50 transition-colors"
-              >
-                <Mail className="w-4 h-4" />
-                Get in touch
-              </a>
-            </motion.div>
-
-            {/* Social Links */}
-            <motion.div
-              className="flex items-center gap-4 pt-4"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.7 }}
-            >
-              <a
-                href="https://github.com/chilukavinayak"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-slate-400 hover:text-slate-600 transition-colors"
-              >
-                <Github className="w-5 h-5" />
-              </a>
-              <a
-                href="https://linkedin.com/in/vinayak-chiluka"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-slate-400 hover:text-slate-600 transition-colors"
-              >
-                <Linkedin className="w-5 h-5" />
-              </a>
-              <a
-                href="mailto:vinayak.chiluka@gmail.com"
-                className="text-slate-400 hover:text-slate-600 transition-colors"
-              >
-                <Mail className="w-5 h-5" />
+              
+              <a href="#contact" className="btn-outline-warm">
+                <span className="flex items-center gap-2">
+                  <Mail className="w-4 h-4" />
+                  Get in touch
+                </span>
               </a>
             </motion.div>
           </motion.div>
 
-          {/* Right - Stats */}
+          {/* Right - Stats Card */}
           <motion.div
-            className="hidden lg:block"
-            initial={{ opacity: 0, x: 20 }}
+            className="lg:justify-self-end"
+            initial={{ opacity: 0, x: 30 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: 0.4 }}
+            transition={{ duration: 0.8, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
           >
-            <div className="space-y-4">
-              {hero.stats.map((stat, index) => (
-                <div
+            <div className="card-premium p-8 lg:p-10 space-y-8">
+              <div className="divider !mx-0" />
+              
+              {content.hero.stats.map((stat, index) => (
+                <motion.div
                   key={stat.label}
-                  className="text-right"
+                  className="text-center"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.5 + index * 0.1 }}
                 >
-                  <div className="text-3xl font-bold text-slate-900">{stat.value}</div>
-                  <div className="text-sm text-slate-500">{stat.label}</div>
-                </div>
+                  <div className="text-4xl lg:text-5xl font-serif text-[#1a2b4a] mb-1">
+                    {stat.value}
+                  </div>
+                  <div className="text-sm text-slate-500 uppercase tracking-wider">
+                    {stat.label}
+                  </div>
+                </motion.div>
               ))}
+              
+              <div className="divider !mx-0" />
             </div>
           </motion.div>
         </div>
 
-        {/* Tech Stack */}
+        {/* Scroll indicator */}
         <motion.div
-          className="mt-16 pt-8 border-t border-slate-200"
+          className="absolute bottom-8 left-1/2 -translate-x-1/2 hidden lg:block"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ delay: 0.8 }}
+          transition={{ delay: 1 }}
         >
-          <p className="text-sm text-slate-500 mb-4">Technologies I work with</p>
-          <div className="flex flex-wrap gap-2">
-            {hero.techStack.map((tech) => (
-              <span
-                key={tech}
-                className="px-3 py-1.5 bg-slate-100 text-slate-700 rounded-md text-sm font-medium"
-              >
-                {tech}
-              </span>
-            ))}
-          </div>
+          <motion.div
+            animate={{ y: [0, 8, 0] }}
+            transition={{ duration: 2, repeat: Infinity }}
+            className="text-slate-400"
+          >
+            <ArrowDown className="w-5 h-5" />
+          </motion.div>
         </motion.div>
       </div>
     </section>
