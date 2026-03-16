@@ -67,7 +67,7 @@ npm install
 npm run dev
 ```
 
-Open [http://localhost:7000](http://localhost:7000) in your browser.
+Open [http://localhost:7070](http://localhost:7070) in your browser.
 
 ### Build for Production
 
