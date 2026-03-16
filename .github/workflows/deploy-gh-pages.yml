@@ -1,4 +1,4 @@
-name: Deploy to gh-pages Branch
+name: Deploy to GitHub Pages
 
 on:
   push:
@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  deploy:
+  build-and-deploy:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -16,10 +16,9 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: "20"
-          cache: 'npm'
 
       - name: Install dependencies
-        run: npm ci || npm install
+        run: npm install
 
       - name: Build static site
         run: npm run build
@@ -32,8 +31,9 @@ jobs:
           cp public/CNAME dist/CNAME
           touch dist/.nojekyll
 
-      - name: Deploy to gh-pages
+      - name: Deploy to gh-pages branch
         uses: peaceiris/actions-gh-pages@v3
+        if: github.ref == 'refs/heads/main'
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist
