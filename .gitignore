@@ -24,3 +24,6 @@ npm-debug.log*
 .claude/settings.json
 .env.local
 .env
+
+# Next.js app (separate project)
+portfolio-app/
