@@ -43,21 +43,29 @@ window.addEventListener("scroll", scrollActive);
 
 /*===== SCROLL REVEAL ANIMATIONS =====*/
 function revealElements() {
-  const reveals = document.querySelectorAll('.skills__content, .projects__content, .blog__content, .contact__content');
+  const reveals = document.querySelectorAll('.skills__content, .projects__content, .blog__content, .contact__card');
   
-  reveals.forEach((element, index) => {
-    const windowHeight = window.innerHeight;
-    const elementTop = element.getBoundingClientRect().top;
-    const elementVisible = 150;
-    
-    if (elementTop < windowHeight - elementVisible) {
-      element.style.animationDelay = `${index * 0.1}s`;
-      element.classList.add('animate-in');
-    }
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, index) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+          entry.target.classList.add('animate-in');
+        }, index * 100);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+  
+  reveals.forEach(element => {
+    element.style.opacity = '0';
+    element.style.transform = 'translateY(30px)';
+    element.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+    observer.observe(element);
   });
 }
 
-window.addEventListener('scroll', revealElements);
 document.addEventListener('DOMContentLoaded', revealElements);
 
 /*===== TYPING ANIMATION =====*/
@@ -133,8 +141,11 @@ window.addEventListener('scroll', () => {
 /*===== CHANGE BACKGROUND HEADER =====*/
 function scrollHeader() {
   const header = document.querySelector(".header");
-  if (this.scrollY >= 80) header.classList.add("scroll-header");
-  else header.classList.remove("scroll-header");
+  if (window.scrollY >= 50) {
+    header.classList.add("scroll-header");
+  } else {
+    header.classList.remove("scroll-header");
+  }
 }
 window.addEventListener("scroll", scrollHeader);
 
