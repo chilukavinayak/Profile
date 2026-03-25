@@ -17,3 +17,8 @@ Thumbs.db
 # Logs
 *.log
 npm-debug.log*
+
+# Claude Code / MCP configuration (contains sensitive tokens)
+.claude/settings.json
+.env.local
+.env
