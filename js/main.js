@@ -1,116 +1,88 @@
-/*=============== ENHANCED MAIN JS WITH DYNAMIC DATA ===============*/
-
-/*===== SHOW MENU =====*/
-const navMenu = document.getElementById("nav-menu"),
-  navToggle = document.getElementById("nav-toggle");
-
-if (navToggle) {
-  navToggle.addEventListener("click", () => {
-    navMenu.classList.toggle("show-menu");
+// Initialize AOS Animation Library
+document.addEventListener('DOMContentLoaded', function() {
+  // Initialize AOS
+  AOS.init({
+    duration: 800,
+    easing: 'ease-out-cubic',
+    once: true,
+    offset: 100
   });
-}
 
-/*===== REMOVE MENU MOBILE =====*/
-const navLink = document.querySelectorAll(".nav__link");
-function linkAction() {
-  // When we click on each nav__link, we remove the show-menu class
-  navMenu.classList.remove("show-menu");
-}
-navLink.forEach((n) => n.addEventListener("click", linkAction));
+  // Navbar scroll effect
+  const navbar = document.getElementById('navbar');
+  let lastScroll = 0;
 
-/*===== SCROLL SECTIONS ACTIVE LINK =====*/
-const sections = document.querySelectorAll("section[id]");
-
-function scrollActive() {
-  const scrollY = window.scrollY;
-  sections.forEach((current) => {
-    const sectionHeight = current.offsetHeight,
-      sectionTop = current.offsetTop - 50,
-      sectionId = current.getAttribute("id");
-
-    if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
-      document
-        .querySelector(".nav__menu a[href*=" + sectionId + "]")
-        .classList.add("active-link");
+  window.addEventListener('scroll', () => {
+    const currentScroll = window.pageYOffset;
+    
+    if (currentScroll > 100) {
+      navbar.classList.add('scrolled');
     } else {
-      document
-        .querySelector(".nav__menu a[href*=" + sectionId + "]")
-        .classList.remove("active-link");
+      navbar.classList.remove('scrolled');
     }
+    
+    lastScroll = currentScroll;
   });
-}
-window.addEventListener("scroll", scrollActive);
 
-/*===== SCROLL REVEAL ANIMATIONS =====*/
-function revealElements() {
-  const reveals = document.querySelectorAll('.skills__content, .projects__content, .blog__content, .contact__card');
+  // Mobile menu toggle
+  const mobileToggle = document.getElementById('mobile-toggle');
+  const navMenu = document.getElementById('nav-menu');
+
+  if (mobileToggle && navMenu) {
+    mobileToggle.addEventListener('click', () => {
+      mobileToggle.classList.toggle('active');
+      navMenu.classList.toggle('active');
+    });
+
+    // Close menu when clicking a link
+    const navLinks = navMenu.querySelectorAll('.nav-link');
+    navLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        mobileToggle.classList.remove('active');
+        navMenu.classList.remove('active');
+      });
+    });
+  }
+
+  // Animate skill bars on scroll
+  const skillBars = document.querySelectorAll('.skill-bar');
   
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry, index) => {
-      if (entry.isIntersecting) {
-        setTimeout(() => {
-          entry.target.style.opacity = '1';
-          entry.target.style.transform = 'translateY(0)';
-          entry.target.classList.add('animate-in');
-        }, index * 100);
-        observer.unobserve(entry.target);
+  const animateSkillBars = () => {
+    skillBars.forEach(bar => {
+      const width = bar.getAttribute('data-width');
+      const rect = bar.getBoundingClientRect();
+      const isVisible = rect.top < window.innerHeight && rect.bottom > 0;
+      
+      if (isVisible) {
+        bar.style.width = width;
       }
     });
-  }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
-  
-  reveals.forEach(element => {
-    element.style.opacity = '0';
-    element.style.transform = 'translateY(30px)';
-    element.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-    observer.observe(element);
-  });
-}
+  };
 
-document.addEventListener('DOMContentLoaded', revealElements);
+  // Animate counter numbers
+  const counters = document.querySelectorAll('.stat-number[data-count]');
+  let counted = false;
 
-/*===== TYPING ANIMATION =====*/
-function typeWriter(element, text, speed = 100) {
-  let i = 0;
-  element.innerHTML = '';
-  
-  function typing() {
-    if (i < text.length) {
-      element.innerHTML += text.charAt(i);
-      i++;
-      setTimeout(typing, speed);
-    }
-  }
-  typing();
-}
-
-// Initialize typing animation for home title
-document.addEventListener('DOMContentLoaded', function() {
-  const homeTitle = document.querySelector('.home__title');
-  if (homeTitle) {
-    const originalText = homeTitle.textContent;
-    typeWriter(homeTitle, originalText, 80);
-  }
-  
-  // Initialize animated counters
-  animateCounters();
-});
-
-/*===== ANIMATED COUNTERS =====*/
-function animateCounters() {
-  const counters = document.querySelectorAll('[data-count]');
-  
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        const counter = entry.target;
+  const animateCounters = () => {
+    const statsSection = document.querySelector('.hero-stats');
+    if (!statsSection) return;
+    
+    const rect = statsSection.getBoundingClientRect();
+    const isVisible = rect.top < window.innerHeight && rect.bottom > 0;
+    
+    if (isVisible && !counted) {
+      counted = true;
+      
+      counters.forEach(counter => {
         const target = parseInt(counter.getAttribute('data-count'));
-        const increment = target / 100;
+        const duration = 2000;
+        const step = target / (duration / 16);
         let current = 0;
         
         const updateCounter = () => {
+          current += step;
           if (current < target) {
-            current += increment;
-            counter.textContent = Math.ceil(current);
+            counter.textContent = Math.floor(current);
             requestAnimationFrame(updateCounter);
           } else {
             counter.textContent = target;
@@ -118,462 +90,68 @@ function animateCounters() {
         };
         
         updateCounter();
-        observer.unobserve(counter);
-      }
-    });
-  }, { threshold: 0.5 });
-  
-  counters.forEach(counter => observer.observe(counter));
-}
-
-/*===== PARALLAX EFFECT =====*/
-window.addEventListener('scroll', () => {
-  const scrolled = window.pageYOffset;
-  const rate = scrolled * -0.5;
-  
-  // Apply parallax to background elements
-  const background = document.querySelector('body::before');
-  if (background) {
-    document.body.style.backgroundPositionY = rate + 'px';
-  }
-});
-
-/*===== CHANGE BACKGROUND HEADER =====*/
-function scrollHeader() {
-  const header = document.querySelector(".header");
-  if (window.scrollY >= 50) {
-    header.classList.add("scroll-header");
-  } else {
-    header.classList.remove("scroll-header");
-  }
-}
-window.addEventListener("scroll", scrollHeader);
-
-/*===== SHOW SCROLL UP =====*/
-function scrollUp() {
-  const scrollUp = document.getElementById("scroll-up");
-  // When the scroll is higher than 350 viewport height, add the show-scroll class to the a tag with the scrollup class
-  if (this.scrollY >= 350) scrollUp.classList.add("show-scroll");
-  else scrollUp.classList.remove("show-scroll");
-}
-window.addEventListener("scroll", scrollUp);
-
-/*===== PROJECT FILTERING (Optional) =====*/
-// const projectsItems = document.querySelectorAll(".projects__item");
-// const projectsContents = document.querySelectorAll(".projects__content");
-
-// projectsItems.forEach((item) => {
-//   item.addEventListener("click", () => {
-//     // remove current active
-//     projectsItems.forEach((i) => i.classList.remove("active-project"));
-//     item.classList.add("active-project");
-
-//     let filterValue = item.getAttribute("data-filter");
-//     projectsContents.forEach((content) => {
-//       if (filterValue === "all") {
-//         content.style.display = "block";
-//       } else {
-//         if (content.classList.contains(filterValue.substring(1))) {
-//           content.style.display = "block";
-//         } else {
-//           content.style.display = "none";
-//         }
-//       }
-//     });
-//   });
-// });
-
-document.addEventListener("DOMContentLoaded", function () {
-  const skillHeaders = document.querySelectorAll(".skills__header");
-
-  skillHeaders.forEach((header) => {
-    header.addEventListener("click", function () {
-      const parent = this.parentElement;
-
-      // Toggle active class to expand/collapse
-      parent.classList.toggle("skills__open");
-
-      // Close other skill sections (optional)
-      // skillHeaders.forEach((otherHeader) => {
-      //   if (otherHeader !== this) {
-      //     otherHeader.parentElement.classList.remove("skills__open");
-      //   }
-      // });
-    });
-  });
-});
-
-function animateSkills() {
-  const skillsSection = document.getElementById("skills");
-  const skillsContents = document.querySelectorAll(".skills__content");
-
-  if (!skillsSection) return;
-
-  const observer = new IntersectionObserver(
-    (entries, observer) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("animate");
-          
-          // Add progress bar animations for skills
-          const skillBars = entry.target.querySelectorAll('.skills__data');
-          skillBars.forEach((skill, index) => {
-            setTimeout(() => {
-              skill.style.animation = `fadeInUp 0.6s ease forwards`;
-              skill.style.animationDelay = `${index * 0.1}s`;
-              
-              // Add skill level animation
-              const skillLevel = skill.querySelector('.skills__level');
-              if (skillLevel) {
-                const levelText = skillLevel.textContent;
-                if (levelText.includes('Expert')) {
-                  skill.style.setProperty('--skill-width', '95%');
-                } else if (levelText.includes('Advanced')) {
-                  skill.style.setProperty('--skill-width', '85%');
-                } else if (levelText.includes('Intermediate')) {
-                  skill.style.setProperty('--skill-width', '70%');
-                } else {
-                  skill.style.setProperty('--skill-width', '60%');
-                }
-              }
-            }, index * 100);
-          });
-          
-          observer.unobserve(entry.target);
-        }
       });
-    },
-    { threshold: 0.3 }
-  );
-
-  skillsContents.forEach((content) => observer.observe(content));
-}
-
-// Call the function when the page loads
-document.addEventListener("DOMContentLoaded", animateSkills);
-
-/*===== PROJECT FILTERING =====*/
-document.addEventListener("DOMContentLoaded", function () {
-  const filterItems = document.querySelectorAll(".projects__item");
-  const projectItems = document.querySelectorAll(".projects__content");
-
-  filterItems.forEach((item) => {
-    item.addEventListener("click", function () {
-      const filterValue = this.getAttribute("data-filter");
-      
-      // Remove active class from all filter items
-      filterItems.forEach((filterItem) => {
-        filterItem.classList.remove("active-project");
-      });
-      
-      // Add active class to clicked item
-      this.classList.add("active-project");
-      
-      // Filter projects
-      projectItems.forEach((project) => {
-        if (filterValue === "all") {
-          project.style.display = "block";
-          project.style.opacity = "1";
-        } else {
-          const categoryClass = filterValue.substring(1); // Remove the dot
-          if (project.classList.contains(categoryClass)) {
-            project.style.display = "block";
-            project.style.opacity = "1";
-          } else {
-            project.style.display = "none";
-            project.style.opacity = "0";
-          }
-        }
-      });
-    });
-  });
-});
-
-document
-  .getElementById("contact-form")
-  .addEventListener("submit", function (event) {
-    console.log("hello");
-    event.preventDefault(); // Prevent default form submission
-
-    const name = document.getElementById("name").value.trim();
-    const email = document.getElementById("email").value.trim();
-    const message = document.getElementById("message").value.trim();
-    const phone = document.getElementById("phone").value.trim();
-
-    if (!name || !email || !message || !phone) {
-      alert("Please fill in all fields.");
-      return;
     }
-
-    sendMail(name, email, phone, message);
-  });
-
-function sendMail(name, email, phone, message) {
-  // Collect form data
-  const formData = {
-    service_id: "service_pdpcyn4", // Replace with your EmailJS Service ID
-    template_id: "template_0e5pdgr", // Replace with your EmailJS Template ID
-    user_id: "hSJAXiSH4M8XZaN87", // Replace with your EmailJS Public Key
-    template_params: {
-      name: name, // Matches {{name}}
-      email: email,
-      phone: phone, // Matches {{time}}, formatted date/time
-      message: message, // Matches {{message}}
-    },
   };
 
-  // Send request to EmailJS API
-  fetch("https://api.emailjs.com/api/v1.0/email/send", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(formData),
-  })
-    .then((response) => {
-      if (response.ok) {
-        alert("Message sent successfully!");
-        document.getElementById("contact-form").reset();
-      } else {
-        alert("Error sending message. Please try again.");
-      }
-    })
-    .catch((error) => {
-      console.error("Error:", error);
-      alert("An error occurred. Please try again.");
-    });
-}
-
-// Resume Download Functionality
-
-
-document
-  .getElementById("cv-download")
-  .addEventListener("click", function (event) {
-    // Optional: You can remove preventDefault if you want native download behavior
-    // If you keep it, manually trigger the download via location.href
-    event.preventDefault(); 
-    window.location.href = "../assets/files/resume.pdf";
+  // Run animations on scroll
+  window.addEventListener('scroll', () => {
+    animateSkillBars();
+    animateCounters();
   });
 
+  // Initial run
+  animateSkillBars();
+  animateCounters();
 
-// document
-//   .getElementById("cv-download")
-//   .addEventListener("click", function (event) {
-//     event.preventDefault(); // Prevent default anchor behavior
-
-//     // Generate dynamic resume content
-//     generateAndDownloadResume();
-//   });
-
-function generateAndDownloadResume() {
-  try {
-    // Check if resume file exists, if not generate a dynamic one
-    const resumeData = {
-      name: "Vinayak Chiluka",
-      title: "Senior Principal Engineer | Distributed Systems Engineer",
-      email: "chilukavinayak.p@gmail.com",
-      phone: "+91 84249 49070",
-      location: "Hyderabad, Telangana, India",
-      linkedin: "https://www.linkedin.com/in/chilukavinayak/",
-      github: "https://github.com/chilukavinayak",
-      portfolio: "https://vinayak-chiluka.me/",
-      summary: "Distinguished Principal Software Engineer with 9+ years architecting fault-tolerant, high-throughput distributed systems at enterprise scale. Expert in AWS cloud architecture, microservices, and platform engineering.",
-      experience: [
-        {
-          position: "Senior Principal Software Engineer",
-          company: "Wissen Technology",
-          duration: "Aug 2024 - Present",
-          achievements: [
-            "Architected multi-tenant IoT platforms processing 1M+ events/day",
-            "Led zero-downtime RDS migrations for 50+ production databases",
-            "Achieved 30% cost optimization through intelligent resource management"
-          ]
-        }
-      ],
-      skills: [
-        "Java (Spring Boot/Cloud) - Expert",
-        "AWS Cloud Architecture - Certified Professional", 
-        "Kubernetes & Docker - Advanced",
-        "Microservices & Distributed Systems - Expert",
-        "DevOps & Infrastructure as Code - Advanced"
-      ]
-    };
-
-    // Create a simple text-based resume content
-    const resumeContent = createResumeContent(resumeData);
-    
-    // Create and download the file
-    const blob = new Blob([resumeContent], { type: 'text/plain' });
-    const url = URL.createObjectURL(blob);
-    
-    const a = document.createElement("a");
-    a.href = url;
-    a.download = "Vinayak_Chiluka_Resume.txt"; 
-    document.body.appendChild(a);
-    a.click();
-    document.body.removeChild(a);
-    
-    // Clean up
-    URL.revokeObjectURL(url);
-    
-    console.log("Resume downloaded successfully");
-  } catch (error) {
-    console.error("Error generating resume:", error);
-    
-    // Fallback: Try to download from assets if available
-    const fallbackUrl = "./assets/files/Resume.pdf";
-    const a = document.createElement("a");
-    a.href = fallbackUrl;
-    a.download = "Vinayak_Chiluka_Resume.pdf";
-    document.body.appendChild(a);
-    a.click();
-    document.body.removeChild(a);
-  }
-}
-
-function createResumeContent(data) {
-  return `
-VINAYAK CHILUKA
-${data.title}
-
-CONTACT INFORMATION
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-Email: ${data.email}
-Phone: ${data.phone}
-Location: ${data.location}
-LinkedIn: ${data.linkedin}
-GitHub: ${data.github}
-Portfolio: ${data.portfolio}
-
-PROFESSIONAL SUMMARY
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-${data.summary}
-
-KEY ACHIEVEMENTS
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-• Architected systems handling 10,000+ RPS with 99.99% uptime
-• Led critical infrastructure migrations with zero downtime
-• Consistently achieved 25-30% cost reduction across AWS environments
-• Built fault-tolerant IoT platforms processing 1M+ events daily
-• Reduced MTTR by 40% through advanced observability implementations
-
-CORE TECHNICAL SKILLS
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-${data.skills.map(skill => `• ${skill}`).join('\n')}
-
-PROFESSIONAL EXPERIENCE
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-${data.experience.map(exp => `
-${exp.position} | ${exp.company}
-${exp.duration}
-
-Key Achievements:
-${exp.achievements.map(achievement => `• ${achievement}`).join('\n')}
-`).join('\n')}
-
-CERTIFICATIONS
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-• AWS Certified Solutions Architect - Professional (2024)
-• AWS Certified Solutions Architect - Associate (2023)
-
-EDUCATION
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-B.Tech in Electronics & Communication Engineering
-JNTU Hyderabad | 2024 | GPA: 7.2/10
-
-Generated on: ${new Date().toLocaleDateString()}
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-`.trim();
-}
-
-/*===== BLOG READ MORE FUNCTIONALITY =====*/
-function toggleBlogContent(button) {
-  console.log('🚀 toggleBlogContent called!', button);
-  
-  try {
-    const article = button.closest('.blog__content');
-    const details = article.querySelector('.blog__details');
-    const buttonText = button.querySelector('.blog__button-text');
-    const icon = button.querySelector('.blog__icon');
-    
-    console.log('📊 Elements found:', {
-      article: !!article,
-      details: !!details,
-      buttonText: !!buttonText,
-      icon: !!icon
-    });
-    
-    if (!article || !details) {
-      console.error('❌ Required elements not found');
-      return;
-    }
-    
-    const isExpanded = article.classList.contains('blog__content--expanded');
-    console.log('📈 Current state - isExpanded:', isExpanded);
-    
-    if (isExpanded) {
-      // Collapse
-      article.classList.remove('blog__content--expanded');
-      if (buttonText) buttonText.textContent = 'Read More';
-      if (icon) {
-        icon.classList.remove('bx-up-arrow-alt');
-        icon.classList.add('bx-right-arrow-alt');
-      }
-      console.log('⬇️ Collapsed');
-    } else {
-      // Expand
-      article.classList.add('blog__content--expanded');
-      if (buttonText) buttonText.textContent = 'Read Less';
-      if (icon) {
-        icon.classList.remove('bx-right-arrow-alt');
-        icon.classList.add('bx-up-arrow-alt');
-      }
-      console.log('⬆️ Expanded');
-    }
-    
-    // Force reflow to ensure styles are applied
-    article.offsetHeight;
-    
-  } catch (error) {
-    console.error('💥 Error in toggleBlogContent:', error);
-  }
-}
-
-// Make function globally available
-window.toggleBlogContent = toggleBlogContent;
-
-// Alternative: Add event listeners when DOM is loaded
-document.addEventListener('DOMContentLoaded', function() {
-  console.log('🎯 DOM loaded, setting up blog buttons...');
-  
-  const blogButtons = document.querySelectorAll('.blog__button');
-  console.log('🔍 Found blog buttons:', blogButtons.length);
-  
-  blogButtons.forEach((button, index) => {
-    console.log(`🔗 Setting up button ${index + 1}:`, button);
-    
-    // Remove existing onclick to avoid conflicts
-    button.removeAttribute('onclick');
-    
-    button.addEventListener('click', function(e) {
+  // Smooth scroll for navigation links
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
       e.preventDefault();
-      e.stopPropagation();
-      console.log('🎯 Button clicked via event listener');
-      toggleBlogContent(this);
+      const target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        const offset = 80;
+        const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - offset;
+        
+        window.scrollTo({
+          top: targetPosition,
+          behavior: 'smooth'
+        });
+      }
     });
   });
+
+  // Contact form handling
+  const contactForm = document.getElementById('contact-form');
+  if (contactForm) {
+    contactForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      // Get form data
+      const formData = new FormData(this);
+      const name = this.querySelector('#name').value;
+      
+      // Show success message
+      alert(`Thank you ${name}! Your message has been sent. I'll get back to you soon.`);
+      
+      // Reset form
+      this.reset();
+    });
+  }
+
+  // Add parallax effect to gradient orbs
+  const orbs = document.querySelectorAll('.gradient-orb');
   
-  // Test function - you can call this in browser console
-  window.testBlogToggle = function() {
-    const firstButton = document.querySelector('.blog__button');
-    if (firstButton) {
-      console.log('🧪 Testing blog toggle...');
-      toggleBlogContent(firstButton);
-    } else {
-      console.log('❌ No blog button found for testing');
-    }
-  };
-  
-  console.log('✅ Blog setup complete. Type testBlogToggle() in console to test.');
+  window.addEventListener('mousemove', (e) => {
+    const mouseX = e.clientX / window.innerWidth;
+    const mouseY = e.clientY / window.innerHeight;
+    
+    orbs.forEach((orb, index) => {
+      const speed = (index + 1) * 20;
+      const x = (mouseX - 0.5) * speed;
+      const y = (mouseY - 0.5) * speed;
+      
+      orb.style.transform = `translate(${x}px, ${y}px)`;
+    });
+  });
 });
