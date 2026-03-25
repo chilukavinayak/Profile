@@ -3,125 +3,206 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Vinayak Chiluka | Principal Engineer</title>
-  <meta name="description" content="Principal Software Engineer specializing in distributed systems, cloud architecture, and enterprise solutions.">
+  <title>Vinayak Chiluka | Principal Engineer & Architect</title>
+  <meta name="description" content="Principal Software Engineer specializing in distributed systems, cloud architecture, and enterprise solutions. 11+ years experience.">
   
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   
   <!-- Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   
-  <!-- Styles -->
+  <!-- AOS Animation Library -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
   
   <!-- Navigation -->
-  <nav class="navbar">
+  <nav class="navbar" id="navbar">
     <div class="nav-container">
-      <a href="#" class="logo">VC</a>
-      <ul class="nav-links">
-        <li><a href="#about">About</a></li>
-        <li><a href="#experience">Experience</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#contact" class="nav-cta">Contact</a></li>
-      </ul>
-      <button class="mobile-menu-btn" aria-label="Menu">
-        <i class="fas fa-bars"></i>
+      <a href="#" class="logo">
+        <span class="logo-text">Vinayak</span>
+        <span class="logo-dot">.</span>
+      </a>
+      
+      <div class="nav-menu" id="nav-menu">
+        <a href="#about" class="nav-link">About</a>
+        <a href="#experience" class="nav-link">Experience</a>
+        <a href="#skills" class="nav-link">Skills</a>
+        <a href="#projects" class="nav-link">Projects</a>
+        <a href="#contact" class="nav-link cta-link">Contact Me</a>
+      </div>
+      
+      <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
       </button>
     </div>
   </nav>
 
   <!-- Hero Section -->
-  <header class="hero">
+  <section class="hero">
+    <div class="hero-bg">
+      <div class="gradient-orb orb-1"></div>
+      <div class="gradient-orb orb-2"></div>
+      <div class="gradient-orb orb-3"></div>
+    </div>
+    
     <div class="container">
       <div class="hero-content">
-        <p class="hero-greeting">Hello, I'm</p>
-        <h1 class="hero-title">Vinayak Chiluka</h1>
-        <p class="hero-role">Principal Software Engineer</p>
-        <p class="hero-description">
-          Building scalable distributed systems and cloud-native architectures. 
-          11+ years of experience leading engineering teams at Amazon, Morgan Stanley, and enterprises.
-        </p>
-        <div class="hero-actions">
-          <a href="assets/cv/Resume.pdf" class="btn btn-primary" download>
-            <i class="fas fa-download"></i> Download CV
-          </a>
-          <a href="#contact" class="btn btn-secondary">Get in Touch</a>
+        <div class="hero-badge" data-aos="fade-down" data-aos-duration="800">
+          <span class="badge-dot"></span>
+          Available for opportunities
         </div>
-        <div class="social-links">
-          <a href="https://linkedin.com/in/chilukavinayak" target="_blank" aria-label="LinkedIn">
-            <i class="fab fa-linkedin"></i>
+        
+        <h1 class="hero-title" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
+          Building <span class="gradient-text">scalable</span> systems that power the future
+        </h1>
+        
+        <p class="hero-subtitle" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
+          Principal Software Engineer with 11+ years crafting distributed architectures, 
+          leading engineering teams, and delivering enterprise solutions at Amazon, Morgan Stanley, and beyond.
+        </p>
+        
+        <div class="hero-actions" data-aos="fade-up" data-aos-duration="800" data-aos-delay="300">
+          <a href="#contact" class="btn btn-primary">
+            <span>Let's Talk</span>
+            <i class="fas fa-arrow-right"></i>
           </a>
-          <a href="https://github.com/chilukavinayak" target="_blank" aria-label="GitHub">
+          <a href="assets/cv/Resume.pdf" class="btn btn-secondary" download>
+            <i class="fas fa-download"></i>
+            <span>Download CV</span>
+          </a>
+        </div>
+        
+        <div class="hero-social" data-aos="fade-up" data-aos-duration="800" data-aos-delay="400">
+          <a href="https://linkedin.com/in/chilukavinayak" target="_blank" class="social-btn" aria-label="LinkedIn">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+          <a href="https://github.com/chilukavinayak" target="_blank" class="social-btn" aria-label="GitHub">
             <i class="fab fa-github"></i>
           </a>
-          <a href="mailto:chilukavinayak.p@gmail.com" aria-label="Email">
+          <a href="mailto:chilukavinayak.p@gmail.com" class="social-btn" aria-label="Email">
             <i class="fas fa-envelope"></i>
           </a>
         </div>
       </div>
-      <div class="hero-stats">
-        <div class="stat">
-          <span class="stat-number">11+</span>
-          <span class="stat-label">Years</span>
+      
+      <div class="hero-stats" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="500">
+        <div class="stat-card">
+          <div class="stat-icon">
+            <i class="fas fa-briefcase"></i>
+          </div>
+          <div class="stat-content">
+            <span class="stat-number" data-count="11">0</span><span class="stat-suffix">+</span>
+            <span class="stat-label">Years Experience</span>
+          </div>
         </div>
-        <div class="stat">
-          <span class="stat-number">10K+</span>
-          <span class="stat-label">RPS Handled</span>
+        
+        <div class="stat-card">
+          <div class="stat-icon">
+            <i class="fas fa-bolt"></i>
+          </div>
+          <div class="stat-content">
+            <span class="stat-number" data-count="10">0</span><span class="stat-suffix">K+</span>
+            <span class="stat-label">RPS Handled</span>
+          </div>
         </div>
-        <div class="stat">
-          <span class="stat-number">50+</span>
-          <span class="stat-label">Apps Migrated</span>
+        
+        <div class="stat-card">
+          <div class="stat-icon">
+            <i class="fas fa-rocket"></i>
+          </div>
+          <div class="stat-content">
+            <span class="stat-number" data-count="50">0</span><span class="stat-suffix">+</span>
+            <span class="stat-label">Apps Migrated</span>
+          </div>
         </div>
       </div>
     </div>
+    
     <div class="scroll-indicator">
-      <i class="fas fa-chevron-down"></i>
+      <div class="mouse">
+        <div class="wheel"></div>
+      </div>
+      <span>Scroll to explore</span>
     </div>
-  </header>
+  </section>
 
   <!-- About Section -->
-  <section id="about" class="about">
+  <section id="about" class="about section">
     <div class="container">
-      <div class="section-header">
-        <span class="section-tag">About</span>
-        <h2 class="section-title">Engineering Leader & Architect</h2>
+      <div class="section-header" data-aos="fade-up">
+        <span class="section-tag">About Me</span>
+        <h2 class="section-title">Engineering Leader & <span class="gradient-text">Problem Solver</span></h2>
+        <p class="section-desc">Transforming complex technical challenges into elegant, scalable solutions.</p>
       </div>
+      
       <div class="about-grid">
-        <div class="about-image">
-          <img src="assets/profile.png" alt="Vinayak Chiluka">
+        <div class="about-image-wrapper" data-aos="fade-right" data-aos-duration="1000">
+          <div class="about-image">
+            <img src="assets/profile.png" alt="Vinayak Chiluka">
+            <div class="image-decoration"></div>
+          </div>
+          <div class="experience-badge">
+            <span class="exp-number">11+</span>
+            <span class="exp-text">Years of<br>Excellence</span>
+          </div>
         </div>
-        <div class="about-content">
-          <p class="lead">
-            Distinguished Principal Engineer with deep expertise in distributed systems, 
-            cloud architecture, and platform engineering.
-          </p>
-          <p>
-            I've led critical infrastructure migrations handling <strong>10,000+ RPS</strong> with 
-            <strong>99.99% uptime</strong> while optimizing costs by <strong>30%+</strong>. 
-            My experience spans fintech, e-commerce, and IoT domains.
-          </p>
-          <p>
-            <strong>AWS Certified Solutions Architect Professional</strong>. 
-            Passionate about building resilient systems that scale.
-          </p>
-          <div class="achievements">
-            <div class="achievement">
-              <i class="fas fa-trophy"></i>
-              <span>Best Performer Award</span>
+        
+        <div class="about-content" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
+          <div class="about-text">
+            <p class="lead">
+              I'm a <strong>Principal Software Engineer</strong> passionate about building systems 
+              that make a real impact. My expertise lies in distributed systems, cloud architecture, 
+              and leading high-performing engineering teams.
+            </p>
+            <p>
+              Throughout my career at <strong>Amazon</strong>, <strong>Morgan Stanley</strong>, and 
+              other enterprise companies, I've led critical infrastructure migrations handling 
+              <strong>10,000+ RPS</strong> with <strong>99.99% uptime</strong> while optimizing 
+              infrastructure costs by <strong>30%+</strong>.
+            </p>
+            <p>
+              I'm an <strong>AWS Certified Solutions Architect Professional</strong> with deep 
+              expertise in Java, Python, Kubernetes, and modern cloud-native technologies.
+            </p>
+          </div>
+          
+          <div class="about-highlights">
+            <div class="highlight-item" data-aos="fade-up" data-aos-delay="300">
+              <div class="highlight-icon">
+                <i class="fas fa-trophy"></i>
+              </div>
+              <div class="highlight-content">
+                <h4>Best Performer Award</h4>
+                <p>Systems Engineering Excellence</p>
+              </div>
             </div>
-            <div class="achievement">
-              <i class="fas fa-certificate"></i>
-              <span>AWS Certified</span>
+            
+            <div class="highlight-item" data-aos="fade-up" data-aos-delay="400">
+              <div class="highlight-icon">
+                <i class="fas fa-certificate"></i>
+              </div>
+              <div class="highlight-content">
+                <h4>AWS Certified</h4>
+                <p>Solutions Architect Professional</p>
+              </div>
             </div>
-            <div class="achievement">
-              <i class="fas fa-chart-line"></i>
-              <span>30% Cost Savings</span>
+            
+            <div class="highlight-item" data-aos="fade-up" data-aos-delay="500">
+              <div class="highlight-icon">
+                <i class="fas fa-chart-line"></i>
+              </div>
+              <div class="highlight-content">
+                <h4>Cost Optimization</h4>
+                <p>30% Infrastructure Savings</p>
+              </div>
             </div>
           </div>
         </div>
@@ -130,38 +211,104 @@
   </section>
 
   <!-- Experience Section -->
-  <section id="experience" class="experience">
+  <section id="experience" class="experience section section-alt">
     <div class="container">
-      <div class="section-header">
+      <div class="section-header" data-aos="fade-up">
         <span class="section-tag">Experience</span>
-        <h2 class="section-title">Career Journey</h2>
+        <h2 class="section-title">Career <span class="gradient-text">Journey</span></h2>
+        <p class="section-desc">A decade of building and leading engineering teams.</p>
       </div>
+      
       <div class="timeline">
-        <div class="timeline-item">
-          <div class="timeline-marker"></div>
+        <div class="timeline-item" data-aos="fade-up" data-aos-delay="100">
+          <div class="timeline-marker">
+            <div class="marker-dot"></div>
+            <div class="marker-line"></div>
+          </div>
           <div class="timeline-content">
-            <span class="timeline-date">2024 - Present</span>
-            <h3>Senior Principal Software Engineer</h3>
-            <p class="timeline-company">Wissen Technology</p>
-            <p>Architecting multi-tenant IoT platforms and leading cloud migrations.</p>
+            <div class="timeline-header">
+              <div class="timeline-company">
+                <div class="company-logo">
+                  <i class="fas fa-building"></i>
+                </div>
+                <div class="company-info">
+                  <h3>Wissen Technology</h3>
+                  <span class="timeline-date">2024 - Present</span>
+                </div>
+              </div>
+              <span class="timeline-role">Senior Principal Engineer</span>
+            </div>
+            <p class="timeline-desc">
+              Architecting multi-tenant IoT platforms processing 1M+ events/day. 
+              Leading zero-downtime RDS migrations for 50+ production databases.
+            </p>
+            <div class="timeline-tags">
+              <span>AWS</span>
+              <span>Kubernetes</span>
+              <span>IoT</span>
+              <span>Java</span>
+            </div>
           </div>
         </div>
-        <div class="timeline-item">
-          <div class="timeline-marker"></div>
+        
+        <div class="timeline-item" data-aos="fade-up" data-aos-delay="200">
+          <div class="timeline-marker">
+            <div class="marker-dot"></div>
+            <div class="marker-line"></div>
+          </div>
           <div class="timeline-content">
-            <span class="timeline-date">2022 - 2024</span>
-            <h3>Principal Engineer</h3>
-            <p class="timeline-company">Amazon</p>
-            <p>Built high-throughput microservices handling millions of requests daily.</p>
+            <div class="timeline-header">
+              <div class="timeline-company">
+                <div class="company-logo amazon">
+                  <i class="fab fa-amazon"></i>
+                </div>
+                <div class="company-info">
+                  <h3>Amazon</h3>
+                  <span class="timeline-date">2022 - 2024</span>
+                </div>
+              </div>
+              <span class="timeline-role">Principal Engineer</span>
+            </div>
+            <p class="timeline-desc">
+              Built high-throughput microservices handling millions of requests daily. 
+              Led logistics platform architecture supporting Amazon's global operations.
+            </p>
+            <div class="timeline-tags">
+              <span>Microservices</span>
+              <span>Kafka</span>
+              <span>Java</span>
+              <span>AWS</span>
+            </div>
           </div>
         </div>
-        <div class="timeline-item">
-          <div class="timeline-marker"></div>
+        
+        <div class="timeline-item" data-aos="fade-up" data-aos-delay="300">
+          <div class="timeline-marker">
+            <div class="marker-dot"></div>
+          </div>
           <div class="timeline-content">
-            <span class="timeline-date">2019 - 2022</span>
-            <h3>Senior Software Engineer</h3>
-            <p class="timeline-company">Morgan Stanley</p>
-            <p>Led financial systems development with focus on security and compliance.</p>
+            <div class="timeline-header">
+              <div class="timeline-company">
+                <div class="company-logo">
+                  <i class="fas fa-university"></i>
+                </div>
+                <div class="company-info">
+                  <h3>Morgan Stanley</h3>
+                  <span class="timeline-date">2019 - 2022</span>
+                </div>
+              </div>
+              <span class="timeline-role">Senior Software Engineer</span>
+            </div>
+            <p class="timeline-desc">
+              Led development of mission-critical financial systems with focus on 
+              security, compliance, and high availability for trading platforms.
+            </p>
+            <div class="timeline-tags">
+              <span>FinTech</span>
+              <span>Spring Boot</span>
+              <span>Security</span>
+              <span>PostgreSQL</span>
+            </div>
           </div>
         </div>
       </div>
@@ -169,40 +316,116 @@
   </section>
 
   <!-- Skills Section -->
-  <section id="skills" class="skills">
+  <section id="skills" class="skills section">
     <div class="container">
-      <div class="section-header">
-        <span class="section-tag">Skills</span>
-        <h2 class="section-title">Technical Expertise</h2>
+      <div class="section-header" data-aos="fade-up">
+        <span class="section-tag">Expertise</span>
+        <h2 class="section-title">Technical <span class="gradient-text">Skills</span></h2>
+        <p class="section-desc">Technologies I work with to bring ideas to life.</p>
       </div>
+      
       <div class="skills-grid">
-        <div class="skill-category">
-          <h3><i class="fas fa-code"></i> Languages</h3>
-          <div class="skill-tags">
-            <span class="tag">Java</span>
-            <span class="tag">Python</span>
-            <span class="tag">C</span>
-            <span class="tag">SQL</span>
-            <span class="tag">JavaScript</span>
+        <div class="skill-category" data-aos="fade-up" data-aos-delay="100">
+          <div class="skill-header">
+            <div class="skill-icon">
+              <i class="fas fa-code"></i>
+            </div>
+            <h3>Languages</h3>
+          </div>
+          <div class="skill-items">
+            <div class="skill-item">
+              <span class="skill-name">Java</span>
+              <div class="skill-level">
+                <div class="skill-bar" data-width="95%"></div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <span class="skill-name">Python</span>
+              <div class="skill-level">
+                <div class="skill-bar" data-width="85%"></div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <span class="skill-name">SQL</span>
+              <div class="skill-level">
+                <div class="skill-bar" data-width="90%"></div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <span class="skill-name">JavaScript</span>
+              <div class="skill-level">
+                <div class="skill-bar" data-width="75%"></div>
+              </div>
+            </div>
           </div>
         </div>
-        <div class="skill-category">
-          <h3><i class="fas fa-cloud"></i> Cloud & DevOps</h3>
-          <div class="skill-tags">
-            <span class="tag">AWS</span>
-            <span class="tag">Kubernetes</span>
-            <span class="tag">Docker</span>
-            <span class="tag">Terraform</span>
-            <span class="tag">CI/CD</span>
+        
+        <div class="skill-category" data-aos="fade-up" data-aos-delay="200">
+          <div class="skill-header">
+            <div class="skill-icon">
+              <i class="fas fa-cloud"></i>
+            </div>
+            <h3>Cloud & DevOps</h3>
+          </div>
+          <div class="skill-items">
+            <div class="skill-item">
+              <span class="skill-name">AWS</span>
+              <div class="skill-level">
+                <div class="skill-bar" data-width="95%"></div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <span class="skill-name">Kubernetes</span>
+              <div class="skill-level">
+                <div class="skill-bar" data-width="90%"></div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <span class="skill-name">Docker</span>
+              <div class="skill-level">
+                <div class="skill-bar" data-width="90%"></div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <span class="skill-name">Terraform</span>
+              <div class="skill-level">
+                <div class="skill-bar" data-width="85%"></div>
+              </div>
+            </div>
           </div>
         </div>
-        <div class="skill-category">
-          <h3><i class="fas fa-server"></i> Architecture</h3>
+        
+        <div class="skill-category" data-aos="fade-up" data-aos-delay="300">
+          <div class="skill-header">
+            <div class="skill-icon">
+              <i class="fas fa-server"></i>
+            </div>
+            <h3>Architecture</h3>
+          </div>
           <div class="skill-tags">
-            <span class="tag">Microservices</span>
-            <span class="tag">Distributed Systems</span>
-            <span class="tag">Event-Driven</span>
-            <span class="tag">System Design</span>
+            <span class="skill-tag">Microservices</span>
+            <span class="skill-tag">Distributed Systems</span>
+            <span class="skill-tag">Event-Driven</span>
+            <span class="skill-tag">System Design</span>
+            <span class="skill-tag">API Gateway</span>
+            <span class="skill-tag">Load Balancing</span>
+          </div>
+        </div>
+        
+        <div class="skill-category" data-aos="fade-up" data-aos-delay="400">
+          <div class="skill-header">
+            <div class="skill-icon">
+              <i class="fas fa-database"></i>
+            </div>
+            <h3>Data & Tools</h3>
+          </div>
+          <div class="skill-tags">
+            <span class="skill-tag">PostgreSQL</span>
+            <span class="skill-tag">Redis</span>
+            <span class="skill-tag">Kafka</span>
+            <span class="skill-tag">DynamoDB</span>
+            <span class="skill-tag">Prometheus</span>
+            <span class="skill-tag">Grafana</span>
           </div>
         </div>
       </div>
@@ -210,47 +433,82 @@
   </section>
 
   <!-- Projects Section -->
-  <section id="projects" class="projects">
+  <section id="projects" class="projects section section-alt">
     <div class="container">
-      <div class="section-header">
+      <div class="section-header" data-aos="fade-up">
         <span class="section-tag">Projects</span>
-        <h2 class="section-title">Featured Work</h2>
+        <h2 class="section-title">Featured <span class="gradient-text">Work</span></h2>
+        <p class="section-desc">Some of the projects I've worked on recently.</p>
       </div>
+      
       <div class="projects-grid">
-        <article class="project-card">
-          <div class="project-icon">
-            <i class="fas fa-network-wired"></i>
+        <article class="project-card featured" data-aos="fade-up" data-aos-delay="100">
+          <div class="project-image">
+            <div class="project-icon-large">
+              <i class="fas fa-network-wired"></i>
+            </div>
+            <div class="project-overlay">
+              <a href="#" class="project-link">
+                <i class="fas fa-external-link-alt"></i>
+              </a>
+            </div>
           </div>
-          <h3>IoT Platform</h3>
-          <p>Multi-tenant platform processing 1M+ events/day with sub-second latency.</p>
-          <div class="project-tech">
-            <span>AWS IoT</span>
-            <span>Kinesis</span>
-            <span>Lambda</span>
+          <div class="project-content">
+            <div class="project-meta">
+              <span class="project-category">IoT Platform</span>
+              <div class="project-stats">
+                <span><i class="fas fa-bolt"></i> 1M+ events/day</span>
+              </div>
+            </div>
+            <h3 class="project-title">Multi-Tenant IoT Platform</h3>
+            <p class="project-desc">
+              Enterprise-grade IoT data processing platform handling millions of events 
+              daily with sub-second latency and 99.99% uptime.
+            </p>
+            <div class="project-tech">
+              <span>AWS IoT Core</span>
+              <span>Kinesis</span>
+              <span>Lambda</span>
+              <span>DynamoDB</span>
+            </div>
           </div>
         </article>
-        <article class="project-card">
-          <div class="project-icon">
-            <i class="fas fa-bolt"></i>
-          </div>
-          <h3>Microservices Architecture</h3>
-          <p>High-throughput system handling 10K+ RPS for logistics operations.</p>
-          <div class="project-tech">
-            <span>Java</span>
-            <span>Kubernetes</span>
-            <span>Kafka</span>
+        
+        <article class="project-card" data-aos="fade-up" data-aos-delay="200">
+          <div class="project-content">
+            <div class="project-meta">
+              <span class="project-category">Microservices</span>
+            </div>
+            <h3 class="project-title">High-Throughput Logistics System</h3>
+            <p class="project-desc">
+              Scalable microservices architecture supporting Amazon's global logistics 
+              operations with 10K+ RPS capacity.
+            </p>
+            <div class="project-tech">
+              <span>Java</span>
+              <span>Kubernetes</span>
+              <span>Kafka</span>
+              <span>Redis</span>
+            </div>
           </div>
         </article>
-        <article class="project-card">
-          <div class="project-icon">
-            <i class="fas fa-shield-alt"></i>
-          </div>
-          <h3>Payment Processing</h3>
-          <p>PCI-DSS compliant system processing $2B+ in transactions.</p>
-          <div class="project-tech">
-            <span>Spring Boot</span>
-            <span>PostgreSQL</span>
-            <span>Redis</span>
+        
+        <article class="project-card" data-aos="fade-up" data-aos-delay="300">
+          <div class="project-content">
+            <div class="project-meta">
+              <span class="project-category">FinTech</span>
+            </div>
+            <h3 class="project-title">Payment Processing Platform</h3>
+            <p class="project-desc">
+              PCI-DSS compliant payment processing system handling $2B+ in transactions 
+              with robust security and compliance.
+            </p>
+            <div class="project-tech">
+              <span>Spring Boot</span>
+              <span>PostgreSQL</span>
+              <span>Vault</span>
+              <span>Kafka</span>
+            </div>
           </div>
         </article>
       </div>
@@ -258,48 +516,81 @@
   </section>
 
   <!-- Contact Section -->
-  <section id="contact" class="contact">
+  <section id="contact" class="contact section">
     <div class="container">
-      <div class="section-header">
-        <span class="section-tag">Contact</span>
-        <h2 class="section-title">Let's Work Together</h2>
-      </div>
-      <div class="contact-content">
-        <div class="contact-info">
-          <div class="contact-item">
-            <i class="fas fa-envelope"></i>
-            <div>
-              <h4>Email</h4>
-              <p>chilukavinayak.p@gmail.com</p>
+      <div class="contact-wrapper">
+        <div class="contact-info" data-aos="fade-right">
+          <span class="section-tag">Get in Touch</span>
+          <h2 class="section-title">Let's Work <span class="gradient-text">Together</span></h2>
+          <p class="contact-desc">
+            Have a project in mind or want to discuss engineering challenges? 
+            I'd love to hear from you.
+          </p>
+          
+          <div class="contact-methods">
+            <a href="mailto:chilukavinayak.p@gmail.com" class="contact-method">
+              <div class="method-icon">
+                <i class="fas fa-envelope"></i>
+              </div>
+              <div class="method-details">
+                <span class="method-label">Email</span>
+                <span class="method-value">chilukavinayak.p@gmail.com</span>
+              </div>
+            </a>
+            
+            <div class="contact-method">
+              <div class="method-icon">
+                <i class="fas fa-map-marker-alt"></i>
+              </div>
+              <div class="method-details">
+                <span class="method-label">Location</span>
+                <span class="method-value">Hyderabad, India</span>
+              </div>
+            </div>
+            
+            <div class="contact-method">
+              <div class="method-icon">
+                <i class="fas fa-clock"></i>
+              </div>
+              <div class="method-details">
+                <span class="method-label">Availability</span>
+                <span class="method-value">Open to opportunities</span>
+              </div>
             </div>
           </div>
-          <div class="contact-item">
-            <i class="fas fa-map-marker-alt"></i>
-            <div>
-              <h4>Location</h4>
-              <p>Hyderabad, India</p>
-            </div>
-          </div>
-          <div class="contact-item">
-            <i class="fas fa-briefcase"></i>
-            <div>
-              <h4>Availability</h4>
-              <p>Open to opportunities</p>
-            </div>
+          
+          <div class="contact-social">
+            <a href="https://linkedin.com/in/chilukavinayak" target="_blank" class="social-link">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+            <a href="https://github.com/chilukavinayak" target="_blank" class="social-link">
+              <i class="fab fa-github"></i>
+            </a>
+            <a href="mailto:chilukavinayak.p@gmail.com" class="social-link">
+              <i class="fas fa-envelope"></i>
+            </a>
           </div>
         </div>
-        <form class="contact-form" id="contact-form">
+        
+        <form class="contact-form" id="contact-form" data-aos="fade-left">
           <div class="form-group">
-            <input type="text" placeholder="Your Name" required>
+            <label for="name">Your Name</label>
+            <input type="text" id="name" placeholder="John Doe" required>
           </div>
+          
           <div class="form-group">
-            <input type="email" placeholder="Your Email" required>
+            <label for="email">Email Address</label>
+            <input type="email" id="email" placeholder="john@example.com" required>
           </div>
+          
           <div class="form-group">
-            <textarea placeholder="Your Message" rows="4" required></textarea>
+            <label for="message">Message</label>
+            <textarea id="message" rows="5" placeholder="Tell me about your project..." required></textarea>
           </div>
+          
           <button type="submit" class="btn btn-primary btn-full">
-            <i class="fas fa-paper-plane"></i> Send Message
+            <span>Send Message</span>
+            <i class="fas fa-paper-plane"></i>
           </button>
         </form>
       </div>
@@ -309,15 +600,18 @@
   <!-- Footer -->
   <footer class="footer">
     <div class="container">
-      <p>&copy; 2025 Vinayak Chiluka. All rights reserved.</p>
-      <div class="footer-social">
-        <a href="https://linkedin.com/in/chilukavinayak" target="_blank"><i class="fab fa-linkedin"></i></a>
-        <a href="https://github.com/chilukavinayak" target="_blank"><i class="fab fa-github"></i></a>
-        <a href="mailto:chilukavinayak.p@gmail.com"><i class="fas fa-envelope"></i></a>
+      <div class="footer-content">
+        <div class="footer-brand">
+          <span class="footer-logo">Vinayak.</span>
+          <p>Building the future, one system at a time.</p>
+        </div>
+        <p class="footer-copy">&copy; 2025 Vinayak Chiluka. All rights reserved.</p>
       </div>
     </div>
   </footer>
 
+  <!-- Scripts -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>
