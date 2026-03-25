@@ -64,30 +64,29 @@
     <!-- ===== HEADER / NAVBAR ===== -->
     <header class="header">
       <nav class="nav container">
-        <a href="#" class="nav__logo">Vinayak Chiluka</a>
+        <a href="#" class="nav__logo"></a>
 
         <div class="nav__menu" id="nav-menu">
           <ul class="nav__list">
             <li class="nav__item">
-              <a href="#home" class="nav__link active-link">Home</a>
-            </li>
-            <li class="nav__item">
-              <a href="#about" class="nav__link">About</a>
-            </li>
-            <li class="nav__item">
-              <a href="#skills" class="nav__link">Skills</a>
+              <a href="#skills" class="nav__link">Expertise</a>
             </li>
             <li class="nav__item">
               <a href="#projects" class="nav__link">Projects</a>
             </li>
             <li class="nav__item">
-              <a href="#blog" class="nav__link">Blog</a>
+              <a href="#about" class="nav__link">Experience</a>
+            </li>
+            <li class="nav__item">
+              <a href="#blog" class="nav__link">Articles</a>
             </li>
             <li class="nav__item">
               <a href="#contact" class="nav__link">Contact</a>
             </li>
           </ul>
         </div>
+
+        <a href="#contact" class="nav__cta">Let's talk</a>
 
         <div class="nav__toggle" id="nav-toggle">
           <i class="bx bx-grid-alt"></i>
@@ -97,40 +96,61 @@
 
     <!-- ===== HOME / HERO SECTION ===== -->
     <section class="home section" id="home">
-      <div class="home__container container grid">
-        <div class="home__content">
-          <span class="home__greeting">Hello, I'm</span>
-          <h1 class="home__title">Vinayak Chiluka</h1>
-          <span class="home__subtitle"
-            >Senior Principal Engineer | Distributed Systems Engineer</span
-          >
-          <p class="home__description">
-            Architecting fault-tolerant, high-throughput distributed systems at enterprise scale. 
-            9+ years of experience with 10K+ RPS platforms, cloud-native architectures, and leading 
-            engineering excellence at Amazon, Morgan Stanley, and top-tier technology companies.
-          </p>
-          <div class="home__stats">
-            <div class="home__stat">
-              <span class="home__stat-number">10K+</span>
-              <span class="home__stat-label">RPS Handled</span>
-            </div>
-            <div class="home__stat">
-              <span class="home__stat-number">99.99%</span>
-              <span class="home__stat-label">Uptime</span>
-            </div>
-            <div class="home__stat">
-              <span class="home__stat-number">30%</span>
-              <span class="home__stat-label">Cost Reduction</span>
+      <div class="home__container container">
+        <div class="home__main">
+          <div class="home__left">
+            <span class="home__greeting">Senior Principal Engineer</span>
+            <h1 class="home__title">
+              <span class="gradient-text">Vinayak</span>
+              <span class="gradient-text">Chiluka</span>
+            </h1>
+            <p class="home__description">
+              Architecting resilient distributed systems at scale. Building high-throughput applications, 
+              leading cloud migrations, and shipping AI-powered solutions for 11+ years.
+            </p>
+            <div class="home__buttons">
+              <a href="#" id="cv-download" class="button button--outline">
+                <i class="bx bx-download"></i> Download CV
+              </a>
+              <a href="#contact" class="button button--white">
+                <i class="bx bx-envelope"></i> Get in touch
+              </a>
             </div>
           </div>
-          <a href="#about" class="button button--flex">
-            Explore My Work <i class="bx bx-right-arrow-alt button__icon"></i>
+          <div class="home__right">
+            <div class="stat-card">
+              <span class="stat-number">11+</span>
+              <span class="stat-label">Years Experience</span>
+            </div>
+            <div class="stat-card stat-card--center">
+              <div class="stat-dot"></div>
+              <span class="stat-number">10K+</span>
+              <span class="stat-label">RPS Handled</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-number">50+</span>
+              <span class="stat-label">Apps Migrated</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="home__tech">
+          <span class="tech-label">Technologies</span>
+          <div class="tech-badges">
+            <span class="tech-badge">AWS</span>
+            <span class="tech-badge">Kubernetes</span>
+            <span class="tech-badge">Java</span>
+            <span class="tech-badge">Python</span>
+            <span class="tech-badge">AI/LLM</span>
+            <span class="tech-badge">Terraform</span>
+          </div>
+        </div>
+        
+        <div class="home__scroll">
+          <a href="#about" class="scroll-link">
+            <i class='bx bx-down-arrow-alt'></i> SCROLL TO EXPLORE
           </a>
         </div>
-        <!-- <div class="home__img"> -->
-        <!-- Optionally replace with your own image or illustration -->
-        <!-- <img src="./assets/glue.png" alt="Cloud DevOps Illustration" />
-        </div> -->
       </div>
     </section>
 
