@@ -1,617 +1,721 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Vinayak Chiluka | Principal Engineer & Architect</title>
-  <meta name="description" content="Principal Software Engineer specializing in distributed systems, cloud architecture, and enterprise solutions. 11+ years experience.">
-  
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-  
-  <!-- Icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  
-  <!-- AOS Animation Library -->
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-  
-  <link rel="stylesheet" href="css/styles.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vinayak Chiluka — Senior Principal Software Engineer · Cloud & AI</title>
+<meta name="description" content="Senior Principal Software Engineer with 11+ years building distributed systems at Amazon-scale, fintech platforms at Morgan Stanley, and production RAG/AI systems. AWS Solutions Architect Professional.">
+<meta name="author" content="Vinayak Chiluka">
+<meta property="og:title" content="Vinayak Chiluka — Senior Principal Software Engineer">
+<meta property="og:description" content="11+ years · 10K+ RPS systems · 99.99% uptime · AWS SA Professional · Production RAG & AI systems.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://vinayak-chiluka.me/">
+<meta property="og:image" content="https://vinayak-chiluka.me/assets/profile.png">
+<meta name="theme-color" content="#05070d">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='64' y2='64'%3E%3Cstop offset='0' stop-color='%236366f1'/%3E%3Cstop offset='1' stop-color='%2322d3ee'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='64' height='64' rx='14' fill='url(%23g)'/%3E%3Ctext x='32' y='42' font-family='Arial,sans-serif' font-size='28' font-weight='700' fill='white' text-anchor='middle'%3EVC%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Person","name":"Vinayak Chiluka","jobTitle":"Senior Principal Software Engineer","url":"https://vinayak-chiluka.me/","email":"mailto:chilukavinayak.p@gmail.com","address":{"@type":"PostalAddress","addressLocality":"Hyderabad","addressCountry":"IN"},"sameAs":["https://www.linkedin.com/in/chilukavinayak/","https://github.com/chilukavinayak"]}
+</script>
+<style>
+/* ============ TOKENS ============ */
+:root{
+  --bg:#05070d; --bg-2:#0a0f1c; --card:rgba(13,19,34,.72); --card-solid:#0d1322;
+  --border:rgba(99,113,255,.16); --border-strong:rgba(120,140,255,.32);
+  --text:#eaeffa; --muted:#9aa7c0; --faint:#6b7893;
+  --indigo:#6366f1; --cyan:#22d3ee; --violet:#a78bfa; --green:#34d399; --amber:#fbbf24;
+  --grad:linear-gradient(100deg,#818cf8,#22d3ee 55%,#a78bfa);
+  --grad-btn:linear-gradient(100deg,#6366f1,#0ea5e9);
+  --shadow:0 20px 60px -20px rgba(2,6,20,.9);
+  --ring:0 0 0 3px rgba(99,102,241,.35);
+  --r-lg:22px; --r-md:16px; --r-sm:10px;
+  --nav-h:68px;
+}
+[data-theme="light"]{
+  --bg:#f4f7fd; --bg-2:#eaeffa; --card:rgba(255,255,255,.82); --card-solid:#ffffff;
+  --border:rgba(70,90,180,.14); --border-strong:rgba(70,90,180,.3);
+  --text:#0c1326; --muted:#48556f; --faint:#7d8aa5;
+  --grad:linear-gradient(100deg,#4f46e5,#0891b2 55%,#7c3aed);
+  --shadow:0 20px 50px -24px rgba(30,45,90,.35);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}
+}
+body{
+  font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);
+  line-height:1.65;font-size:16px;overflow-x:hidden;
+  transition:background .4s,color .4s;
+}
+h1,h2,h3,.disp{font-family:'Space Grotesk',sans-serif;letter-spacing:-.02em}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+button{font:inherit;color:inherit;background:none;border:none;cursor:pointer}
+::selection{background:rgba(99,102,241,.45);color:#fff}
+:focus-visible{outline:none;box-shadow:var(--ring);border-radius:8px}
+.container{width:min(1140px,100% - 40px);margin-inline:auto}
+.skip-link{position:fixed;top:-60px;left:16px;z-index:200;background:var(--card-solid);border:1px solid var(--border-strong);padding:10px 16px;border-radius:10px;transition:top .2s}
+.skip-link:focus{top:12px}
+
+/* ============ BACKDROP ============ */
+.backdrop{position:fixed;inset:0;z-index:-2;overflow:hidden;pointer-events:none}
+.backdrop::before{content:"";position:absolute;inset:0;
+  background-image:linear-gradient(rgba(130,150,255,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(130,150,255,.05) 1px,transparent 1px);
+  background-size:44px 44px;
+  mask-image:radial-gradient(ellipse 90% 60% at 50% 0%,#000 55%,transparent 100%);
+}
+[data-theme="light"] .backdrop::before{background-image:linear-gradient(rgba(60,80,180,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(60,80,180,.07) 1px,transparent 1px)}
+.orb{position:absolute;border-radius:50%;filter:blur(90px);opacity:.5;animation:drift 18s ease-in-out infinite alternate}
+.orb-1{width:480px;height:480px;top:-160px;left:-120px;background:radial-gradient(circle,rgba(99,102,241,.55),transparent 65%)}
+.orb-2{width:420px;height:420px;top:10%;right:-140px;background:radial-gradient(circle,rgba(34,211,238,.4),transparent 65%);animation-delay:-6s}
+.orb-3{width:380px;height:380px;bottom:-120px;left:38%;background:radial-gradient(circle,rgba(167,139,250,.35),transparent 65%);animation-delay:-12s}
+[data-theme="light"] .orb{opacity:.33}
+@keyframes drift{from{transform:translate(0,0) scale(1)}to{transform:translate(40px,30px) scale(1.08)}}
+
+/* ============ PROGRESS + NAV ============ */
+.progress{position:fixed;top:0;left:0;height:3px;width:0;background:var(--grad);z-index:120;border-radius:0 3px 3px 0}
+.navbar{position:fixed;top:0;left:0;right:0;z-index:100;height:var(--nav-h);
+  display:flex;align-items:center;
+  background:color-mix(in srgb,var(--bg) 70%,transparent);
+  backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+  border-bottom:1px solid transparent;transition:border-color .3s,background .3s}
+.navbar.scrolled{border-bottom-color:var(--border)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;gap:16px;width:min(1140px,100% - 40px);margin-inline:auto}
+.logo{display:flex;align-items:center;gap:10px;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1.15rem}
+.logo-mark{width:36px;height:36px;border-radius:11px;background:var(--grad-btn);display:grid;place-items:center;color:#fff;font-size:.85rem;font-weight:700;box-shadow:0 6px 18px -6px rgba(79,88,240,.7)}
+.nav-links{display:flex;gap:4px;align-items:center}
+.nav-link{padding:8px 14px;border-radius:10px;font-size:.92rem;font-weight:500;color:var(--muted);transition:color .2s,background .2s}
+.nav-link:hover{color:var(--text);background:rgba(120,140,255,.08)}
+.nav-link.active{color:var(--text);background:rgba(120,140,255,.12)}
+.nav-cta{margin-left:8px;padding:9px 18px;border-radius:12px;background:var(--grad-btn);color:#fff;font-weight:600;font-size:.9rem;box-shadow:0 8px 20px -8px rgba(79,88,240,.8);transition:transform .2s,box-shadow .2s}
+.nav-cta:hover{transform:translateY(-2px);box-shadow:0 12px 26px -8px rgba(79,88,240,.9)}
+.theme-btn{width:38px;height:38px;border-radius:11px;border:1px solid var(--border);display:grid;place-items:center;color:var(--muted);transition:color .2s,border-color .2s}
+.theme-btn:hover{color:var(--text);border-color:var(--border-strong)}
+.theme-btn svg{width:18px;height:18px}
+.theme-btn .ico-sun{display:none}
+[data-theme="light"] .theme-btn .ico-sun{display:block}
+[data-theme="light"] .theme-btn .ico-moon{display:none}
+.burger{display:none;width:40px;height:40px;border-radius:11px;border:1px solid var(--border);flex-direction:column;align-items:center;justify-content:center;gap:5px}
+.burger span{width:18px;height:2px;background:var(--text);border-radius:2px;transition:transform .25s,opacity .25s}
+.burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.burger.open span:nth-child(2){opacity:0}
+.burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+
+/* ============ HERO ============ */
+.hero{min-height:100svh;display:flex;align-items:center;padding:calc(var(--nav-h) + 40px) 0 60px;position:relative}
+.hero-grid{display:grid;grid-template-columns:1.25fr 1fr;gap:48px;align-items:center}
+.chip{display:inline-flex;align-items:center;gap:8px;padding:8px 16px;border-radius:999px;
+  border:1px solid var(--border-strong);background:var(--card);backdrop-filter:blur(8px);
+  font-size:.85rem;font-weight:500;color:var(--muted)}
+.pulse{width:8px;height:8px;border-radius:50%;background:var(--green);box-shadow:0 0 0 0 rgba(52,211,153,.7);animation:pulse 2s infinite}
+@keyframes pulse{70%{box-shadow:0 0 0 9px rgba(52,211,153,0)}}
+.hero h1{font-size:clamp(2.5rem,5.4vw,4.1rem);line-height:1.08;font-weight:700;margin:22px 0 18px}
+.grad-text{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero-sub{font-size:1.1rem;color:var(--muted);max-width:560px}
+.hero-sub strong{color:var(--text);font-weight:600}
+.hero-ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+.btn{display:inline-flex;align-items:center;gap:9px;padding:13px 24px;border-radius:14px;font-weight:600;font-size:.95rem;transition:transform .2s,box-shadow .2s,border-color .2s}
+.btn svg{width:17px;height:17px}
+.btn-primary{background:var(--grad-btn);color:#fff;box-shadow:0 10px 26px -10px rgba(79,88,240,.85)}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 16px 32px -10px rgba(79,88,240,.95)}
+.btn-ghost{border:1px solid var(--border-strong);background:var(--card);color:var(--text)}
+.btn-ghost:hover{transform:translateY(-2px);border-color:var(--indigo)}
+.hero-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:42px;max-width:620px}
+.hstat{padding:14px 10px;border-radius:var(--r-md);border:1px solid var(--border);background:var(--card);text-align:center}
+.hstat b{display:block;font-family:'Space Grotesk',sans-serif;font-size:clamp(1.25rem,2vw,1.6rem);font-weight:700;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hstat > span{font-size:.74rem;color:var(--faint);font-weight:500;letter-spacing:.02em}
+/* portrait */
+.hero-visual{position:relative;display:flex;justify-content:center}
+.portrait{position:relative;width:min(340px,80vw);aspect-ratio:1;border-radius:36px;padding:5px;
+  background:var(--grad);box-shadow:0 30px 80px -30px rgba(80,100,255,.55)}
+.portrait-inner{width:100%;height:100%;border-radius:32px;overflow:hidden;background:var(--bg-2)}
+.portrait img{width:100%;height:100%;object-fit:cover}
+.float-chip{position:absolute;display:flex;align-items:center;gap:9px;padding:11px 15px;border-radius:15px;
+  background:var(--card-solid);border:1px solid var(--border-strong);box-shadow:var(--shadow);
+  font-size:.8rem;font-weight:600;animation:bob 5s ease-in-out infinite}
+.float-chip .fc-ico{width:30px;height:30px;border-radius:9px;display:grid;place-items:center;font-size:.95rem}
+.float-chip small{display:block;font-weight:500;color:var(--faint);font-size:.68rem;letter-spacing:.02em}
+.fc-1{top:6%;left:-10%;animation-delay:0s}
+.fc-2{bottom:16%;right:-12%;animation-delay:-1.8s}
+.fc-3{bottom:-6%;left:2%;animation-delay:-3.4s}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+.scroll-hint{position:absolute;bottom:22px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:6px;color:var(--faint);font-size:.72rem;letter-spacing:.14em;text-transform:uppercase}
+.scroll-hint::after{content:"";width:1px;height:34px;background:linear-gradient(var(--indigo),transparent);animation:fall 1.6s ease-in-out infinite}
+@keyframes fall{from{transform:scaleY(0);transform-origin:top}50%{transform:scaleY(1)}to{transform:scaleY(0);transform-origin:bottom}}
+
+/* ============ SECTIONS ============ */
+.section{padding:96px 0;position:relative}
+.sec-head{text-align:center;max-width:640px;margin:0 auto 54px}
+.sec-tag{display:inline-block;padding:6px 15px;border-radius:999px;font-size:.76rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--cyan);border:1px solid rgba(34,211,238,.3);background:rgba(34,211,238,.07);margin-bottom:16px}
+[data-theme="light"] .sec-tag{color:#0e7490;border-color:rgba(8,145,178,.3);background:rgba(8,145,178,.07)}
+.sec-head h2{font-size:clamp(1.9rem,3.6vw,2.7rem);font-weight:700;line-height:1.15}
+.sec-head p{color:var(--muted);margin-top:12px}
+
+/* trust bar */
+.trust{padding:26px 0;border-block:1px solid var(--border);background:color-mix(in srgb,var(--bg-2) 55%,transparent)}
+.trust-inner{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:14px 38px}
+.trust-label{font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--faint);font-weight:600}
+.trust-logo{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1.06rem;color:var(--muted);display:flex;align-items:baseline;gap:7px}
+.trust-logo small{font-size:.68rem;font-weight:500;color:var(--faint)}
+
+/* bento */
+.bento{display:grid;grid-template-columns:repeat(12,1fr);gap:16px}
+.bcard{border:1px solid var(--border);background:var(--card);backdrop-filter:blur(10px);border-radius:var(--r-lg);padding:26px;position:relative;overflow:hidden;transition:transform .25s,border-color .25s,box-shadow .25s}
+.bcard:hover{transform:translateY(-4px);border-color:var(--border-strong);box-shadow:var(--shadow)}
+.bcard .b-ico{width:44px;height:44px;border-radius:13px;display:grid;place-items:center;font-size:1.25rem;margin-bottom:16px}
+.bcard h3{font-size:1.12rem;margin-bottom:8px}
+.bcard p{font-size:.92rem;color:var(--muted)}
+.bcard .big{font-family:'Space Grotesk',sans-serif;font-size:2.3rem;font-weight:700;line-height:1;margin-bottom:6px;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.b-span6{grid-column:span 6}
+.b-span4{grid-column:span 4}
+.b-span3{grid-column:span 3}
+.b-glow::after{content:"";position:absolute;top:-60px;right:-60px;width:170px;height:170px;border-radius:50%;background:radial-gradient(circle,rgba(99,102,241,.28),transparent 70%);pointer-events:none}
+.tagline-badges{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.mini-badge{display:inline-flex;align-items:center;gap:6px;font-size:.78rem;font-weight:600;padding:6px 12px;border-radius:999px;border:1px solid var(--border-strong);color:var(--muted)}
+.mini-badge.gold{color:var(--amber);border-color:rgba(251,191,36,.35);background:rgba(251,191,36,.07)}
+.mini-badge.green{color:var(--green);border-color:rgba(52,211,153,.35);background:rgba(52,211,153,.07)}
+</style>
+<style>
+/* ============ TIMELINE ============ */
+.timeline{position:relative;max-width:860px;margin:0 auto}
+.timeline::before{content:"";position:absolute;left:19px;top:8px;bottom:8px;width:2px;background:linear-gradient(var(--indigo),var(--cyan),transparent)}
+.titem{position:relative;padding:0 0 42px 62px}
+.titem:last-child{padding-bottom:0}
+.tdot{position:absolute;left:11px;top:6px;width:18px;height:18px;border-radius:50%;background:var(--bg);border:3px solid var(--indigo);box-shadow:0 0 0 5px rgba(99,102,241,.15)}
+.titem.current .tdot{border-color:var(--green);box-shadow:0 0 0 5px rgba(52,211,153,.18)}
+.tcard{border:1px solid var(--border);background:var(--card);border-radius:var(--r-lg);padding:24px 26px;transition:transform .25s,border-color .25s,box-shadow .25s}
+.tcard:hover{transform:translateX(5px);border-color:var(--border-strong);box-shadow:var(--shadow)}
+.thead{display:flex;flex-wrap:wrap;align-items:center;gap:8px 14px;margin-bottom:6px}
+.thead h3{font-size:1.15rem}
+.tdate{margin-left:auto;font-size:.8rem;font-weight:600;color:var(--cyan);white-space:nowrap}
+[data-theme="light"] .tdate{color:#0e7490}
+.trole{font-size:.92rem;font-weight:600;color:var(--muted)}
+.ttype{font-size:.72rem;font-weight:600;padding:3px 10px;border-radius:999px;border:1px solid var(--border-strong);color:var(--faint)}
+.tdesc{font-size:.93rem;color:var(--muted);margin:10px 0 14px}
+.ttags{display:flex;flex-wrap:wrap;gap:7px}
+.ttags span{font-size:.75rem;font-weight:500;padding:4px 11px;border-radius:8px;background:rgba(120,140,255,.1);border:1px solid var(--border);color:var(--muted)}
+.t-earlier{display:flex;flex-wrap:wrap;gap:8px 20px;align-items:center;font-size:.88rem;color:var(--faint)}
+.t-earlier b{color:var(--muted);font-weight:600}
+
+/* ============ SKILLS ============ */
+.skills-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.scard{border:1px solid var(--border);background:var(--card);border-radius:var(--r-lg);padding:26px;transition:transform .25s,border-color .25s,box-shadow .25s}
+.scard:hover{transform:translateY(-4px);border-color:var(--border-strong);box-shadow:var(--shadow)}
+.scard-head{display:flex;align-items:center;gap:13px;margin-bottom:18px}
+.scard-head .b-ico{margin:0}
+.scard-head h3{font-size:1.08rem}
+.scard-head small{display:block;color:var(--faint);font-size:.78rem;font-weight:500}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chips span{font-size:.84rem;font-weight:500;padding:7px 14px;border-radius:10px;background:rgba(120,140,255,.08);border:1px solid var(--border);color:var(--muted);transition:border-color .2s,color .2s,transform .2s}
+.chips span:hover{border-color:var(--indigo);color:var(--text);transform:translateY(-2px)}
+.chips span.hot{border-color:rgba(34,211,238,.4);background:rgba(34,211,238,.08);color:var(--cyan);font-weight:600}
+[data-theme="light"] .chips span.hot{color:#0e7490}
+.arch-row{margin-top:16px;border:1px dashed var(--border-strong);border-radius:var(--r-lg);padding:20px 26px;display:flex;flex-wrap:wrap;align-items:center;gap:10px}
+.arch-row b{font-family:'Space Grotesk',sans-serif;font-size:.9rem;margin-right:6px}
+
+/* ============ PROJECTS ============ */
+.filters{display:flex;flex-wrap:wrap;justify-content:center;gap:9px;margin-bottom:38px}
+.fbtn{padding:9px 19px;border-radius:999px;border:1px solid var(--border);background:var(--card);font-size:.86rem;font-weight:600;color:var(--muted);transition:all .2s}
+.fbtn:hover{border-color:var(--border-strong);color:var(--text)}
+.fbtn.active{background:var(--grad-btn);color:#fff;border-color:transparent;box-shadow:0 8px 20px -8px rgba(79,88,240,.8)}
+.proj-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.pcard{border:1px solid var(--border);background:var(--card);border-radius:var(--r-lg);padding:26px;display:flex;flex-direction:column;gap:12px;position:relative;overflow:hidden;transition:transform .25s,border-color .25s,box-shadow .25s}
+.pcard:hover{transform:translateY(-5px);border-color:var(--border-strong);box-shadow:var(--shadow)}
+.pcard.hidden{display:none}
+.ptop{display:flex;align-items:center;gap:12px}
+.ptop .b-ico{margin:0;flex-shrink:0}
+.pcat{font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--cyan)}
+[data-theme="light"] .pcat{color:#0e7490}
+.pcat.ai{color:var(--violet)}
+[data-theme="light"] .pcat.ai{color:#7c3aed}
+.pmetric{margin-left:auto;font-size:.76rem;font-weight:600;padding:5px 12px;border-radius:999px;background:rgba(52,211,153,.09);border:1px solid rgba(52,211,153,.3);color:var(--green);white-space:nowrap}
+.pcard h3{font-size:1.14rem}
+.pcard p{font-size:.9rem;color:var(--muted);flex-grow:1}
+.pfoot{display:flex;flex-wrap:wrap;align-items:center;gap:7px}
+.pfoot span{font-size:.74rem;font-weight:500;padding:4px 11px;border-radius:8px;background:rgba(120,140,255,.08);border:1px solid var(--border);color:var(--muted)}
+.plink{display:inline-flex;align-items:center;gap:6px;font-size:.85rem;font-weight:600;color:var(--cyan);margin-top:4px;transition:gap .2s}
+.plink:hover{gap:10px}
+[data-theme="light"] .plink{color:#0e7490}
+.plink svg{width:15px;height:15px}
+
+/* ============ CONTACT ============ */
+.contact-card{border:1px solid var(--border-strong);border-radius:28px;padding:clamp(34px,6vw,64px);text-align:center;position:relative;overflow:hidden;background:var(--card)}
+.contact-card::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse 70% 90% at 50% -10%,rgba(99,102,241,.22),transparent 60%);pointer-events:none}
+.contact-card h2{font-size:clamp(1.9rem,4vw,2.9rem);margin-bottom:14px;position:relative}
+.contact-card>p{color:var(--muted);max-width:520px;margin:0 auto 30px;position:relative}
+.contact-ctas{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;position:relative}
+.email-pill{display:inline-flex;align-items:center;gap:11px;margin-top:26px;padding:11px 20px;border-radius:999px;border:1px dashed var(--border-strong);color:var(--muted);font-size:.9rem;position:relative;transition:border-color .2s,color .2s}
+.email-pill:hover{border-color:var(--indigo);color:var(--text)}
+.email-pill svg{width:16px;height:16px}
+.contact-meta{display:flex;flex-wrap:wrap;justify-content:center;gap:10px 28px;margin-top:30px;font-size:.84rem;color:var(--faint);position:relative}
+.contact-meta b{color:var(--muted);font-weight:600}
+.toast{position:fixed;bottom:26px;left:50%;transform:translateX(-50%) translateY(90px);background:var(--card-solid);border:1px solid rgba(52,211,153,.5);color:var(--green);padding:12px 22px;border-radius:14px;font-weight:600;font-size:.9rem;box-shadow:var(--shadow);transition:transform .35s cubic-bezier(.2,.9,.3,1.2);z-index:150}
+.toast.show{transform:translateX(-50%) translateY(0)}
+
+/* ============ FOOTER / MISC ============ */
+footer{border-top:1px solid var(--border);padding:34px 0;margin-top:40px}
+.foot-inner{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:14px;font-size:.86rem;color:var(--faint)}
+.foot-social{display:flex;gap:10px}
+.foot-social a,.to-top{width:38px;height:38px;border-radius:11px;border:1px solid var(--border);display:grid;place-items:center;color:var(--muted);transition:all .2s}
+.foot-social a:hover{color:var(--text);border-color:var(--indigo);transform:translateY(-2px)}
+.foot-social svg{width:17px;height:17px}
+.to-top{position:fixed;right:22px;bottom:22px;z-index:90;background:var(--card-solid);opacity:0;pointer-events:none;transition:opacity .3s,transform .2s}
+.to-top.show{opacity:1;pointer-events:auto}
+.to-top:hover{transform:translateY(-3px);border-color:var(--indigo)}
+.to-top svg{width:17px;height:17px}
+
+/* reveal */
+.reveal{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s ease}
+.reveal.in{opacity:1;transform:none}
+
+/* ============ RESPONSIVE ============ */
+@media(max-width:960px){
+  .hero-grid{grid-template-columns:1fr;gap:60px}
+  .hero-visual{order:-1}
+  .portrait{width:min(260px,70vw)}
+  .fc-1{left:-4%}.fc-2{right:-4%}
+  .hero h1{font-size:clamp(2.1rem,7vw,3rem)}
+  .b-span6,.b-span4,.b-span3{grid-column:span 12}
+  .bento{grid-template-columns:repeat(12,1fr)}
+  .b-sm6{grid-column:span 6!important}
+  .skills-grid,.proj-grid{grid-template-columns:1fr}
+  .nav-links{position:fixed;top:var(--nav-h);right:12px;flex-direction:column;align-items:stretch;gap:6px;
+    background:var(--card-solid);border:1px solid var(--border-strong);border-radius:18px;padding:14px;
+    box-shadow:var(--shadow);min-width:210px;
+    opacity:0;pointer-events:none;transform:translateY(-8px);transition:opacity .25s,transform .25s}
+  .nav-links.open{opacity:1;pointer-events:auto;transform:none}
+  .nav-link{padding:11px 16px}
+  .nav-cta{margin:6px 0 0;text-align:center}
+  .burger{display:flex}
+  .hero-stats{grid-template-columns:repeat(2,1fr)}
+  .tdate{margin-left:0;width:100%}
+}
+@media(max-width:520px){
+  .hstat b{font-size:1.2rem}
+  .float-chip{padding:8px 11px;font-size:.72rem}
+  .float-chip .fc-ico{width:24px;height:24px;font-size:.8rem}
+  .section{padding:72px 0}
+}
+</style>
 </head>
 <body>
-  
-  <!-- Navigation -->
-  <nav class="navbar" id="navbar">
-    <div class="nav-container">
-      <a href="#" class="logo">
-        <span class="logo-text">Vinayak</span>
-        <span class="logo-dot">.</span>
-      </a>
-      
-      <div class="nav-menu" id="nav-menu">
-        <a href="#about" class="nav-link">About</a>
-        <a href="#experience" class="nav-link">Experience</a>
-        <a href="#skills" class="nav-link">Skills</a>
-        <a href="#projects" class="nav-link">Projects</a>
-        <a href="#contact" class="nav-link cta-link">Contact Me</a>
-      </div>
-      
-      <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle menu">
-        <span></span>
-        <span></span>
-        <span></span>
+<a href="#main" class="skip-link">Skip to content</a>
+<div class="backdrop" aria-hidden="true">
+  <div class="orb orb-1"></div><div class="orb orb-2"></div><div class="orb orb-3"></div>
+</div>
+<div class="progress" id="progress" aria-hidden="true"></div>
+
+<nav class="navbar" id="navbar" aria-label="Main navigation">
+  <div class="nav-inner">
+    <a href="#top" class="logo"><span class="logo-mark">VC</span>Vinayak<span class="grad-text">.</span></a>
+    <div class="nav-links" id="nav-links">
+      <a href="#about" class="nav-link">About</a>
+      <a href="#experience" class="nav-link">Experience</a>
+      <a href="#skills" class="nav-link">Skills</a>
+      <a href="#projects" class="nav-link">Projects</a>
+      <a href="#contact" class="nav-cta">Hire Me</a>
+    </div>
+    <div style="display:flex;gap:10px;align-items:center">
+      <button class="theme-btn" id="theme-btn" aria-label="Toggle light / dark theme" title="Toggle theme">
+        <svg class="ico-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        <svg class="ico-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
       </button>
+      <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
     </div>
-  </nav>
+  </div>
+</nav>
 
-  <!-- Hero Section -->
-  <section class="hero">
-    <div class="hero-bg">
-      <div class="gradient-orb orb-1"></div>
-      <div class="gradient-orb orb-2"></div>
-      <div class="gradient-orb orb-3"></div>
-    </div>
-    
-    <div class="container">
-      <div class="hero-content">
-        <div class="hero-badge" data-aos="fade-down" data-aos-duration="800">
-          <span class="badge-dot"></span>
-          Available for opportunities
-        </div>
-        
-        <h1 class="hero-title" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
-          Building <span class="gradient-text">scalable</span> systems that power the future
-        </h1>
-        
-        <p class="hero-subtitle" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
-          Principal Software Engineer with 11+ years crafting distributed architectures, 
-          leading engineering teams, and delivering enterprise solutions at Amazon, Morgan Stanley, and beyond.
-        </p>
-        
-        <div class="hero-actions" data-aos="fade-up" data-aos-duration="800" data-aos-delay="300">
-          <a href="#contact" class="btn btn-primary">
-            <span>Let's Talk</span>
-            <i class="fas fa-arrow-right"></i>
-          </a>
-          <a href="assets/cv/Resume.pdf" class="btn btn-secondary" download>
-            <i class="fas fa-download"></i>
-            <span>Download CV</span>
-          </a>
-        </div>
-        
-        <div class="hero-social" data-aos="fade-up" data-aos-duration="800" data-aos-delay="400">
-          <a href="https://linkedin.com/in/chilukavinayak" target="_blank" class="social-btn" aria-label="LinkedIn">
-            <i class="fab fa-linkedin-in"></i>
-          </a>
-          <a href="https://github.com/chilukavinayak" target="_blank" class="social-btn" aria-label="GitHub">
-            <i class="fab fa-github"></i>
-          </a>
-          <a href="mailto:chilukavinayak.p@gmail.com" class="social-btn" aria-label="Email">
-            <i class="fas fa-envelope"></i>
-          </a>
-        </div>
+<main id="main">
+<!-- ================= HERO ================= -->
+<section class="hero" id="top">
+  <div class="container hero-grid">
+    <div>
+      <span class="chip"><span class="pulse"></span>Open to new opportunities — Senior IC · Cloud & AI</span>
+      <h1>I build <span class="grad-text">distributed systems</span> that scale — and <span class="grad-text">AI</span> that ships.</h1>
+      <p class="hero-sub">Senior Principal Software Engineer with <strong>11+ years</strong> across Amazon-scale logistics, Morgan Stanley fintech and enterprise IoT — now building <strong>production RAG &amp; AI systems</strong> on AWS.</p>
+      <div class="hero-ctas">
+        <a href="mailto:chilukavinayak.p@gmail.com" class="btn btn-primary">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>
+          Email Me</a>
+        <a href="https://www.linkedin.com/in/chilukavinayak/" target="_blank" rel="noopener" class="btn btn-ghost">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.07 2.07 0 1 1 0-4.13 2.07 2.07 0 0 1 0 4.13zM7.12 20.45H3.55V9h3.57v11.45z"/></svg>
+          LinkedIn</a>
+        <a href="https://github.com/chilukavinayak" target="_blank" rel="noopener" class="btn btn-ghost">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5A11.5 11.5 0 0 0 .5 12a11.5 11.5 0 0 0 7.86 10.91c.58.1.79-.25.79-.55v-2.17c-3.2.7-3.87-1.37-3.87-1.37-.52-1.33-1.28-1.68-1.28-1.68-1.04-.72.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.03 1.75 2.69 1.25 3.34.95.1-.74.4-1.25.72-1.53-2.55-.3-5.23-1.28-5.23-5.69 0-1.25.45-2.28 1.18-3.08-.12-.3-.51-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.78 0c2.2-1.49 3.16-1.18 3.16-1.18.63 1.59.24 2.75.12 3.05.74.8 1.18 1.83 1.18 3.08 0 4.42-2.69 5.39-5.25 5.67.41.36.78 1.05.78 2.13v3.16c0 .3.2.66.8.55A11.5 11.5 0 0 0 23.5 12 11.5 11.5 0 0 0 12 .5z"/></svg>
+          GitHub</a>
       </div>
-      
-      <div class="hero-stats" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="500">
-        <div class="stat-card">
-          <div class="stat-icon">
-            <i class="fas fa-briefcase"></i>
-          </div>
-          <div class="stat-content">
-            <span class="stat-number" data-count="11">0</span><span class="stat-suffix">+</span>
-            <span class="stat-label">Years Experience</span>
-          </div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-icon">
-            <i class="fas fa-bolt"></i>
-          </div>
-          <div class="stat-content">
-            <span class="stat-number" data-count="10">0</span><span class="stat-suffix">K+</span>
-            <span class="stat-label">RPS Handled</span>
-          </div>
-        </div>
-        
-        <div class="stat-card">
-          <div class="stat-icon">
-            <i class="fas fa-rocket"></i>
-          </div>
-          <div class="stat-content">
-            <span class="stat-number" data-count="50">0</span><span class="stat-suffix">+</span>
-            <span class="stat-label">Apps Migrated</span>
-          </div>
-        </div>
+      <div class="hero-stats">
+        <div class="hstat"><b><span data-count="11">0</span>+</b><span>Years Experience</span></div>
+        <div class="hstat"><b><span data-count="10">0</span>K+</b><span>RPS Handled</span></div>
+        <div class="hstat"><b>99.99<small style="font-size:.7em">%</small></b><span>Uptime Delivered</span></div>
+        <div class="hstat"><b><span data-count="30">0</span>%</b><span>Cloud Cost Cut</span></div>
       </div>
     </div>
-    
-    <div class="scroll-indicator">
-      <div class="mouse">
-        <div class="wheel"></div>
+    <div class="hero-visual">
+      <div class="portrait">
+        <div class="portrait-inner"><img src="assets/profile.png" alt="Portrait of Vinayak Chiluka" width="500" height="500"></div>
+        <div class="float-chip fc-1"><span class="fc-ico" style="background:rgba(251,191,36,.15)">🏆</span><span>AWS Certified<small>Solutions Architect — Pro</small></span></div>
+        <div class="float-chip fc-2"><span class="fc-ico" style="background:rgba(167,139,250,.15)">🤖</span><span>RAG &amp; AI Systems<small>LangChain · FAISS · pgvector</small></span></div>
+        <div class="float-chip fc-3"><span class="fc-ico" style="background:rgba(52,211,153,.15)">⚡</span><span>2,600+ contributions<small>on GitHub, last 12 months</small></span></div>
       </div>
-      <span>Scroll to explore</span>
     </div>
-  </section>
+  </div>
+  <div class="scroll-hint" aria-hidden="true">Scroll</div>
+</section>
 
-  <!-- About Section -->
-  <section id="about" class="about section">
-    <div class="container">
-      <div class="section-header" data-aos="fade-up">
-        <span class="section-tag">About Me</span>
-        <h2 class="section-title">Engineering Leader & <span class="gradient-text">Problem Solver</span></h2>
-        <p class="section-desc">Transforming complex technical challenges into elegant, scalable solutions.</p>
-      </div>
-      
-      <div class="about-grid">
-        <div class="about-image-wrapper" data-aos="fade-right" data-aos-duration="1000">
-          <div class="about-image">
-            <img src="assets/profile.png" alt="Vinayak Chiluka">
-            <div class="image-decoration"></div>
-          </div>
-          <div class="experience-badge">
-            <span class="exp-number">11+</span>
-            <span class="exp-text">Years of<br>Excellence</span>
-          </div>
+<!-- ================= TRUST BAR ================= -->
+<div class="trust reveal">
+  <div class="container trust-inner">
+    <span class="trust-label">Built for scale at</span>
+    <span class="trust-logo">Amazon <small>client</small></span>
+    <span class="trust-logo">Morgan Stanley <small>client</small></span>
+    <span class="trust-logo">Wissen Technology</span>
+    <span class="trust-logo">Visible Alpha</span>
+    <span class="trust-logo">63 Moons</span>
+  </div>
+</div>
+<!-- ================= ABOUT / BENTO ================= -->
+<section class="section" id="about">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="sec-tag">About — at a glance</span>
+      <h2>Everything you need to know, <span class="grad-text">in one look</span></h2>
+      <p>11+ years of backend, cloud and platform engineering — measured in outcomes, not buzzwords.</p>
+    </div>
+    <div class="bento">
+      <div class="bcard b-span6 b-glow reveal">
+        <div class="b-ico" style="background:rgba(99,102,241,.15)">👨‍💻</div>
+        <h3>Senior Principal Software Engineer</h3>
+        <p>I design fault-tolerant, high-throughput distributed systems — from Amazon-scale logistics platforms to post-trade validation at Morgan Stanley — and lead the teams that run them. Based in Hyderabad, India.</p>
+        <div class="tagline-badges">
+          <span class="mini-badge gold">🏅 AWS Solutions Architect — Professional</span>
+          <span class="mini-badge">AWS SA — Associate</span>
+          <span class="mini-badge green">● Open to Senior IC roles</span>
         </div>
-        
-        <div class="about-content" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
-          <div class="about-text">
-            <p class="lead">
-              I'm a <strong>Principal Software Engineer</strong> passionate about building systems 
-              that make a real impact. My expertise lies in distributed systems, cloud architecture, 
-              and leading high-performing engineering teams.
-            </p>
-            <p>
-              Throughout my career at <strong>Amazon</strong>, <strong>Morgan Stanley</strong>, and 
-              other enterprise companies, I've led critical infrastructure migrations handling 
-              <strong>10,000+ RPS</strong> with <strong>99.99% uptime</strong> while optimizing 
-              infrastructure costs by <strong>30%+</strong>.
-            </p>
-            <p>
-              I'm an <strong>AWS Certified Solutions Architect Professional</strong> with deep 
-              expertise in Java, Python, Kubernetes, and modern cloud-native technologies.
-            </p>
-          </div>
-          
-          <div class="about-highlights">
-            <div class="highlight-item" data-aos="fade-up" data-aos-delay="300">
-              <div class="highlight-icon">
-                <i class="fas fa-trophy"></i>
-              </div>
-              <div class="highlight-content">
-                <h4>Best Performer Award</h4>
-                <p>Systems Engineering Excellence</p>
-              </div>
-            </div>
-            
-            <div class="highlight-item" data-aos="fade-up" data-aos-delay="400">
-              <div class="highlight-icon">
-                <i class="fas fa-certificate"></i>
-              </div>
-              <div class="highlight-content">
-                <h4>AWS Certified</h4>
-                <p>Solutions Architect Professional</p>
-              </div>
-            </div>
-            
-            <div class="highlight-item" data-aos="fade-up" data-aos-delay="500">
-              <div class="highlight-icon">
-                <i class="fas fa-chart-line"></i>
-              </div>
-              <div class="highlight-content">
-                <h4>Cost Optimization</h4>
-                <p>30% Infrastructure Savings</p>
-              </div>
-            </div>
+      </div>
+      <div class="bcard b-span3 b-sm6 reveal">
+        <div class="big"><span data-count="50">0</span>+</div>
+        <h3>Zero-downtime DB migrations</h3>
+        <p>Production RDS fleets moved to KMS-encrypted instances — no downtime, clear rollback.</p>
+      </div>
+      <div class="bcard b-span3 b-sm6 reveal">
+        <div class="big"><span data-count="1">0</span>M+</div>
+        <h3>IoT events / day</h3>
+        <p>Multi-tenant platform on AWS IoT Core, Kinesis &amp; Lambda with sub-second latency.</p>
+      </div>
+      <div class="bcard b-span3 b-sm6 reveal">
+        <div class="big"><span data-count="40">0</span>%</div>
+        <h3>Faster incident recovery</h3>
+        <p>MTTR cut with CloudWatch, X-Ray and custom observability across services.</p>
+      </div>
+      <div class="bcard b-span3 b-sm6 reveal">
+        <div class="b-ico" style="background:rgba(251,191,36,.12)">🏆</div>
+        <h3>Recognized performer</h3>
+        <p>Best Performer (Verixo) · Best Contributor 2024 (People Tech).</p>
+      </div>
+      <div class="bcard b-span6 b-glow reveal">
+        <div class="b-ico" style="background:rgba(167,139,250,.15)">🤖</div>
+        <h3>Now: Production AI &amp; RAG systems</h3>
+        <p>Building a portfolio of retrieval-augmented systems — medical diagnosis assistant, realtime voice agent, text-to-SQL, airline support — with LangChain, FAISS, pgvector, OpenSearch and Kubernetes.</p>
+        <div class="tagline-badges">
+          <span class="mini-badge">LangChain</span><span class="mini-badge">FAISS</span><span class="mini-badge">pgvector</span><span class="mini-badge">WebRTC Voice</span><span class="mini-badge">FastAPI</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= EXPERIENCE ================= -->
+<section class="section" id="experience" style="background:color-mix(in srgb,var(--bg-2) 45%,transparent)">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="sec-tag">Experience</span>
+      <h2>A decade of <span class="grad-text">shipping at scale</span></h2>
+      <p>Fintech, e-commerce logistics, IoT — always the systems everything else depends on.</p>
+    </div>
+    <div class="timeline">
+      <div class="titem current reveal"><span class="tdot"></span>
+        <div class="tcard">
+          <div class="thead"><h3>Wissen Technology</h3><span class="ttype">IoT · Cloud Platform</span><span class="tdate">Aug 2024 — Present</span></div>
+          <div class="trole">Senior Principal Software Engineer</div>
+          <p class="tdesc">Architecting multi-tenant IoT platforms processing 1M+ events/day. Reusable AWS CDK modules &amp; Helm charts that accelerate client onboarding; KMS-encrypted RDS migrations with zero downtime; 20–30% annual cloud-spend savings.</p>
+          <div class="ttags"><span>AWS CDK</span><span>EKS</span><span>Java · Spring Boot</span><span>IoT Core</span><span>Helm</span></div>
+        </div>
+      </div>
+      <div class="titem reveal"><span class="tdot"></span>
+        <div class="tcard">
+          <div class="thead"><h3>People Tech — Amazon <small style="font-weight:500;color:var(--faint)">(client)</small></h3><span class="ttype">E-commerce Logistics</span><span class="tdate">Nov 2021 — Jul 2024</span></div>
+          <div class="trole">Sr. Software Engineer → Assistant Manager</div>
+          <p class="tdesc">High-volume internal Amazon platform at 10,000+ RPS for global logistics &amp; fulfillment. IoT data pipelines with CDK/SQS/Lambda/DynamoDB; 25–30% infra cost reduction; 40% MTTR cut via CloudWatch + X-Ray observability.</p>
+          <div class="ttags"><span>Java</span><span>AWS Lambda</span><span>DynamoDB</span><span>SQS</span><span>X-Ray</span></div>
+        </div>
+      </div>
+      <div class="titem reveal"><span class="tdot"></span>
+        <div class="tcard">
+          <div class="thead"><h3>Wissen — Morgan Stanley <small style="font-weight:500;color:var(--faint)">(client)</small></h3><span class="ttype">Capital Markets</span><span class="tdate">Jan 2020 — Nov 2021</span></div>
+          <div class="trole">Software Engineer</div>
+          <p class="tdesc">Post-trade validation systems for settlement &amp; reconciliation of high-value trades. Resolved critical production issues across validation pipelines, collaborating with global teams in New York and London.</p>
+          <div class="ttags"><span>Java · Spring</span><span>SQL</span><span>Event Sourcing</span><span>FinTech</span></div>
+        </div>
+      </div>
+      <div class="titem reveal"><span class="tdot"></span>
+        <div class="tcard">
+          <div class="thead"><h3>Visible Alpha</h3><span class="ttype">FinTech Analytics</span><span class="tdate">Sep 2017 — Nov 2019</span></div>
+          <div class="trole">Software Engineer</div>
+          <p class="tdesc">Core backend for the consensus engine powering real-time sell-side models of 1,500+ public companies; CI/CD pipelines that cut deployment time by 40%.</p>
+          <div class="ttags"><span>C#</span><span>SQL Server</span><span>Jenkins</span><span>ETL</span></div>
+        </div>
+      </div>
+      <div class="titem reveal"><span class="tdot"></span>
+        <div class="tcard">
+          <div class="t-earlier">
+            <b>Earlier:</b>
+            <span><b>63 Moons</b> — high-frequency trading systems support (2016–17)</span>
+            <span><b>Verixo</b> — network restore system in C · 🏆 Best Performer (2015–16)</span>
           </div>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- Experience Section -->
-  <section id="experience" class="experience section section-alt">
-    <div class="container">
-      <div class="section-header" data-aos="fade-up">
-        <span class="section-tag">Experience</span>
-        <h2 class="section-title">Career <span class="gradient-text">Journey</span></h2>
-        <p class="section-desc">A decade of building and leading engineering teams.</p>
+<!-- ================= SKILLS ================= -->
+<section class="section" id="skills">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="sec-tag">Skills</span>
+      <h2>The stack I <span class="grad-text">think in</span></h2>
+      <p>Highlighted chips are what I reach for daily.</p>
+    </div>
+    <div class="skills-grid">
+      <div class="scard reveal">
+        <div class="scard-head"><div class="b-ico" style="background:rgba(99,102,241,.15)">⌨️</div><div><h3>Languages</h3><small>8+ years Java &amp; SQL</small></div></div>
+        <div class="chips"><span class="hot">Java</span><span class="hot">Python</span><span class="hot">SQL</span><span>C</span><span>C#</span><span>JavaScript</span><span>Bash</span></div>
       </div>
-      
-      <div class="timeline">
-        <div class="timeline-item" data-aos="fade-up" data-aos-delay="100">
-          <div class="timeline-marker">
-            <div class="marker-dot"></div>
-            <div class="marker-line"></div>
-          </div>
-          <div class="timeline-content">
-            <div class="timeline-header">
-              <div class="timeline-company">
-                <div class="company-logo">
-                  <i class="fas fa-building"></i>
-                </div>
-                <div class="company-info">
-                  <h3>Wissen Technology</h3>
-                  <span class="timeline-date">2024 - Present</span>
-                </div>
-              </div>
-              <span class="timeline-role">Senior Principal Engineer</span>
-            </div>
-            <p class="timeline-desc">
-              Architecting multi-tenant IoT platforms processing 1M+ events/day. 
-              Leading zero-downtime RDS migrations for 50+ production databases.
-            </p>
-            <div class="timeline-tags">
-              <span>AWS</span>
-              <span>Kubernetes</span>
-              <span>IoT</span>
-              <span>Java</span>
-            </div>
-          </div>
-        </div>
-        
-        <div class="timeline-item" data-aos="fade-up" data-aos-delay="200">
-          <div class="timeline-marker">
-            <div class="marker-dot"></div>
-            <div class="marker-line"></div>
-          </div>
-          <div class="timeline-content">
-            <div class="timeline-header">
-              <div class="timeline-company">
-                <div class="company-logo amazon">
-                  <i class="fab fa-amazon"></i>
-                </div>
-                <div class="company-info">
-                  <h3>Amazon</h3>
-                  <span class="timeline-date">2022 - 2024</span>
-                </div>
-              </div>
-              <span class="timeline-role">Principal Engineer</span>
-            </div>
-            <p class="timeline-desc">
-              Built high-throughput microservices handling millions of requests daily. 
-              Led logistics platform architecture supporting Amazon's global operations.
-            </p>
-            <div class="timeline-tags">
-              <span>Microservices</span>
-              <span>Kafka</span>
-              <span>Java</span>
-              <span>AWS</span>
-            </div>
-          </div>
-        </div>
-        
-        <div class="timeline-item" data-aos="fade-up" data-aos-delay="300">
-          <div class="timeline-marker">
-            <div class="marker-dot"></div>
-          </div>
-          <div class="timeline-content">
-            <div class="timeline-header">
-              <div class="timeline-company">
-                <div class="company-logo">
-                  <i class="fas fa-university"></i>
-                </div>
-                <div class="company-info">
-                  <h3>Morgan Stanley</h3>
-                  <span class="timeline-date">2019 - 2022</span>
-                </div>
-              </div>
-              <span class="timeline-role">Senior Software Engineer</span>
-            </div>
-            <p class="timeline-desc">
-              Led development of mission-critical financial systems with focus on 
-              security, compliance, and high availability for trading platforms.
-            </p>
-            <div class="timeline-tags">
-              <span>FinTech</span>
-              <span>Spring Boot</span>
-              <span>Security</span>
-              <span>PostgreSQL</span>
-            </div>
-          </div>
-        </div>
+      <div class="scard reveal">
+        <div class="scard-head"><div class="b-ico" style="background:rgba(34,211,238,.13)">☁️</div><div><h3>Cloud &amp; Infrastructure</h3><small>AWS Solutions Architect — Professional</small></div></div>
+        <div class="chips"><span class="hot">AWS</span><span class="hot">AWS CDK</span><span>Lambda</span><span>EKS · ECS</span><span>DynamoDB</span><span>RDS</span><span>IoT Core</span><span>S3 · SQS</span><span>Terraform</span><span>CloudFormation</span></div>
+      </div>
+      <div class="scard reveal">
+        <div class="scard-head"><div class="b-ico" style="background:rgba(52,211,153,.13)">🚀</div><div><h3>Platform &amp; DevOps</h3><small>Ship fast, observe everything</small></div></div>
+        <div class="chips"><span class="hot">Kubernetes</span><span class="hot">Docker</span><span>Helm</span><span>GitHub Actions</span><span>Jenkins</span><span>Prometheus</span><span>Grafana</span><span>CloudWatch</span><span>X-Ray</span></div>
+      </div>
+      <div class="scard reveal">
+        <div class="scard-head"><div class="b-ico" style="background:rgba(167,139,250,.15)">🤖</div><div><h3>AI &amp; Data Engineering</h3><small>RAG systems in production patterns</small></div></div>
+        <div class="chips"><span class="hot">RAG</span><span class="hot">LangChain</span><span class="hot">FAISS</span><span>pgvector</span><span>OpenSearch</span><span>Weaviate</span><span>FastAPI</span><span>Kafka</span><span>Redis</span><span>PostgreSQL</span></div>
       </div>
     </div>
-  </section>
+    <div class="arch-row reveal">
+      <b>Architecture patterns —</b>
+      <div class="chips" style="display:contents"><span>Microservices</span><span>Event-Driven</span><span>Domain-Driven Design</span><span>CQRS</span><span>Event Sourcing</span><span>Circuit Breaker</span></div>
+    </div>
+  </div>
+</section>
 
-  <!-- Skills Section -->
-  <section id="skills" class="skills section">
-    <div class="container">
-      <div class="section-header" data-aos="fade-up">
-        <span class="section-tag">Expertise</span>
-        <h2 class="section-title">Technical <span class="gradient-text">Skills</span></h2>
-        <p class="section-desc">Technologies I work with to bring ideas to life.</p>
+<!-- ================= PROJECTS ================= -->
+<section class="section" id="projects" style="background:color-mix(in srgb,var(--bg-2) 45%,transparent)">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="sec-tag">Projects</span>
+      <h2>Work that <span class="grad-text">moves numbers</span></h2>
+      <p>Filter by what you care about — AI projects include architecture docs on GitHub.</p>
+    </div>
+    <div class="filters reveal" role="tablist" aria-label="Project filters">
+      <button class="fbtn active" data-filter="all">All</button>
+      <button class="fbtn" data-filter="ai">🤖 AI &amp; RAG</button>
+      <button class="fbtn" data-filter="cloud">☁️ Cloud &amp; IoT</button>
+      <button class="fbtn" data-filter="backend">⚙️ Backend</button>
+      <button class="fbtn" data-filter="fintech">💹 FinTech</button>
+    </div>
+    <div class="proj-grid" id="proj-grid">
+      <article class="pcard reveal" data-cat="ai">
+        <div class="ptop"><div class="b-ico" style="background:rgba(167,139,250,.15)">🩺</div><div><span class="pcat ai">AI · RAG</span><h3>Medical Diagnosis RAG Assistant</h3></div><span class="pmetric">Grounded + auditable</span></div>
+        <p>Clinical RAG assistant combining medical documents, knowledge bases and patient metadata with an LLM — explainability snippets make every answer auditable.</p>
+        <div class="pfoot"><span>LangChain</span><span>FAISS</span><span>FastAPI</span><span>PostgreSQL</span><span>Kubernetes</span></div>
+        <a class="plink" href="https://github.com/chilukavinayak/Profile/tree/main/projects/medical-diagnosis-rag" target="_blank" rel="noopener">Architecture &amp; docs <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M7 7h10v10"/></svg></a>
+      </article>
+      <article class="pcard reveal" data-cat="ai">
+        <div class="ptop"><div class="b-ico" style="background:rgba(167,139,250,.15)">🎙️</div><div><span class="pcat ai">AI · Voice</span><h3>Realtime Voice AI Agent with RAG</h3></div><span class="pmetric">Low-latency voice</span></div>
+        <p>Voice-first agent over WebRTC that retrieves from a Weaviate vector store mid-conversation — speech in, grounded answers out, in real time.</p>
+        <div class="pfoot"><span>WebRTC</span><span>Weaviate</span><span>LangChain</span><span>Python</span></div>
+        <a class="plink" href="https://github.com/chilukavinayak/Profile/tree/main/projects/realtime-voice-rag" target="_blank" rel="noopener">Architecture &amp; docs <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M7 7h10v10"/></svg></a>
+      </article>
+      <article class="pcard reveal" data-cat="ai">
+        <div class="ptop"><div class="b-ico" style="background:rgba(167,139,250,.15)">🗄️</div><div><span class="pcat ai">AI · Data</span><h3>Text-to-SQL RAG Chatbot</h3></div><span class="pmetric">Ask DB in English</span></div>
+        <p>Natural-language questions become safe, validated SQL over live databases, with pgvector-powered schema retrieval keeping generations grounded.</p>
+        <div class="pfoot"><span>pgvector</span><span>LangChain</span><span>FastAPI</span><span>PostgreSQL</span></div>
+        <a class="plink" href="https://github.com/chilukavinayak/Profile/tree/main/projects/text-to-sql-rag" target="_blank" rel="noopener">Architecture &amp; docs <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M7 7h10v10"/></svg></a>
+      </article>
+      <article class="pcard reveal" data-cat="ai">
+        <div class="ptop"><div class="b-ico" style="background:rgba(167,139,250,.15)">✈️</div><div><span class="pcat ai">AI · Support</span><h3>Airline Support RAG Chatbot</h3></div><span class="pmetric">OpenSearch retrieval</span></div>
+        <p>Customer-support assistant for airline policies, fares and disruptions — hybrid retrieval over OpenSearch with guardrailed responses.</p>
+        <div class="pfoot"><span>OpenSearch</span><span>LangChain</span><span>Python</span><span>Docker</span></div>
+        <a class="plink" href="https://github.com/chilukavinayak/Profile/tree/main/projects/airline-rag-chatbot" target="_blank" rel="noopener">Architecture &amp; docs <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M7 7h10v10"/></svg></a>
+      </article>
+      <article class="pcard reveal" data-cat="cloud">
+        <div class="ptop"><div class="b-ico" style="background:rgba(34,211,238,.13)">📡</div><div><span class="pcat">Cloud · IoT</span><h3>Multi-Tenant IoT Platform</h3></div><span class="pmetric">1M+ events/day</span></div>
+        <p>Enterprise IoT data platform on AWS IoT Core, Kinesis and Lambda — sub-second processing, tenant isolation, 99.99% uptime.</p>
+        <div class="pfoot"><span>IoT Core</span><span>Kinesis</span><span>Lambda</span><span>DynamoDB</span><span>CDK</span></div>
+      </article>
+      <article class="pcard reveal" data-cat="backend">
+        <div class="ptop"><div class="b-ico" style="background:rgba(99,102,241,.15)">⚙️</div><div><span class="pcat">Backend</span><h3>High-Throughput Logistics Services</h3></div><span class="pmetric">10K+ RPS</span></div>
+        <p>Java microservices behind Amazon's global logistics &amp; fulfillment operations — fault-tolerant, horizontally scaled, continuously deployed.</p>
+        <div class="pfoot"><span>Java</span><span>Spring Boot</span><span>SQS</span><span>Lambda</span><span>RDS</span></div>
+      </article>
+      <article class="pcard reveal" data-cat="cloud">
+        <div class="ptop"><div class="b-ico" style="background:rgba(52,211,153,.13)">🔁</div><div><span class="pcat">Cloud · DevOps</span><h3>Zero-Downtime DB Migration Framework</h3></div><span class="pmetric">50+ prod DBs</span></div>
+        <p>Repeatable framework for migrating live RDS databases to KMS-encrypted instances — zero downtime, automated verification, instant rollback.</p>
+        <div class="pfoot"><span>RDS</span><span>KMS</span><span>CDK</span><span>CloudWatch</span></div>
+      </article>
+      <article class="pcard reveal" data-cat="fintech">
+        <div class="ptop"><div class="b-ico" style="background:rgba(251,191,36,.12)">💹</div><div><span class="pcat">FinTech</span><h3>Post-Trade Validation System</h3></div><span class="pmetric">High-value trades</span></div>
+        <p>Settlement and reconciliation pipelines at Morgan Stanley — data integrity, compliance and stability for mission-critical trade flows.</p>
+        <div class="pfoot"><span>Java</span><span>Spring</span><span>SQL</span><span>Event Sourcing</span></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CONTACT ================= -->
+<section class="section" id="contact">
+  <div class="container">
+    <div class="contact-card reveal">
+      <span class="sec-tag">Contact</span>
+      <h2>Let's build something <span class="grad-text">that lasts</span></h2>
+      <p>Hiring for a senior IC who owns outcomes end-to-end? Or want to talk distributed systems and RAG? My inbox is open.</p>
+      <div class="contact-ctas">
+        <a href="mailto:chilukavinayak.p@gmail.com" class="btn btn-primary">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>
+          Email Me</a>
+        <a href="https://www.linkedin.com/in/chilukavinayak/" target="_blank" rel="noopener" class="btn btn-ghost">Connect on LinkedIn</a>
+        <a href="https://github.com/chilukavinayak" target="_blank" rel="noopener" class="btn btn-ghost">Follow on GitHub</a>
       </div>
-      
-      <div class="skills-grid">
-        <div class="skill-category" data-aos="fade-up" data-aos-delay="100">
-          <div class="skill-header">
-            <div class="skill-icon">
-              <i class="fas fa-code"></i>
-            </div>
-            <h3>Languages</h3>
-          </div>
-          <div class="skill-items">
-            <div class="skill-item">
-              <span class="skill-name">Java</span>
-              <div class="skill-level">
-                <div class="skill-bar" data-width="95%"></div>
-              </div>
-            </div>
-            <div class="skill-item">
-              <span class="skill-name">Python</span>
-              <div class="skill-level">
-                <div class="skill-bar" data-width="85%"></div>
-              </div>
-            </div>
-            <div class="skill-item">
-              <span class="skill-name">SQL</span>
-              <div class="skill-level">
-                <div class="skill-bar" data-width="90%"></div>
-              </div>
-            </div>
-            <div class="skill-item">
-              <span class="skill-name">JavaScript</span>
-              <div class="skill-level">
-                <div class="skill-bar" data-width="75%"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-        
-        <div class="skill-category" data-aos="fade-up" data-aos-delay="200">
-          <div class="skill-header">
-            <div class="skill-icon">
-              <i class="fas fa-cloud"></i>
-            </div>
-            <h3>Cloud & DevOps</h3>
-          </div>
-          <div class="skill-items">
-            <div class="skill-item">
-              <span class="skill-name">AWS</span>
-              <div class="skill-level">
-                <div class="skill-bar" data-width="95%"></div>
-              </div>
-            </div>
-            <div class="skill-item">
-              <span class="skill-name">Kubernetes</span>
-              <div class="skill-level">
-                <div class="skill-bar" data-width="90%"></div>
-              </div>
-            </div>
-            <div class="skill-item">
-              <span class="skill-name">Docker</span>
-              <div class="skill-level">
-                <div class="skill-bar" data-width="90%"></div>
-              </div>
-            </div>
-            <div class="skill-item">
-              <span class="skill-name">Terraform</span>
-              <div class="skill-level">
-                <div class="skill-bar" data-width="85%"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-        
-        <div class="skill-category" data-aos="fade-up" data-aos-delay="300">
-          <div class="skill-header">
-            <div class="skill-icon">
-              <i class="fas fa-server"></i>
-            </div>
-            <h3>Architecture</h3>
-          </div>
-          <div class="skill-tags">
-            <span class="skill-tag">Microservices</span>
-            <span class="skill-tag">Distributed Systems</span>
-            <span class="skill-tag">Event-Driven</span>
-            <span class="skill-tag">System Design</span>
-            <span class="skill-tag">API Gateway</span>
-            <span class="skill-tag">Load Balancing</span>
-          </div>
-        </div>
-        
-        <div class="skill-category" data-aos="fade-up" data-aos-delay="400">
-          <div class="skill-header">
-            <div class="skill-icon">
-              <i class="fas fa-database"></i>
-            </div>
-            <h3>Data & Tools</h3>
-          </div>
-          <div class="skill-tags">
-            <span class="skill-tag">PostgreSQL</span>
-            <span class="skill-tag">Redis</span>
-            <span class="skill-tag">Kafka</span>
-            <span class="skill-tag">DynamoDB</span>
-            <span class="skill-tag">Prometheus</span>
-            <span class="skill-tag">Grafana</span>
-          </div>
-        </div>
+      <button class="email-pill" id="copy-email" title="Copy email address">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+        chilukavinayak.p@gmail.com — click to copy
+      </button>
+      <div class="contact-meta">
+        <span>📍 <b>Hyderabad, India</b> · IST (UTC+5:30)</span>
+        <span>💼 <b>Open to:</b> Senior / Principal IC · Platform · AI Engineering</span>
       </div>
     </div>
-  </section>
+  </div>
+</section>
+</main>
 
-  <!-- Projects Section -->
-  <section id="projects" class="projects section section-alt">
-    <div class="container">
-      <div class="section-header" data-aos="fade-up">
-        <span class="section-tag">Projects</span>
-        <h2 class="section-title">Featured <span class="gradient-text">Work</span></h2>
-        <p class="section-desc">Some of the projects I've worked on recently.</p>
-      </div>
-      
-      <div class="projects-grid">
-        <article class="project-card featured" data-aos="fade-up" data-aos-delay="100">
-          <div class="project-image">
-            <div class="project-icon-large">
-              <i class="fas fa-network-wired"></i>
-            </div>
-            <div class="project-overlay">
-              <a href="#" class="project-link">
-                <i class="fas fa-external-link-alt"></i>
-              </a>
-            </div>
-          </div>
-          <div class="project-content">
-            <div class="project-meta">
-              <span class="project-category">IoT Platform</span>
-              <div class="project-stats">
-                <span><i class="fas fa-bolt"></i> 1M+ events/day</span>
-              </div>
-            </div>
-            <h3 class="project-title">Multi-Tenant IoT Platform</h3>
-            <p class="project-desc">
-              Enterprise-grade IoT data processing platform handling millions of events 
-              daily with sub-second latency and 99.99% uptime.
-            </p>
-            <div class="project-tech">
-              <span>AWS IoT Core</span>
-              <span>Kinesis</span>
-              <span>Lambda</span>
-              <span>DynamoDB</span>
-            </div>
-          </div>
-        </article>
-        
-        <article class="project-card" data-aos="fade-up" data-aos-delay="200">
-          <div class="project-content">
-            <div class="project-meta">
-              <span class="project-category">Microservices</span>
-            </div>
-            <h3 class="project-title">High-Throughput Logistics System</h3>
-            <p class="project-desc">
-              Scalable microservices architecture supporting Amazon's global logistics 
-              operations with 10K+ RPS capacity.
-            </p>
-            <div class="project-tech">
-              <span>Java</span>
-              <span>Kubernetes</span>
-              <span>Kafka</span>
-              <span>Redis</span>
-            </div>
-          </div>
-        </article>
-        
-        <article class="project-card" data-aos="fade-up" data-aos-delay="300">
-          <div class="project-content">
-            <div class="project-meta">
-              <span class="project-category">FinTech</span>
-            </div>
-            <h3 class="project-title">Payment Processing Platform</h3>
-            <p class="project-desc">
-              PCI-DSS compliant payment processing system handling $2B+ in transactions 
-              with robust security and compliance.
-            </p>
-            <div class="project-tech">
-              <span>Spring Boot</span>
-              <span>PostgreSQL</span>
-              <span>Vault</span>
-              <span>Kafka</span>
-            </div>
-          </div>
-        </article>
-      </div>
+<footer>
+  <div class="container foot-inner">
+    <span>© <span id="year">2026</span> Vinayak Chiluka · Built with vanilla HTML/CSS/JS · Deployed on GitHub Pages</span>
+    <div class="foot-social">
+      <a href="https://www.linkedin.com/in/chilukavinayak/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.07 2.07 0 1 1 0-4.13 2.07 2.07 0 0 1 0 4.13zM7.12 20.45H3.55V9h3.57v11.45z"/></svg></a>
+      <a href="https://github.com/chilukavinayak" target="_blank" rel="noopener" aria-label="GitHub"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5A11.5 11.5 0 0 0 .5 12a11.5 11.5 0 0 0 7.86 10.91c.58.1.79-.25.79-.55v-2.17c-3.2.7-3.87-1.37-3.87-1.37-.52-1.33-1.28-1.68-1.28-1.68-1.04-.72.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.03 1.75 2.69 1.25 3.34.95.1-.74.4-1.25.72-1.53-2.55-.3-5.23-1.28-5.23-5.69 0-1.25.45-2.28 1.18-3.08-.12-.3-.51-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.78 0c2.2-1.49 3.16-1.18 3.16-1.18.63 1.59.24 2.75.12 3.05.74.8 1.18 1.83 1.18 3.08 0 4.42-2.69 5.39-5.25 5.67.41.36.78 1.05.78 2.13v3.16c0 .3.2.66.8.55A11.5 11.5 0 0 0 23.5 12 11.5 11.5 0 0 0 12 .5z"/></svg></a>
+      <a href="mailto:chilukavinayak.p@gmail.com" aria-label="Email"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg></a>
     </div>
-  </section>
+  </div>
+</footer>
 
-  <!-- Contact Section -->
-  <section id="contact" class="contact section">
-    <div class="container">
-      <div class="contact-wrapper">
-        <div class="contact-info" data-aos="fade-right">
-          <span class="section-tag">Get in Touch</span>
-          <h2 class="section-title">Let's Work <span class="gradient-text">Together</span></h2>
-          <p class="contact-desc">
-            Have a project in mind or want to discuss engineering challenges? 
-            I'd love to hear from you.
-          </p>
-          
-          <div class="contact-methods">
-            <a href="mailto:chilukavinayak.p@gmail.com" class="contact-method">
-              <div class="method-icon">
-                <i class="fas fa-envelope"></i>
-              </div>
-              <div class="method-details">
-                <span class="method-label">Email</span>
-                <span class="method-value">chilukavinayak.p@gmail.com</span>
-              </div>
-            </a>
-            
-            <div class="contact-method">
-              <div class="method-icon">
-                <i class="fas fa-map-marker-alt"></i>
-              </div>
-              <div class="method-details">
-                <span class="method-label">Location</span>
-                <span class="method-value">Hyderabad, India</span>
-              </div>
-            </div>
-            
-            <div class="contact-method">
-              <div class="method-icon">
-                <i class="fas fa-clock"></i>
-              </div>
-              <div class="method-details">
-                <span class="method-label">Availability</span>
-                <span class="method-value">Open to opportunities</span>
-              </div>
-            </div>
-          </div>
-          
-          <div class="contact-social">
-            <a href="https://linkedin.com/in/chilukavinayak" target="_blank" class="social-link">
-              <i class="fab fa-linkedin-in"></i>
-            </a>
-            <a href="https://github.com/chilukavinayak" target="_blank" class="social-link">
-              <i class="fab fa-github"></i>
-            </a>
-            <a href="mailto:chilukavinayak.p@gmail.com" class="social-link">
-              <i class="fas fa-envelope"></i>
-            </a>
-          </div>
-        </div>
-        
-        <form class="contact-form" id="contact-form" data-aos="fade-left">
-          <div class="form-group">
-            <label for="name">Your Name</label>
-            <input type="text" id="name" placeholder="John Doe" required>
-          </div>
-          
-          <div class="form-group">
-            <label for="email">Email Address</label>
-            <input type="email" id="email" placeholder="john@example.com" required>
-          </div>
-          
-          <div class="form-group">
-            <label for="message">Message</label>
-            <textarea id="message" rows="5" placeholder="Tell me about your project..." required></textarea>
-          </div>
-          
-          <button type="submit" class="btn btn-primary btn-full">
-            <span>Send Message</span>
-            <i class="fas fa-paper-plane"></i>
-          </button>
-        </form>
-      </div>
-    </div>
-  </section>
+<button class="to-top" id="to-top" aria-label="Back to top"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m18 15-6-6-6 6"/></svg></button>
+<div class="toast" id="toast" role="status">✓ Email copied to clipboard</div>
 
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-content">
-        <div class="footer-brand">
-          <span class="footer-logo">Vinayak.</span>
-          <p>Building the future, one system at a time.</p>
-        </div>
-        <p class="footer-copy">&copy; 2025 Vinayak Chiluka. All rights reserved.</p>
-      </div>
-    </div>
-  </footer>
+<script>
+(function(){
+  "use strict";
+  var d=document, w=window;
 
-  <!-- Scripts -->
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script src="js/main.js"></script>
+  /* theme */
+  var root=d.documentElement;
+  function getTheme(){try{return localStorage.getItem("vc-theme")}catch(e){return null}}
+  function setTheme(t){root.setAttribute("data-theme",t);try{localStorage.setItem("vc-theme",t)}catch(e){}}
+  var saved=getTheme(); if(saved==="light"||saved==="dark"){root.setAttribute("data-theme",saved);}
+  d.getElementById("theme-btn").addEventListener("click",function(){
+    setTheme(root.getAttribute("data-theme")==="light"?"dark":"light");
+  });
+
+  /* nav: scroll state + progress + to-top */
+  var secIds=["about","experience","skills","projects","contact"];
+  var navLinks=Array.prototype.slice.call(d.querySelectorAll(".nav-link"));
+  var nav=d.getElementById("navbar"), prog=d.getElementById("progress"), toTop=d.getElementById("to-top");
+  function onScroll(){
+    var y=w.pageYOffset||d.documentElement.scrollTop;
+    nav.classList.toggle("scrolled",y>40);
+    var h=d.documentElement.scrollHeight-w.innerHeight;
+    prog.style.width=(h>0?(y/h)*100:0)+"%";
+    toTop.classList.toggle("show",y>700);
+    spy();
+  }
+  w.addEventListener("scroll",onScroll,{passive:true}); onScroll();
+  toTop.addEventListener("click",function(){w.scrollTo({top:0,behavior:"smooth"})});
+
+  /* mobile menu */
+  var burger=d.getElementById("burger"), links=d.getElementById("nav-links");
+  burger.addEventListener("click",function(){
+    var open=links.classList.toggle("open");
+    burger.classList.toggle("open",open);
+    burger.setAttribute("aria-expanded",open?"true":"false");
+  });
+  links.addEventListener("click",function(e){
+    if(e.target.closest("a")){links.classList.remove("open");burger.classList.remove("open");burger.setAttribute("aria-expanded","false");}
+  });
+
+  /* scroll spy */
+  function spy(){
+    var y=(w.pageYOffset||0)+120, cur="";
+    secIds.forEach(function(id){var el=d.getElementById(id);if(el&&el.offsetTop<=y)cur=id;});
+    navLinks.forEach(function(a){a.classList.toggle("active",a.getAttribute("href")==="#"+cur);});
+  }
+
+  /* reveal on scroll */
+  var reduce=w.matchMedia&&w.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var io=("IntersectionObserver" in w)&&!reduce?new IntersectionObserver(function(entries){
+    entries.forEach(function(en){if(en.isIntersecting){en.target.classList.add("in");io.unobserve(en.target);}});
+  },{threshold:.12,rootMargin:"0px 0px -40px 0px"}):null;
+  d.querySelectorAll(".reveal").forEach(function(el){io?io.observe(el):el.classList.add("in");});
+
+  /* counters */
+  function animateCount(el){
+    var target=+el.getAttribute("data-count"),start=null,dur=1400;
+    if(reduce){el.textContent=target;return;}
+    function step(ts){if(!start)start=ts;var p=Math.min((ts-start)/dur,1);
+      el.textContent=Math.floor((1-Math.pow(1-p,3))*target);
+      if(p<1)requestAnimationFrame(step);else el.textContent=target;}
+    requestAnimationFrame(step);
+  }
+  var cio=("IntersectionObserver" in w)?new IntersectionObserver(function(entries){
+    entries.forEach(function(en){if(en.isIntersecting){animateCount(en.target);cio.unobserve(en.target);}});
+  },{threshold:.35}):null;
+  d.querySelectorAll("[data-count]").forEach(function(el){cio?cio.observe(el):el.textContent=el.getAttribute("data-count");});
+
+  /* project filters */
+  var fbtns=d.querySelectorAll(".fbtn"), cards=d.querySelectorAll(".pcard");
+  fbtns.forEach(function(btn){
+    btn.addEventListener("click",function(){
+      fbtns.forEach(function(b){b.classList.remove("active")});
+      btn.classList.add("active");
+      var f=btn.getAttribute("data-filter");
+      cards.forEach(function(c){
+        var show=f==="all"||c.getAttribute("data-cat")===f;
+        c.classList.toggle("hidden",!show);
+        if(show){c.classList.add("in");}
+      });
+    });
+  });
+
+  /* copy email */
+  var copyBtn=d.getElementById("copy-email"), toast=d.getElementById("toast"), tTimer;
+  copyBtn.addEventListener("click",function(){
+    var mail="chilukavinayak.p@gmail.com";
+    function done(){toast.classList.add("show");clearTimeout(tTimer);tTimer=setTimeout(function(){toast.classList.remove("show")},2200);}
+    if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(mail).then(done).catch(function(){w.location.href="mailto:"+mail;});}
+    else{w.location.href="mailto:"+mail;}
+  });
+
+  /* year */
+  d.getElementById("year").textContent=new Date().getFullYear();
+})();
+</script>
 </body>
 </html>
