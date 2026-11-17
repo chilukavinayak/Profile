@@ -3,11 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Vinayak Chiluka — Senior Principal Software Engineer · Cloud & AI</title>
-<meta name="description" content="Senior Principal Software Engineer with 11+ years building distributed systems at Amazon-scale, fintech platforms at Morgan Stanley, and production RAG/AI systems. AWS Solutions Architect Professional.">
+<title>Vinayak Chiluka — Staff / Principal Engineer &amp; Architect · Java · AWS · AI</title>
+<meta name="description" content="Vinayak Chiluka — Senior Principal Software Engineer and AWS Solutions Architect Professional. 11+ years of Java and AWS: 10K+ RPS distributed systems, cloud platform architecture, and RAG / LLM systems. Open to Staff / Principal Engineer, Solutions Architect and AI Engineering roles.">
 <meta name="author" content="Vinayak Chiluka">
-<meta property="og:title" content="Vinayak Chiluka — Senior Principal Software Engineer">
-<meta property="og:description" content="11+ years · 10K+ RPS systems · 99.99% uptime · AWS SA Professional · Production RAG & AI systems.">
+<meta name="keywords" content="Staff Engineer, Principal Engineer, Solutions Architect, Cloud Architect, AI Engineer, Java, Spring Boot, AWS, Microservices, RAG, LLM, Hyderabad">
+<link rel="canonical" href="https://vinayak-chiluka.me/">
+<meta property="og:title" content="Vinayak Chiluka — Staff / Principal Engineer &amp; Architect · Java · AWS · AI">
+<meta property="og:description" content="11+ years of Java &amp; AWS · 10K+ RPS systems · 99.99% uptime · AWS Solutions Architect Professional · RAG &amp; LLM systems.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://vinayak-chiluka.me/">
 <meta property="og:image" content="https://vinayak-chiluka.me/assets/profile.png">
@@ -17,7 +19,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Person","name":"Vinayak Chiluka","jobTitle":"Senior Principal Software Engineer","url":"https://vinayak-chiluka.me/","email":"mailto:chilukavinayak.p@gmail.com","address":{"@type":"PostalAddress","addressLocality":"Hyderabad","addressCountry":"IN"},"sameAs":["https://www.linkedin.com/in/chilukavinayak/","https://github.com/chilukavinayak"]}
+{"@context":"https://schema.org","@type":"Person","name":"Vinayak Chiluka","jobTitle":"Senior Principal Software Engineer","description":"Staff / Principal-level backend engineer and cloud architect (Java, AWS) building RAG and LLM systems.","knowsAbout":["Java","Spring Boot","Microservices","Distributed Systems","Amazon Web Services","Cloud Architecture","Kubernetes","Azure API Management","Retrieval-Augmented Generation","Large Language Models","Python"],"hasCredential":[{"@type":"EducationalOccupationalCredential","name":"AWS Certified Solutions Architect – Professional"},{"@type":"EducationalOccupationalCredential","name":"AWS Certified Solutions Architect – Associate"}],"url":"https://vinayak-chiluka.me/","email":"mailto:chilukavinayak.p@gmail.com","address":{"@type":"PostalAddress","addressLocality":"Hyderabad","addressCountry":"IN"},"sameAs":["https://www.linkedin.com/in/chilukavinayak/","https://github.com/chilukavinayak"]}
 </script>
 <style>
 /* ============ TOKENS ============ */
@@ -243,6 +245,46 @@ button{font:inherit;color:inherit;background:none;border:none;cursor:pointer}
 [data-theme="light"] .plink{color:#0e7490}
 .plink svg{width:15px;height:15px}
 
+/* ============ ROLE PILLS / LANES / DECISIONS ============ */
+.role-pills{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 18px}
+.role-pill{display:inline-flex;align-items:center;gap:7px;padding:7px 14px;border-radius:999px;font-size:.82rem;font-weight:600;border:1px solid var(--border-strong);background:var(--card);color:var(--text)}
+.role-pill i{width:8px;height:8px;border-radius:50%;display:block}
+.lanes{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.lane{border:1px solid var(--border);background:var(--card);backdrop-filter:blur(10px);border-radius:var(--r-lg);padding:28px 26px;position:relative;overflow:hidden;display:flex;flex-direction:column;transition:transform .25s,border-color .25s,box-shadow .25s}
+.lane::before{content:"";position:absolute;inset:0 0 auto 0;height:4px;background:var(--lane,var(--indigo))}
+.lane:hover{transform:translateY(-5px);border-color:var(--border-strong);box-shadow:var(--shadow)}
+.lane .b-ico{width:46px;height:46px;border-radius:13px;display:grid;place-items:center;font-size:1.3rem;margin-bottom:16px}
+.lane-kicker{font-size:.72rem;font-weight:700;letter-spacing:.11em;text-transform:uppercase;color:var(--lane,var(--indigo))}
+.lane h3{font-size:1.22rem;margin:6px 0 4px;line-height:1.25}
+.lane-stack{font-size:.84rem;color:var(--faint);font-weight:500;margin-bottom:16px}
+.lane ul{list-style:none;display:grid;gap:10px;flex-grow:1}
+.lane li{position:relative;padding-left:22px;font-size:.92rem;color:var(--muted)}
+.lane li::before{content:"";position:absolute;left:2px;top:.62em;width:8px;height:8px;border-radius:2px;background:var(--lane,var(--indigo));transform:rotate(45deg)}
+.lane li strong{color:var(--text);font-weight:600}
+.lane-fit{margin-top:20px;padding-top:16px;border-top:1px dashed var(--border-strong);font-size:.8rem;color:var(--faint)}
+.lane-fit b{color:var(--muted);font-weight:600}
+.adr-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.adr{border:1px solid var(--border);background:var(--card);border-radius:var(--r-lg);padding:26px;transition:transform .25s,border-color .25s,box-shadow .25s}
+.adr:hover{transform:translateY(-4px);border-color:var(--border-strong);box-shadow:var(--shadow)}
+.adr-top{display:flex;align-items:center;gap:12px;margin-bottom:16px}
+.adr-top .b-ico{width:42px;height:42px;border-radius:12px;display:grid;place-items:center;font-size:1.15rem;flex-shrink:0}
+.adr-top h3{font-size:1.1rem;line-height:1.25}
+.adr dl{display:grid;gap:12px}
+.adr dl>div{display:grid;grid-template-columns:86px 1fr;gap:12px;align-items:start}
+.adr dt{font-size:.68rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:4px 0;border-radius:7px;text-align:center}
+.adr dd{font-size:.91rem;color:var(--muted)}
+.adr dd strong{color:var(--text);font-weight:600}
+.dt-p{color:var(--amber);background:rgba(251,191,36,.1);border:1px solid rgba(251,191,36,.3)}
+.dt-d{color:var(--cyan);background:rgba(34,211,238,.09);border:1px solid rgba(34,211,238,.3)}
+.dt-o{color:var(--green);background:rgba(52,211,153,.09);border:1px solid rgba(52,211,153,.3)}
+[data-theme="light"] .dt-p{color:#b45309}
+[data-theme="light"] .dt-d{color:#0e7490}
+[data-theme="light"] .dt-o{color:#047857}
+[data-theme="light"] .mini-badge.gold{color:#b45309}
+[data-theme="light"] .mini-badge.green,[data-theme="light"] .pmetric{color:#047857}
+.cred-row{margin-top:16px;border:1px dashed var(--border-strong);border-radius:var(--r-lg);padding:20px 26px;display:flex;flex-wrap:wrap;align-items:center;gap:10px}
+.cred-row b{font-family:'Space Grotesk',sans-serif;font-size:.9rem;margin-right:6px}
+
 /* ============ CONTACT ============ */
 .contact-card{border:1px solid var(--border-strong);border-radius:28px;padding:clamp(34px,6vw,64px);text-align:center;position:relative;overflow:hidden;background:var(--card)}
 .contact-card::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse 70% 90% at 50% -10%,rgba(99,102,241,.22),transparent 60%);pointer-events:none}
@@ -274,6 +316,16 @@ footer{border-top:1px solid var(--border);padding:34px 0;margin-top:40px}
 .reveal.in{opacity:1;transform:none}
 
 /* ============ RESPONSIVE ============ */
+@media(max-width:1020px){
+  .nav-links{position:fixed;top:var(--nav-h);right:12px;flex-direction:column;align-items:stretch;gap:6px;
+    background:var(--card-solid);border:1px solid var(--border-strong);border-radius:18px;padding:14px;
+    box-shadow:var(--shadow);min-width:210px;
+    opacity:0;pointer-events:none;transform:translateY(-8px);transition:opacity .25s,transform .25s}
+  .nav-links.open{opacity:1;pointer-events:auto;transform:none}
+  .nav-link{padding:11px 16px}
+  .nav-cta{margin:6px 0 0;text-align:center}
+  .burger{display:flex}
+}
 @media(max-width:960px){
   .hero-grid{grid-template-columns:1fr;gap:60px}
   .hero-visual{order:-1}
@@ -283,7 +335,7 @@ footer{border-top:1px solid var(--border);padding:34px 0;margin-top:40px}
   .b-span6,.b-span4,.b-span3{grid-column:span 12}
   .bento{grid-template-columns:repeat(12,1fr)}
   .b-sm6{grid-column:span 6!important}
-  .skills-grid,.proj-grid{grid-template-columns:1fr}
+  .skills-grid,.proj-grid,.lanes,.adr-grid{grid-template-columns:1fr}
   .nav-links{position:fixed;top:var(--nav-h);right:12px;flex-direction:column;align-items:stretch;gap:6px;
     background:var(--card-solid);border:1px solid var(--border-strong);border-radius:18px;padding:14px;
     box-shadow:var(--shadow);min-width:210px;
@@ -300,6 +352,8 @@ footer{border-top:1px solid var(--border);padding:34px 0;margin-top:40px}
   .float-chip{padding:8px 11px;font-size:.72rem}
   .float-chip .fc-ico{width:24px;height:24px;font-size:.8rem}
   .section{padding:72px 0}
+  .adr dl>div{grid-template-columns:1fr;gap:6px}
+  .adr dt{justify-self:start;padding:4px 12px}
 }
 </style>
 </head>
@@ -314,8 +368,10 @@ footer{border-top:1px solid var(--border);padding:34px 0;margin-top:40px}
   <div class="nav-inner">
     <a href="#top" class="logo"><span class="logo-mark">VC</span>Vinayak<span class="grad-text">.</span></a>
     <div class="nav-links" id="nav-links">
+      <a href="#roles" class="nav-link">What I do</a>
       <a href="#about" class="nav-link">About</a>
       <a href="#experience" class="nav-link">Experience</a>
+      <a href="#architecture" class="nav-link">Architecture</a>
       <a href="#skills" class="nav-link">Skills</a>
       <a href="#projects" class="nav-link">Projects</a>
       <a href="#contact" class="nav-cta">Hire Me</a>
@@ -335,9 +391,14 @@ footer{border-top:1px solid var(--border);padding:34px 0;margin-top:40px}
 <section class="hero" id="top">
   <div class="container hero-grid">
     <div>
-      <span class="chip"><span class="pulse"></span>Open to new opportunities — Senior IC · Cloud & AI</span>
-      <h1>I build <span class="grad-text">distributed systems</span> that scale — and <span class="grad-text">AI</span> that ships.</h1>
-      <p class="hero-sub">Senior Principal Software Engineer with <strong>11+ years</strong> across Amazon-scale logistics, Morgan Stanley fintech and enterprise IoT — now building <strong>production RAG &amp; AI systems</strong> on AWS.</p>
+      <span class="chip"><span class="pulse"></span>Open to Staff / Principal Engineer · Architect · AI Engineering roles</span>
+      <h1>I architect <span class="grad-text">Java &amp; AWS platforms</span> that scale — and <span class="grad-text">AI systems</span> that ship.</h1>
+      <div class="role-pills" aria-label="Roles I fit">
+        <span class="role-pill"><i style="background:var(--indigo)"></i>Staff / Principal Engineer</span>
+        <span class="role-pill"><i style="background:var(--cyan)"></i>Solutions &amp; Cloud Architect</span>
+        <span class="role-pill"><i style="background:var(--violet)"></i>AI / LLM Engineer</span>
+      </div>
+      <p class="hero-sub">Senior Principal Software Engineer and <strong>AWS Solutions Architect — Professional</strong> with <strong>11+ years</strong> of Java and AWS across Amazon-scale logistics, Morgan Stanley post-trade and enterprise cloud platforms — now applying the same production discipline to <strong>RAG &amp; LLM systems</strong>.</p>
       <div class="hero-ctas">
         <a href="mailto:chilukavinayak.p@gmail.com" class="btn btn-primary">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>
@@ -360,8 +421,8 @@ footer{border-top:1px solid var(--border);padding:34px 0;margin-top:40px}
       <div class="portrait">
         <div class="portrait-inner"><img src="assets/profile.png" alt="Portrait of Vinayak Chiluka" width="500" height="500"></div>
         <div class="float-chip fc-1"><span class="fc-ico" style="background:rgba(251,191,36,.15)">🏆</span><span>AWS Certified<small>Solutions Architect — Pro</small></span></div>
-        <div class="float-chip fc-2"><span class="fc-ico" style="background:rgba(167,139,250,.15)">🤖</span><span>RAG &amp; AI Systems<small>LangChain · FAISS · pgvector</small></span></div>
-        <div class="float-chip fc-3"><span class="fc-ico" style="background:rgba(52,211,153,.15)">⚡</span><span>2,600+ contributions<small>on GitHub, last 12 months</small></span></div>
+        <div class="float-chip fc-2"><span class="fc-ico" style="background:rgba(167,139,250,.15)">🤖</span><span>RAG &amp; LLM Systems<small>LangChain · FAISS · pgvector</small></span></div>
+        <div class="float-chip fc-3"><span class="fc-ico" style="background:rgba(52,211,153,.15)">☕</span><span>Java · Spring Boot · AWS<small>11+ years in production</small></span></div>
       </div>
     </div>
   </div>
@@ -379,23 +440,76 @@ footer{border-top:1px solid var(--border);padding:34px 0;margin-top:40px}
     <span class="trust-logo">63 Moons</span>
   </div>
 </div>
+<!-- ================= WHAT I DO / ROLES ================= -->
+<section class="section" id="roles">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="sec-tag">What I do</span>
+      <h2>One engineer, <span class="grad-text">three ways to hire me</span></h2>
+      <p>The same 11 years, read three ways — pick the lane that matches your open role.</p>
+    </div>
+    <div class="lanes">
+      <article class="lane reveal" style="--lane:var(--indigo)">
+        <div class="b-ico" style="background:rgba(99,102,241,.15)">☕</div>
+        <span class="lane-kicker">Lane 01 · Build</span>
+        <h3>Staff / Principal Backend Engineer</h3>
+        <div class="lane-stack">Java 17 · Spring Boot 3 · Microservices · Event-driven</div>
+        <ul>
+          <li><strong>10,000+ RPS</strong> Java services behind Amazon's global logistics &amp; fulfillment.</li>
+          <li>Post-trade <strong>validation and settlement</strong> systems for Morgan Stanley.</li>
+          <li>Event-driven design with SQS, Kinesis and Kafka; CQRS and event sourcing where they earn their keep.</li>
+          <li>Hands-on technical lead for teams of <strong>10+ engineers</strong> — design reviews, mentoring, on-call ownership.</li>
+        </ul>
+        <div class="lane-fit"><b>Best fit:</b> Staff Engineer · Principal Engineer · Senior Staff SWE</div>
+      </article>
+      <article class="lane reveal" style="--lane:var(--cyan)">
+        <div class="b-ico" style="background:rgba(34,211,238,.13)">☁️</div>
+        <span class="lane-kicker">Lane 02 · Architect</span>
+        <h3>Solutions / Cloud Architect</h3>
+        <div class="lane-stack">AWS SA Professional · IaC · Kubernetes · Azure APIM</div>
+        <ul>
+          <li><strong>AWS Solutions Architect — Professional</strong> and Associate certified.</li>
+          <li>Multi-tenant IoT platform: <strong>1M+ events/day</strong>, sub-second latency, 99.99% uptime.</li>
+          <li><strong>50+ production databases</strong> migrated to KMS encryption with zero downtime.</li>
+          <li><strong>20–30% lower cloud spend</strong> through Reserved / Spot strategy and right-sizing.</li>
+          <li>Enterprise API gateway on Azure API Management, delivered as code.</li>
+        </ul>
+        <div class="lane-fit"><b>Best fit:</b> Solutions Architect · Cloud Architect · Technical Architect</div>
+      </article>
+      <article class="lane reveal" style="--lane:var(--violet)">
+        <div class="b-ico" style="background:rgba(167,139,250,.15)">🤖</div>
+        <span class="lane-kicker">Lane 03 · AI</span>
+        <h3>AI / LLM Engineer</h3>
+        <div class="lane-stack">RAG · LangChain · Vector search · Python · FastAPI</div>
+        <ul>
+          <li>Four <strong>RAG reference systems</strong>: clinical assistant, realtime voice agent, text-to-SQL, airline support.</li>
+          <li>Retrieval across <strong>FAISS, pgvector, Weaviate and OpenSearch</strong> — chosen per workload, not by habit.</li>
+          <li>LLM services shipped the way backends should be: FastAPI, Docker, Kubernetes, observability.</li>
+          <li>Grounded, auditable answers — citations, guardrails and safe SQL validation by design.</li>
+        </ul>
+        <div class="lane-fit"><b>Best fit:</b> AI Engineer · GenAI Architect · LLM Platform Engineer</div>
+      </article>
+    </div>
+  </div>
+</section>
+
 <!-- ================= ABOUT / BENTO ================= -->
 <section class="section" id="about">
   <div class="container">
     <div class="sec-head reveal">
       <span class="sec-tag">About — at a glance</span>
       <h2>Everything you need to know, <span class="grad-text">in one look</span></h2>
-      <p>11+ years of backend, cloud and platform engineering — measured in outcomes, not buzzwords.</p>
+      <p>11+ years of Java, AWS and platform engineering — measured in outcomes, not buzzwords.</p>
     </div>
     <div class="bento">
       <div class="bcard b-span6 b-glow reveal">
         <div class="b-ico" style="background:rgba(99,102,241,.15)">👨‍💻</div>
         <h3>Senior Principal Software Engineer</h3>
-        <p>I design fault-tolerant, high-throughput distributed systems — from Amazon-scale logistics platforms to post-trade validation at Morgan Stanley — and lead the teams that run them. Based in Hyderabad, India.</p>
+        <p>I design and build fault-tolerant, high-throughput systems in Java on AWS — from Amazon-scale logistics platforms to post-trade validation at Morgan Stanley — and stay hands-on from architecture diagram to production on-call. Based in Hyderabad, India.</p>
         <div class="tagline-badges">
           <span class="mini-badge gold">🏅 AWS Solutions Architect — Professional</span>
           <span class="mini-badge">AWS SA — Associate</span>
-          <span class="mini-badge green">● Open to Senior IC roles</span>
+          <span class="mini-badge green">● Staff · Principal · Architect</span>
         </div>
       </div>
       <div class="bcard b-span3 b-sm6 reveal">
@@ -420,12 +534,18 @@ footer{border-top:1px solid var(--border);padding:34px 0;margin-top:40px}
       </div>
       <div class="bcard b-span6 b-glow reveal">
         <div class="b-ico" style="background:rgba(167,139,250,.15)">🤖</div>
-        <h3>Now: Production AI &amp; RAG systems</h3>
-        <p>Building a portfolio of retrieval-augmented systems — medical diagnosis assistant, realtime voice agent, text-to-SQL, airline support — with LangChain, FAISS, pgvector, OpenSearch and Kubernetes.</p>
+        <h3>Now: RAG &amp; LLM systems, built like production</h3>
+        <p>Building a portfolio of retrieval-augmented systems — medical diagnosis assistant, realtime voice agent, text-to-SQL, airline support — with LangChain, FAISS, pgvector, OpenSearch and Kubernetes, and the same reliability bar I hold backend services to.</p>
         <div class="tagline-badges">
           <span class="mini-badge">LangChain</span><span class="mini-badge">FAISS</span><span class="mini-badge">pgvector</span><span class="mini-badge">WebRTC Voice</span><span class="mini-badge">FastAPI</span>
         </div>
       </div>
+    </div>
+    <div class="cred-row reveal">
+      <b>Education &amp; learning —</b>
+      <span class="mini-badge">B.Tech, Electronics &amp; Communication — JNTUH</span>
+      <span class="mini-badge">MIT xPRO · PG Program in Data Science &amp; AI (in progress)</span>
+      <span class="mini-badge">IIM Visakhapatnam · Leadership with AI (in progress)</span>
     </div>
   </div>
 </section>
@@ -435,16 +555,16 @@ footer{border-top:1px solid var(--border);padding:34px 0;margin-top:40px}
   <div class="container">
     <div class="sec-head reveal">
       <span class="sec-tag">Experience</span>
-      <h2>A decade of <span class="grad-text">shipping at scale</span></h2>
-      <p>Fintech, e-commerce logistics, IoT — always the systems everything else depends on.</p>
+      <h2>Eleven years of <span class="grad-text">shipping at scale</span></h2>
+      <p>Fintech, e-commerce logistics, IoT and API platforms — always the systems everything else depends on.</p>
     </div>
     <div class="timeline">
       <div class="titem current reveal"><span class="tdot"></span>
         <div class="tcard">
-          <div class="thead"><h3>Wissen Technology</h3><span class="ttype">IoT · Cloud Platform</span><span class="tdate">Aug 2024 — Present</span></div>
+          <div class="thead"><h3>Wissen Technology</h3><span class="ttype">Cloud Platform · API Gateway</span><span class="tdate">Aug 2024 — Present</span></div>
           <div class="trole">Senior Principal Software Engineer</div>
-          <p class="tdesc">Architecting multi-tenant IoT platforms processing 1M+ events/day. Reusable AWS CDK modules &amp; Helm charts that accelerate client onboarding; KMS-encrypted RDS migrations with zero downtime; 20–30% annual cloud-spend savings.</p>
-          <div class="ttags"><span>AWS CDK</span><span>EKS</span><span>Java · Spring Boot</span><span>IoT Core</span><span>Helm</span></div>
+          <p class="tdesc">Own an enterprise API gateway platform on Azure API Management — moving it from imperative scripts to infrastructure-as-code (Bicep, APIOps, GitLab CI/CD) with self-service API onboarding, JWT token validation and observability. Before that, architected multi-tenant AWS IoT platforms processing 1M+ events/day: reusable CDK modules &amp; Helm charts, zero-downtime KMS-encrypted RDS migrations and 20–30% annual cloud-spend savings.</p>
+          <div class="ttags"><span>Azure APIM</span><span>Bicep · APIOps</span><span>GitLab CI/CD</span><span>AWS CDK</span><span>EKS · Helm</span><span>Java · Spring Boot</span></div>
         </div>
       </div>
       <div class="titem reveal"><span class="tdot"></span>
@@ -484,8 +604,53 @@ footer{border-top:1px solid var(--border);padding:34px 0;margin-top:40px}
   </div>
 </section>
 
+<!-- ================= ARCHITECTURE DECISIONS ================= -->
+<section class="section" id="architecture">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="sec-tag">Architecture</span>
+      <h2>Decisions I've <span class="grad-text">owned in production</span></h2>
+      <p>Architecture is trade-offs. Here is the problem, the call I made, and what it bought.</p>
+    </div>
+    <div class="adr-grid">
+      <article class="adr reveal">
+        <div class="adr-top"><div class="b-ico" style="background:rgba(52,211,153,.13)">🔐</div><h3>Encrypting 50+ live databases without downtime</h3></div>
+        <dl>
+          <div><dt class="dt-p">Problem</dt><dd>Production RDS fleets had to move to KMS-encrypted instances for compliance — on systems that could not go offline.</dd></div>
+          <div><dt class="dt-d">Decision</dt><dd>A repeatable migration framework instead of one-off runbooks: staged cutover, automated verification and a clear rollback at every step.</dd></div>
+          <div><dt class="dt-o">Outcome</dt><dd><strong>50+ production databases</strong> migrated with <strong>zero downtime</strong>.</dd></div>
+        </dl>
+      </article>
+      <article class="adr reveal">
+        <div class="adr-top"><div class="b-ico" style="background:rgba(34,211,238,.13)">📡</div><h3>Event-driven ingestion for 1M+ IoT events a day</h3></div>
+        <dl>
+          <div><dt class="dt-p">Problem</dt><dd>Many tenants, bursty device traffic and a sub-second processing target — without one tenant starving another.</dd></div>
+          <div><dt class="dt-d">Decision</dt><dd>IoT Core → Kinesis / SQS → Lambda → DynamoDB with tenant isolation, health checks and automated alerts, packaged as reusable CDK modules and Helm charts.</dd></div>
+          <div><dt class="dt-o">Outcome</dt><dd><strong>Sub-second latency</strong>, <strong>99.99% uptime</strong> and faster onboarding for each new client.</dd></div>
+        </dl>
+      </article>
+      <article class="adr reveal">
+        <div class="adr-top"><div class="b-ico" style="background:rgba(99,102,241,.15)">🧩</div><h3>A declarative API gateway instead of sync scripts</h3></div>
+        <dl>
+          <div><dt class="dt-p">Problem</dt><dd>Gateway configuration was pushed across environments by imperative scripts — hard to review, easy to drift.</dd></div>
+          <div><dt class="dt-d">Decision</dt><dd>Bicep for the platform, APIOps for API content, applied as deltas from git through GitLab CI/CD — with an explicit gate for which APIs get promoted.</dd></div>
+          <div><dt class="dt-o">Outcome</dt><dd><strong>Git as the single source of truth</strong>; every API ships on its own schedule, rolled out environment by environment.</dd></div>
+        </dl>
+      </article>
+      <article class="adr reveal">
+        <div class="adr-top"><div class="b-ico" style="background:rgba(251,191,36,.12)">🔭</div><h3>Observability first, for a 40% faster recovery</h3></div>
+        <dl>
+          <div><dt class="dt-p">Problem</dt><dd>At 10,000+ RPS across many microservices, incidents took too long to trace to a root cause.</dd></div>
+          <div><dt class="dt-d">Decision</dt><dd>Distributed tracing with X-Ray, CloudWatch dashboards and custom service metrics wired into every critical path.</dd></div>
+          <div><dt class="dt-o">Outcome</dt><dd><strong>40% lower MTTR</strong>, alongside a <strong>25–30% infrastructure cost reduction</strong> on the same platform.</dd></div>
+        </dl>
+      </article>
+    </div>
+  </div>
+</section>
+
 <!-- ================= SKILLS ================= -->
-<section class="section" id="skills">
+<section class="section" id="skills" style="background:color-mix(in srgb,var(--bg-2) 45%,transparent)">
   <div class="container">
     <div class="sec-head reveal">
       <span class="sec-tag">Skills</span>
@@ -494,41 +659,41 @@ footer{border-top:1px solid var(--border);padding:34px 0;margin-top:40px}
     </div>
     <div class="skills-grid">
       <div class="scard reveal">
-        <div class="scard-head"><div class="b-ico" style="background:rgba(99,102,241,.15)">⌨️</div><div><h3>Languages</h3><small>8+ years Java &amp; SQL</small></div></div>
-        <div class="chips"><span class="hot">Java</span><span class="hot">Python</span><span class="hot">SQL</span><span>C</span><span>C#</span><span>JavaScript</span><span>Bash</span></div>
+        <div class="scard-head"><div class="b-ico" style="background:rgba(99,102,241,.15)">⌨️</div><div><h3>Java &amp; Backend</h3><small>11+ years · Java 17 · Spring Boot 3 in production</small></div></div>
+        <div class="chips"><span class="hot">Java</span><span class="hot">Spring Boot</span><span class="hot">Microservices</span><span class="hot">SQL</span><span>Python</span><span>REST · gRPC</span><span>Kafka</span><span>Redis</span><span>PostgreSQL</span><span>C#</span><span>C</span></div>
       </div>
       <div class="scard reveal">
-        <div class="scard-head"><div class="b-ico" style="background:rgba(34,211,238,.13)">☁️</div><div><h3>Cloud &amp; Infrastructure</h3><small>AWS Solutions Architect — Professional</small></div></div>
-        <div class="chips"><span class="hot">AWS</span><span class="hot">AWS CDK</span><span>Lambda</span><span>EKS · ECS</span><span>DynamoDB</span><span>RDS</span><span>IoT Core</span><span>S3 · SQS</span><span>Terraform</span><span>CloudFormation</span></div>
+        <div class="scard-head"><div class="b-ico" style="background:rgba(34,211,238,.13)">☁️</div><div><h3>Cloud Architecture</h3><small>AWS Solutions Architect — Professional</small></div></div>
+        <div class="chips"><span class="hot">AWS</span><span class="hot">AWS CDK</span><span class="hot">Solution Design</span><span>Lambda</span><span>EKS · ECS</span><span>DynamoDB</span><span>RDS</span><span>Kinesis · SQS</span><span>IoT Core</span><span>Azure APIM</span><span>Terraform</span><span>Bicep</span></div>
       </div>
       <div class="scard reveal">
         <div class="scard-head"><div class="b-ico" style="background:rgba(52,211,153,.13)">🚀</div><div><h3>Platform &amp; DevOps</h3><small>Ship fast, observe everything</small></div></div>
-        <div class="chips"><span class="hot">Kubernetes</span><span class="hot">Docker</span><span>Helm</span><span>GitHub Actions</span><span>Jenkins</span><span>Prometheus</span><span>Grafana</span><span>CloudWatch</span><span>X-Ray</span></div>
+        <div class="chips"><span class="hot">Kubernetes</span><span class="hot">Docker</span><span>Helm</span><span>GitLab CI/CD</span><span>GitHub Actions</span><span>Jenkins</span><span>OpenTelemetry</span><span>Prometheus</span><span>Grafana</span><span>CloudWatch</span><span>X-Ray</span></div>
       </div>
       <div class="scard reveal">
-        <div class="scard-head"><div class="b-ico" style="background:rgba(167,139,250,.15)">🤖</div><div><h3>AI &amp; Data Engineering</h3><small>RAG systems in production patterns</small></div></div>
-        <div class="chips"><span class="hot">RAG</span><span class="hot">LangChain</span><span class="hot">FAISS</span><span>pgvector</span><span>OpenSearch</span><span>Weaviate</span><span>FastAPI</span><span>Kafka</span><span>Redis</span><span>PostgreSQL</span></div>
+        <div class="scard-head"><div class="b-ico" style="background:rgba(167,139,250,.15)">🤖</div><div><h3>AI &amp; LLM Engineering</h3><small>RAG systems built with production patterns</small></div></div>
+        <div class="chips"><span class="hot">RAG</span><span class="hot">LangChain</span><span class="hot">Vector Search</span><span>FAISS</span><span>pgvector</span><span>OpenSearch</span><span>Weaviate</span><span>Embeddings</span><span>Prompt Engineering</span><span>OpenAI API</span><span>FastAPI</span></div>
       </div>
     </div>
     <div class="arch-row reveal">
       <b>Architecture patterns —</b>
-      <div class="chips" style="display:contents"><span>Microservices</span><span>Event-Driven</span><span>Domain-Driven Design</span><span>CQRS</span><span>Event Sourcing</span><span>Circuit Breaker</span></div>
+      <div class="chips" style="display:contents"><span>Microservices</span><span>Event-Driven</span><span>Domain-Driven Design</span><span>CQRS</span><span>Event Sourcing</span><span>Circuit Breaker</span><span>Multi-Tenancy</span><span>Zero-Downtime Migration</span><span>Infrastructure as Code</span></div>
     </div>
   </div>
 </section>
 
 <!-- ================= PROJECTS ================= -->
-<section class="section" id="projects" style="background:color-mix(in srgb,var(--bg-2) 45%,transparent)">
+<section class="section" id="projects">
   <div class="container">
     <div class="sec-head reveal">
       <span class="sec-tag">Projects</span>
       <h2>Work that <span class="grad-text">moves numbers</span></h2>
-      <p>Filter by what you care about — AI projects include architecture docs on GitHub.</p>
+      <p>Filter by what you care about — production platforms from my roles, plus AI reference builds with architecture docs on GitHub.</p>
     </div>
     <div class="filters reveal" role="tablist" aria-label="Project filters">
       <button class="fbtn active" data-filter="all">All</button>
       <button class="fbtn" data-filter="ai">🤖 AI &amp; RAG</button>
-      <button class="fbtn" data-filter="cloud">☁️ Cloud &amp; IoT</button>
+      <button class="fbtn" data-filter="cloud">☁️ Cloud &amp; Platform</button>
       <button class="fbtn" data-filter="backend">⚙️ Backend</button>
       <button class="fbtn" data-filter="fintech">💹 FinTech</button>
     </div>
@@ -562,6 +727,11 @@ footer{border-top:1px solid var(--border);padding:34px 0;margin-top:40px}
         <p>Enterprise IoT data platform on AWS IoT Core, Kinesis and Lambda — sub-second processing, tenant isolation, 99.99% uptime.</p>
         <div class="pfoot"><span>IoT Core</span><span>Kinesis</span><span>Lambda</span><span>DynamoDB</span><span>CDK</span></div>
       </article>
+      <article class="pcard reveal" data-cat="cloud">
+        <div class="ptop"><div class="b-ico" style="background:rgba(99,102,241,.15)">🧩</div><div><span class="pcat">Cloud · Platform</span><h3>Enterprise API Gateway Platform</h3></div><span class="pmetric">Gateway as code</span></div>
+        <p>API gateway on Azure API Management rebuilt as infrastructure-as-code — self-service API onboarding, per-API promotion across environments, JWT validation policies and alerting.</p>
+        <div class="pfoot"><span>Azure APIM</span><span>Bicep</span><span>APIOps</span><span>GitLab CI/CD</span></div>
+      </article>
       <article class="pcard reveal" data-cat="backend">
         <div class="ptop"><div class="b-ico" style="background:rgba(99,102,241,.15)">⚙️</div><div><span class="pcat">Backend</span><h3>High-Throughput Logistics Services</h3></div><span class="pmetric">10K+ RPS</span></div>
         <p>Java microservices behind Amazon's global logistics &amp; fulfillment operations — fault-tolerant, horizontally scaled, continuously deployed.</p>
@@ -587,7 +757,7 @@ footer{border-top:1px solid var(--border);padding:34px 0;margin-top:40px}
     <div class="contact-card reveal">
       <span class="sec-tag">Contact</span>
       <h2>Let's build something <span class="grad-text">that lasts</span></h2>
-      <p>Hiring for a senior IC who owns outcomes end-to-end? Or want to talk distributed systems and RAG? My inbox is open.</p>
+      <p>Hiring a Staff / Principal Engineer, a Solutions Architect or an AI Engineer who owns outcomes end-to-end? My inbox is open.</p>
       <div class="contact-ctas">
         <a href="mailto:chilukavinayak.p@gmail.com" class="btn btn-primary">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>
@@ -601,7 +771,8 @@ footer{border-top:1px solid var(--border);padding:34px 0;margin-top:40px}
       </button>
       <div class="contact-meta">
         <span>📍 <b>Hyderabad, India</b> · IST (UTC+5:30)</span>
-        <span>💼 <b>Open to:</b> Senior / Principal IC · Platform · AI Engineering</span>
+        <span>💼 <b>Open to:</b> Staff / Principal Engineer · Solutions &amp; Cloud Architect · AI / LLM Engineering</span>
+        <span>🌍 <b>Work mode:</b> On-site, hybrid or remote · open to relocation</span>
       </div>
     </div>
   </div>
@@ -637,7 +808,7 @@ footer{border-top:1px solid var(--border);padding:34px 0;margin-top:40px}
   });
 
   /* nav: scroll state + progress + to-top */
-  var secIds=["about","experience","skills","projects","contact"];
+  var secIds=["roles","about","experience","architecture","skills","projects","contact"];
   var navLinks=Array.prototype.slice.call(d.querySelectorAll(".nav-link"));
   var nav=d.getElementById("navbar"), prog=d.getElementById("progress"), toTop=d.getElementById("to-top");
   function onScroll(){
